@@ -1,0 +1,294 @@
+[
+  {
+    "code": "english",
+    "name": "English",
+    "nativeName": "English",
+    "flag": "🇬🇧",
+    "variants": [
+      { "id": "english", "name": "English", "size": 70, "file": "english.json" },
+      { "id": "english_1k", "name": "English 1k", "size": 1000, "file": "english_1k.json" }
+    ],
+    "default": "english_1k"
+  },
+  {
+    "code": "indonesian",
+    "name": "Indonesian",
+    "nativeName": "Bahasa Indonesia",
+    "flag": "🇮🇩",
+    "variants": [
+      { "id": "indonesian", "name": "Indonesian", "size": 200, "file": "indonesian.json" },
+      { "id": "indonesian_1k", "name": "Indonesian 1k", "size": 1000, "file": "indonesian_1k.json" }
+    ],
+    "default": "indonesian_1k"
+  },
+  {
+    "code": "spanish",
+    "name": "Spanish",
+    "nativeName": "Español",
+    "flag": "🇪🇸",
+    "variants": [
+      { "id": "spanish", "name": "Spanish", "size": 200, "file": "spanish.json" }
+    ],
+    "default": "spanish"
+  },
+  {
+    "code": "french",
+    "name": "French",
+    "nativeName": "Français",
+    "flag": "🇫🇷",
+    "variants": [
+      { "id": "french", "name": "French", "size": 200, "file": "french.json" }
+    ],
+    "default": "french"
+  },
+  {
+    "code": "german",
+    "name": "German",
+    "nativeName": "Deutsch",
+    "flag": "🇩🇪",
+    "variants": [
+      { "id": "german", "name": "German", "size": 200, "file": "german.json" }
+    ],
+    "default": "german"
+  },
+  {
+    "code": "italian",
+    "name": "Italian",
+    "nativeName": "Italiano",
+    "flag": "🇮🇹",
+    "variants": [
+      { "id": "italian", "name": "Italian", "size": 200, "file": "italian.json" }
+    ],
+    "default": "italian"
+  },
+  {
+    "code": "portuguese",
+    "name": "Portuguese",
+    "nativeName": "Português",
+    "flag": "🇵🇹",
+    "variants": [
+      { "id": "portuguese", "name": "Portuguese", "size": 200, "file": "portuguese.json" }
+    ],
+    "default": "portuguese"
+  },
+  {
+    "code": "dutch",
+    "name": "Dutch",
+    "nativeName": "Nederlands",
+    "flag": "🇳🇱",
+    "variants": [
+      { "id": "dutch", "name": "Dutch", "size": 200, "file": "dutch.json" }
+    ],
+    "default": "dutch"
+  },
+  {
+    "code": "russian",
+    "name": "Russian",
+    "nativeName": "Русский",
+    "flag": "🇷🇺",
+    "variants": [
+      { "id": "russian", "name": "Russian", "size": 200, "file": "russian.json" }
+    ],
+    "default": "russian"
+  },
+  {
+    "code": "japanese_romaji",
+    "name": "Japanese (Romaji)",
+    "nativeName": "Nihongo Romaji",
+    "flag": "🇯🇵",
+    "variants": [
+      { "id": "japanese_romaji", "name": "Japanese Romaji", "size": 200, "file": "japanese_romaji.json" }
+    ],
+    "default": "japanese_romaji"
+  },
+  {
+    "code": "polish",
+    "name": "Polish",
+    "nativeName": "Polski",
+    "flag": "🇵🇱",
+    "variants": [
+      { "id": "polish", "name": "Polish", "size": 200, "file": "polish.json" }
+    ],
+    "default": "polish"
+  },
+  {
+    "code": "turkish",
+    "name": "Turkish",
+    "nativeName": "Türkçe",
+    "flag": "🇹🇷",
+    "variants": [
+      { "id": "turkish", "name": "Turkish", "size": 200, "file": "turkish.json" }
+    ],
+    "default": "turkish"
+  },
+  {
+    "code": "vietnamese",
+    "name": "Vietnamese",
+    "nativeName": "Tiếng Việt",
+    "flag": "🇻🇳",
+    "variants": [
+      { "id": "vietnamese", "name": "Vietnamese", "size": 200, "file": "vietnamese.json" }
+    ],
+    "default": "vietnamese"
+  },
+  {
+    "code": "afrikaans",
+    "name": "Afrikaans",
+    "nativeName": "Afrikaans",
+    "flag": "🇿🇦",
+    "variants": [
+      { "id": "afrikaans", "name": "Afrikaans", "size": 120, "file": "afrikaans.json" }
+    ],
+    "default": "afrikaans"
+  },
+  {
+    "code": "code_javascript",
+    "name": "JavaScript",
+    "nativeName": "JavaScript",
+    "flag": "🟨",
+    "variants": [
+      { "id": "code_javascript", "name": "JavaScript", "size": 89, "file": "code_javascript.json" }
+    ],
+    "default": "code_javascript"
+  },
+  {
+    "code": "code_typescript",
+    "name": "TypeScript",
+    "nativeName": "TypeScript",
+    "flag": "🔷",
+    "variants": [
+      { "id": "code_typescript", "name": "TypeScript", "size": 150, "file": "code_typescript.json" }
+    ],
+    "default": "code_typescript"
+  },
+  {
+    "code": "code_python",
+    "name": "Python",
+    "nativeName": "Python",
+    "flag": "🐍",
+    "variants": [
+      { "id": "code_python", "name": "Python", "size": 200, "file": "code_python.json" }
+    ],
+    "default": "code_python"
+  },
+  {
+    "code": "code_rust",
+    "name": "Rust",
+    "nativeName": "Rust",
+    "flag": "🦀",
+    "variants": [
+      { "id": "code_rust", "name": "Rust", "size": 150, "file": "code_rust.json" }
+    ],
+    "default": "code_rust"
+  },
+  {
+    "code": "code_go",
+    "name": "Go",
+    "nativeName": "Go (Golang)",
+    "flag": "🐹",
+    "variants": [
+      { "id": "code_go", "name": "Go", "size": 150, "file": "code_go.json" }
+    ],
+    "default": "code_go"
+  },
+  {
+    "code": "code_c",
+    "name": "C",
+    "nativeName": "C Language",
+    "flag": "©️",
+    "variants": [
+      { "id": "code_c", "name": "C", "size": 120, "file": "code_c.json" }
+    ],
+    "default": "code_c"
+  },
+  {
+    "code": "code_cpp",
+    "name": "C++",
+    "nativeName": "C++ Language",
+    "flag": "➕",
+    "variants": [
+      { "id": "code_cpp", "name": "C++", "size": 150, "file": "code_cpp.json" }
+    ],
+    "default": "code_cpp"
+  },
+  {
+    "code": "code_java",
+    "name": "Java",
+    "nativeName": "Java",
+    "flag": "☕",
+    "variants": [
+      { "id": "code_java", "name": "Java", "size": 150, "file": "code_java.json" }
+    ],
+    "default": "code_java"
+  },
+  {
+    "code": "code_php",
+    "name": "PHP",
+    "nativeName": "PHP",
+    "flag": "🐘",
+    "variants": [
+      { "id": "code_php", "name": "PHP", "size": 150, "file": "code_php.json" }
+    ],
+    "default": "code_php"
+  },
+  {
+    "code": "code_bash",
+    "name": "Bash",
+    "nativeName": "Bash Shell",
+    "flag": "🐚",
+    "variants": [
+      { "id": "code_bash", "name": "Bash", "size": 120, "file": "code_bash.json" }
+    ],
+    "default": "code_bash"
+  },
+  {
+    "code": "code_html",
+    "name": "HTML",
+    "nativeName": "HTML5",
+    "flag": "🌐",
+    "variants": [
+      { "id": "code_html", "name": "HTML", "size": 120, "file": "code_html.json" }
+    ],
+    "default": "code_html"
+  },
+  {
+    "code": "code_css",
+    "name": "CSS",
+    "nativeName": "CSS3",
+    "flag": "🎨",
+    "variants": [
+      { "id": "code_css", "name": "CSS", "size": 120, "file": "code_css.json" }
+    ],
+    "default": "code_css"
+  },
+  {
+    "code": "code_sql",
+    "name": "SQL",
+    "nativeName": "SQL",
+    "flag": "🗄️",
+    "variants": [
+      { "id": "code_sql", "name": "SQL", "size": 120, "file": "code_sql.json" }
+    ],
+    "default": "code_sql"
+  },
+  {
+    "code": "code_git",
+    "name": "Git",
+    "nativeName": "Git VCS",
+    "flag": "🌿",
+    "variants": [
+      { "id": "code_git", "name": "Git", "size": 100, "file": "code_git.json" }
+    ],
+    "default": "code_git"
+  },
+  {
+    "code": "code_docker",
+    "name": "Docker",
+    "nativeName": "Docker & Containers",
+    "flag": "🐳",
+    "variants": [
+      { "id": "code_docker", "name": "Docker", "size": 100, "file": "code_docker.json" }
+    ],
+    "default": "code_docker"
+  }
+]

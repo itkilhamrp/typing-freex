@@ -1,0 +1,8 @@
+{
+  "id": "code_python",
+  "name": "Python",
+  "version": "1.0.0",
+  "language": "code_python",
+  "type": "wordlist",
+  "packed": "def\nclass\nimport\nfrom\nas\nreturn\nyield\nlambda\nasync\nawait\nif\nelif\nelse\nfor\nwhile\nbreak\ncontinue\ntry\nexcept\nfinally\nraise\nassert\nwith\npass\nglobal\nnonlocal\nTrue\nFalse\nNone\nand\nor\nnot\nin\nis\nself\ncls\nprint\nlen\nrange\nenumerate\nzip\nmap\nfilter\nlist\ndict\nset\ntuple\nstr\nint\nfloat\nbool\nbytes\nbytearray\nsuper\nisinstance\nissubclass\ntype\nid\nhash\ncallable\ngetattr\nsetattr\ndelattr\nhasattr\nproperty\nstaticmethod\nclassmethod\nabstractmethod\ndecorator\nopen\nread\nwrite\nclose\nseek\ntell\niter\nnext\nreversed\nsorted\nmin\nmax\nsum\nabs\nround\npow\ndivmod\nall\nany\nbin\noct\nhex\nord\nchr\nrepr\nascii\nformat\nvars\ndir\nhelp\ninput\neval\nexec\ncompile\nslice\nmemoryview\nException\nValueError\nTypeError\nKeyError\nIndexError\nAttributeError\nImportError\nFileNotFoundError\nStopIteration\nZeroDivisionError\nRuntimeError\n__init__\n__new__\n__str__\n__repr__\n__call__\n__len__\n__getitem__\n__setitem__\n__delitem__\n__iter__\n__next__\n__enter__\n__exit__\n__eq__\n__ne__\n__lt__\n__le__\n__gt__\n__ge__\n__add__\n__sub__\n__mul__\n__truediv__\n__contains__\n__dict__\n__doc__\n__name__\n__file__\n__all__\ndataclass\nfield\nTypedDict\nOptional\nUnion\nLiteral\nCallable\nIterable\nSequence\nMapping\nAny"
+}

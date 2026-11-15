@@ -1,0 +1,58 @@
+[
+  {
+    "text": "server {\n    listen 80;\n    server_name example.com www.example.com;\n    root /usr/share/nginx/html;\n    index index.html;\n}",
+    "source": "NGINX: Canonical static server block"
+  },
+  {
+    "text": "server {\n    listen 80;\n    server_name example.com www.example.com;\n    return 301 https://$host$request_uri;\n}",
+    "source": "NGINX: HTTP to HTTPS permanent canonical redirect"
+  },
+  {
+    "text": "location ~* \\.(css|js|png|jpg|jpeg|gif|ico|svg|woff2)$ {\n    expires 30d;\n    add_header Cache-Control \"public, no-transform\";\n    access_log off;\n    log_not_found off;\n}",
+    "source": "NGINX: Static asset browser cache directives"
+  },
+  {
+    "text": "gzip on;\ngzip_vary on;\ngzip_proxied any;\ngzip_comp_level 6;\ngzip_min_length 1024;\ngzip_types text/plain text/css application/json application/javascript text/xml application/xml+rss;",
+    "source": "NGINX: Gzip dynamic asset compression"
+  },
+  {
+    "text": "location /api/ {\n    proxy_pass http://backend_cluster;\n    proxy_set_header Host $host;\n    proxy_set_header X-Real-IP $remote_addr;\n    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;\n    proxy_set_header X-Forwarded-Proto $scheme;\n}",
+    "source": "NGINX: Reverse proxy with upstream forwarding headers"
+  },
+  {
+    "text": "location ~ \\.php$ {\n    fastcgi_pass unix:/run/php/php8.3-fpm.sock;\n    fastcgi_index index.php;\n    include fastcgi_params;\n    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;\n}",
+    "source": "NGINX: FastCGI UNIX socket pass for PHP-FPM"
+  },
+  {
+    "text": "ssl_protocols TLSv1.2 TLSv1.3;\nssl_ciphers ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256;\nssl_prefer_server_ciphers off;\nssl_session_cache shared:SSL:10m;\nssl_session_timeout 1d;\nssl_session_tickets off;",
+    "source": "NGINX: Modern TLS security and session caching"
+  },
+  {
+    "text": "add_header X-Frame-Options \"DENY\" always;\nadd_header X-Content-Type-Options \"nosniff\" always;\nadd_header Referrer-Policy \"strict-origin-when-cross-origin\" always;\nadd_header Content-Security-Policy \"default-src 'self';\" always;",
+    "source": "NGINX: OWASP recommended security headers"
+  },
+  {
+    "text": "location /ws/ {\n    proxy_pass http://websocket_upstream;\n    proxy_http_version 1.1;\n    proxy_set_header Upgrade $http_upgrade;\n    proxy_set_header Connection \"upgrade\";\n    proxy_read_timeout 86400s;\n}",
+    "source": "NGINX: WebSocket duplex connection upgrade"
+  },
+  {
+    "text": "limit_req_zone $binary_remote_addr zone=api_limit:10m rate=10r/s;\nupstream backend_cluster {\n    least_conn;\n    server 10.0.0.1:8080 max_fails=3 fail_timeout=10s;\n    server 10.0.0.2:8080 backup;\n    keepalive 32;\n}",
+    "source": "NGINX: Upstream load balancing cluster with rate limiting"
+  },
+  {
+    "text": "client_max_body_size 20M;\nclient_body_buffer_size 128k;\nclient_header_timeout 12s;\nclient_body_timeout 12s;\nsend_timeout 10s;",
+    "source": "NGINX: Client buffer sizes and request timeout thresholds"
+  },
+  {
+    "text": "error_page 404 /404.html;\nerror_page 500 502 503 504 /50x.html;\nlocation = /50x.html {\n    root /usr/share/nginx/html;\n}",
+    "source": "NGINX: Custom HTTP error pages with exact location match"
+  },
+  {
+    "text": "map $http_upgrade $connection_upgrade {\n    default upgrade;\n    ''      close;\n}",
+    "source": "NGINX: Map directive for dynamic hop-by-hop connection upgrade"
+  },
+  {
+    "text": "server {\n    listen 443 ssl http2;\n    server_name typing.example.com;\n    ssl_certificate /etc/letsencrypt/live/typing/fullchain.pem;\n    ssl_certificate_key /etc/letsencrypt/live/typing/privkey.pem;\n    location / {\n        proxy_pass http://127.0.0.1:3000;\n        proxy_set_header Host $host;\n        proxy_set_header X-Real-IP $remote_addr;\n    }\n}",
+    "source": "NGINX: Full HTTPS server block with Let's Encrypt certificates"
+  }
+]

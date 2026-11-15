@@ -1,0 +1,8 @@
+{
+  "id": "code_bash",
+  "name": "Bash",
+  "version": "1.0.0",
+  "language": "code_bash",
+  "type": "wordlist",
+  "packed": "echo\nprintf\nread\ncd\npwd\nls\ncat\ngrep\nsed\nawk\nfind\nxargs\ntr\ncut\nsort\nuniq\nwc\nhead\ntail\nless\nmore\ncp\nmv\nrm\nmkdir\nrmdir\ntouch\nchmod\nchown\nchgrp\nln\ntar\ngzip\ngunzip\nbzip2\nzip\nunzip\ncurl\nwget\nssh\nscp\nrsync\nping\nnetstat\nss\nip\nifconfig\ndf\ndu\nfree\ntop\nhtop\nps\nkill\nkillall\npkill\nsudo\nsu\nuseradd\nusermod\nuserdel\ngroupadd\npasswd\nsystemctl\njournalctl\nservice\nenv\nexport\nunset\nsource\nalias\nunalias\nhistory\nclear\nexit\nset\nshopt\ntrap\neval\nexec\ntype\nwhich\nwhereis\nfile\ndate\ncal\nsleep\nwhoami\nuname\nhostname\nuptime\ncrontab\ndmesg\nlsof\nstrace\nif\nthen\nelif\nelse\nfi\nfor\nin\ndo\ndone\nwhile\nuntil\ncase\nesac\nfunction\nselect\ntime\nreturn\nbreak\ncontinue\nlocal\ndeclare\ntypeset\nreadonly\nshift\ntest\ntrue\nfalse"
+}

@@ -1,0 +1,240 @@
+/**
+ * Typing FreeX Design System Tokens
+ * Strict semantic variables for light and dark modes
+ */
+
+:root {
+  /* === Layer 1: Background Canvas === */
+  --tt-bg: #F2F2F7;
+
+  /* === Layer 2: Content Surfaces (System Materials — SOLID) === */
+  --tt-surface: #FFFFFF;
+  --tt-surface-2: #E5E5EA;
+  --tt-surface-3: #D1D1D6;
+  --tt-surface-elevated: #FFFFFF;
+  --tt-separator: #C6C6C8;
+
+  /* === Layer 3: Navigation Chrome === */
+  --tt-glass-bg: rgba(242, 242, 247, 0.92);
+  --tt-glass-border: rgba(255, 255, 255, 0.70);
+  --tt-glass-blur: 8px;
+  --tt-glass-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.03);
+  --tt-glass-shadow-scroll: 0 8px 24px -4px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.03);
+
+  /* Mode Select & Interactive Cards Tokens */
+  --tt-mode-card-border: rgba(255, 255, 255, 0.72);
+  --tt-mode-card-rim:
+    inset 0 1.5px 0.5px rgba(255, 255, 255, 0.85),
+    inset 1px 0 0.5px rgba(255, 255, 255, 0.4),
+    inset 0 -1px 0.5px rgba(255, 255, 255, 0.2);
+  --tt-mode-card-sheen: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.35) 0%,
+      rgba(255, 255, 255, 0.08) 35%,
+      transparent 60%);
+  --tt-mode-thumb-bg: #0d1117;
+  --tt-mode-thumb-border: rgba(255, 255, 255, 0.12);
+  --tt-mode-thumb-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5), 0 2px 8px -2px rgba(0, 0, 0, 0.08);
+  --tt-mode-footer-border: rgba(0, 0, 0, 0.07);
+  --tt-mode-orb-opacity: 0.32;
+
+  /* Semantic Accent & Status (Calibrated for WCAG AA readability in light mode) */
+  --tt-text: #000000;
+  --tt-text-secondary: #48484A;
+  --tt-primary: #007AFF;
+  --tt-untyped: #76767A;
+  --tt-correct: #000000;
+  --tt-incorrect: #D70015;
+  --tt-extra: #C93400;
+  --tt-success: #248A3D;
+  --tt-caret: #007AFF;
+  --tt-focus-ring: #007AFF;
+  --tt-focus-glow: rgba(0, 122, 255, 0.15);
+
+  /* Hand Guide Light (High-Contrast Precision) */
+  --tt-hand-skin: #E2E8F0;
+  --tt-hand-outline: #64748B;
+  --tt-hand-idle: #475569;
+  --tt-hand-palm: #64748B;
+  --tt-hand-target: #0066CC;
+  --tt-hand-target-glow: rgba(0, 102, 204, 0.25);
+  --tt-hand-pressed: #16A34A;
+  --tt-hand-error: #DC2626;
+  --tt-hand-active: #0066CC;
+  --tt-hand-active-glow: rgba(0, 102, 204, 0.25);
+
+  /* Typography */
+  --tt-font-ui: -apple-system, 'SF Pro Text', 'SF UI Text', system-ui, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --tt-font-display: -apple-system, 'SF Pro Display', 'SF Pro Text', system-ui, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --tt-font-typing: "Typing FreeX Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  /* Font Size Presets for Typing Arena */
+  --tt-text-arena-xs: 1.125rem;
+  --tt-text-arena-sm: 1.5rem;
+  --tt-text-arena-md: 1.75rem;
+  --tt-text-arena-lg: 2.25rem;
+  --tt-text-arena-xl: 2.75rem;
+
+  --tt-line-height-arena-xs: 1.875rem;
+  --tt-line-height-arena-sm: 2.375rem;
+  --tt-line-height-arena-md: 2.75rem;
+  --tt-line-height-arena-lg: 3.25rem;
+  --tt-line-height-arena-xl: 3.75rem;
+
+  --tt-text-arena: var(--tt-text-arena-md);
+  --tt-line-height-arena: var(--tt-line-height-arena-md);
+  --tt-text-stat-large: 3.5rem;
+
+  /* Status Palette (Light) */
+  --color-status-red: #ff3b30;
+  --color-status-orange: #ff9500;
+  --color-status-yellow: #ffcc00;
+  --color-status-green: #34c759;
+  --color-status-mint: #00c7be;
+  --color-status-teal: #30b0c7;
+  --color-status-cyan: #32ade6;
+  --color-status-blue: #007aff;
+  --color-status-indigo: #5856d6;
+  --color-status-purple: #af52de;
+  --color-status-pink: #ff2d55;
+  --color-status-brown: #a2845e;
+  --color-status-gray: #8e8e93;
+
+  /* Backward compatibility aliases */
+  --color-ios-red: var(--color-status-red);
+  --color-ios-orange: var(--color-status-orange);
+  --color-ios-yellow: var(--color-status-yellow);
+  --color-ios-green: var(--color-status-green);
+  --color-ios-mint: var(--color-status-mint);
+  --color-ios-teal: var(--color-status-teal);
+  --color-ios-cyan: var(--color-status-cyan);
+  --color-ios-blue: var(--color-status-blue);
+  --color-ios-indigo: var(--color-status-indigo);
+  --color-ios-purple: var(--color-status-purple);
+  --color-ios-pink: var(--color-status-pink);
+  --color-ios-brown: var(--color-status-brown);
+  --color-ios-gray: var(--color-status-gray);
+
+  /* Shapes & Spacing */
+  --tt-radius-card: 14px;
+  --tt-radius-control: 10px;
+  --tt-radius-sm: 6px;
+  --tt-sidebar-width: 240px;
+  --tt-sidebar-width-collapsed: 64px;
+
+  /* Motion */
+  --tt-motion-fast: 120ms;
+  --tt-motion-base: 220ms;
+  --tt-ease-default: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dark,
+[data-theme="dark"] {
+  /* === Layer 1: Background Canvas === */
+  --tt-bg: #000000;
+
+  /* === Layer 2: Content Surfaces (System Materials — SOLID) === */
+  --tt-surface: #1C1C1E;
+  --tt-surface-2: #2C2C2E;
+  --tt-surface-3: #3A3A3C;
+  --tt-surface-elevated: #2C2C2E;
+  --tt-separator: #38383A;
+
+  /* === Layer 3: Navigation Chrome === */
+  --tt-glass-bg: rgba(28, 28, 30, 0.94);
+  --tt-glass-border: rgba(255, 255, 255, 0.1);
+  --tt-glass-blur: 8px;
+  --tt-glass-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  --tt-glass-shadow-scroll: 0 2px 12px rgba(0, 0, 0, 0.4);
+
+  /* Mode Select & Interactive Cards Tokens */
+  --tt-mode-card-border: rgba(255, 255, 255, 0.12);
+  --tt-mode-card-rim:
+    inset 0 1px 0.5px rgba(255, 255, 255, 0.18),
+    inset 0 -1px 0.5px rgba(255, 255, 255, 0.05);
+  --tt-mode-card-sheen: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.12) 0%,
+      rgba(255, 255, 255, 0.03) 32%,
+      transparent 55%);
+  --tt-mode-thumb-bg: #080a0f;
+  --tt-mode-thumb-border: rgba(255, 255, 255, 0.08);
+  --tt-mode-thumb-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+  --tt-mode-footer-border: rgba(255, 255, 255, 0.08);
+  --tt-mode-orb-opacity: 0.38;
+
+  /* Semantic Accent & Status (Calibrated for crisp readability in dark mode) */
+  --tt-text: #FFFFFF;
+  --tt-text-secondary: #98989D;
+  --tt-primary: #0A84FF;
+  --tt-untyped: #8E8E93;
+  --tt-correct: #FFFFFF;
+  --tt-incorrect: #FF453A;
+  --tt-extra: #FF9F0A;
+  --tt-success: #30D158;
+  --tt-caret: #0A84FF;
+  --tt-focus-ring: #0A84FF;
+  --tt-focus-glow: rgba(10, 132, 255, 0.25);
+
+  /* Status Palette (Dark) */
+  --color-status-red: #ff453a;
+  --color-status-orange: #ff9f0a;
+  --color-status-yellow: #ffd60a;
+  --color-status-green: #30d158;
+  --color-status-mint: #63e6e2;
+  --color-status-teal: #40c8e0;
+  --color-status-cyan: #64d2ff;
+  --color-status-blue: #0a84ff;
+  --color-status-indigo: #5e5ce6;
+  --color-status-purple: #bf5af2;
+  --color-status-pink: #ff375f;
+  --color-status-brown: #ac8e68;
+  --color-status-gray: #98989d;
+
+  /* Backward compatibility aliases */
+  --color-ios-red: var(--color-status-red);
+  --color-ios-orange: var(--color-status-orange);
+  --color-ios-yellow: var(--color-status-yellow);
+  --color-ios-green: var(--color-status-green);
+  --color-ios-mint: var(--color-status-mint);
+  --color-ios-teal: var(--color-status-teal);
+  --color-ios-cyan: var(--color-status-cyan);
+  --color-ios-blue: var(--color-status-blue);
+  --color-ios-indigo: var(--color-status-indigo);
+  --color-ios-purple: var(--color-status-purple);
+  --color-ios-pink: var(--color-status-pink);
+  --color-ios-brown: var(--color-status-brown);
+  --color-ios-gray: var(--color-status-gray);
+
+  /* Hand Guide Dark (Vibrant High-Contrast Cyber Glow) */
+  --tt-hand-skin: #2C2C2E;
+  --tt-hand-outline: #636366;
+  --tt-hand-idle: #98989D;
+  --tt-hand-palm: #8E8E93;
+  --tt-hand-target: #0A84FF;
+  --tt-hand-target-glow: rgba(10, 132, 255, 0.45);
+  --tt-hand-pressed: #30D158;
+  --tt-hand-error: #FF453A;
+  --tt-hand-active: #0A84FF;
+  --tt-hand-active-glow: rgba(10, 132, 255, 0.45);
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  :root {
+    --tt-glass-bg: var(--tt-surface) !important;
+    --tt-glass-border: var(--tt-separator) !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --tt-motion-fast: 0ms !important;
+    --tt-motion-base: 0ms !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

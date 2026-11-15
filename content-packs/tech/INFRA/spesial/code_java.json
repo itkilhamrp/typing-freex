@@ -1,0 +1,58 @@
+[
+  {
+    "text": "public class Main {\n    public static void main(String[] args) {\n        System.out.println(\"Hello, World!\");\n    }\n}",
+    "source": "Java: Canonical Hello World entrypoint"
+  },
+  {
+    "text": "public record UserRecord(UUID id, String username, Instant createdAt) {}",
+    "source": "Java: Canonical immutable record declaration"
+  },
+  {
+    "text": "var message = \"Processed payload successfully\";\nSystem.out.printf(\"Log: %s%n\", message);",
+    "source": "Java: Local variable type inference with var"
+  },
+  {
+    "text": "Optional<String> findEmail(Long id) {\n    return userRepository.findById(id)\n        .map(User::getEmail)\n        .filter(e -> !e.isBlank());\n}",
+    "source": "Java: Optional monadic chain"
+  },
+  {
+    "text": "List<String> names = users.stream()\n    .filter(User::isActive)\n    .map(User::getName)\n    .sorted()\n    .toList();",
+    "source": "Java: Stream filter, map, and toList collector"
+  },
+  {
+    "text": "try (var reader = Files.newBufferedReader(Path.of(\"data.txt\"))) {\n    String line;\n    while ((line = reader.readLine()) != null) {\n        System.out.println(line);\n    }\n}",
+    "source": "Java: Try-with-resources auto-closeable"
+  },
+  {
+    "text": "public sealed interface Shape permits Circle, Rectangle, Triangle {\n    double area();\n}",
+    "source": "Java: Sealed interface domain hierarchy"
+  },
+  {
+    "text": "String formatted = switch (obj) {\n    case Integer i -> String.format(\"int: %d\", i);\n    case String s  -> String.format(\"string: %s\", s);\n    case null      -> \"null value\";\n    default        -> obj.toString();\n};",
+    "source": "Java: Pattern matching switch expressions"
+  },
+  {
+    "text": "Map<String, List<Product>> byCategory = products.stream()\n    .collect(Collectors.groupingBy(Product::category));",
+    "source": "Java: Stream groupingBy collector aggregation"
+  },
+  {
+    "text": "CompletableFuture.supplyAsync(() -> fetchRemoteData())\n    .thenApply(this::parseResponse)\n    .thenAccept(System.out::println)\n    .exceptionally(ex -> { log.error(\"failed\", ex); return null; });",
+    "source": "Java: CompletableFuture asynchronous pipeline"
+  },
+  {
+    "text": "try (var executor = Executors.newVirtualThreadPerTaskExecutor()) {\n    IntStream.range(0, 10_000).forEach(i -> {\n        executor.submit(() -> Thread.sleep(Duration.ofMillis(10)));\n    });\n}",
+    "source": "Java: Project Loom high-throughput virtual threads"
+  },
+  {
+    "text": "ConcurrentMap<String, LongAdder> counters = new ConcurrentHashMap<>();\n\nvoid recordHit(String route) {\n    counters.computeIfAbsent(route, k -> new LongAdder()).increment();\n}",
+    "source": "Java: Atomic frequency counting with LongAdder and ConcurrentHashMap"
+  },
+  {
+    "text": "public class BoundedStack<T> {\n    private final Object[] elements;\n    private int top = 0;\n    public BoundedStack(int capacity) {\n        this.elements = new Object[capacity];\n    }\n    public synchronized void push(T item) {\n        if (top == elements.length) throw new IllegalStateException(\"Stack is full\");\n        elements[top++] = item;\n    }\n    @SuppressWarnings(\"unchecked\")\n    public synchronized T pop() {\n        if (top == 0) throw new NoSuchElementException(\"Stack is empty\");\n        T val = (T) elements[--top];\n        elements[top] = null;\n        return val;\n    }\n}",
+    "source": "Java: Thread-safe generic bounded stack with memory cleanup"
+  },
+  {
+    "text": "HttpClient client = HttpClient.newBuilder()\n    .connectTimeout(Duration.ofSeconds(5))\n    .build();\n\nHttpRequest request = HttpRequest.newBuilder()\n    .uri(URI.create(\"https://api.github.com\"))\n    .header(\"Accept\", \"application/json\")\n    .GET()\n    .build();\n\nHttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());",
+    "source": "Java: Modern HTTP Client synchronous GET request"
+  }
+]

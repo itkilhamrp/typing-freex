@@ -1,0 +1,58 @@
+[
+  {
+    "text": "vim.notify(\"Hello, World!\", vim.log.levels.INFO, { title = \"Neovim\" })",
+    "source": "Neovim/Vim: Canonical Hello World Notification"
+  },
+  {
+    "text": ":g/^$/d",
+    "source": "Neovim/Vim: Delete All Empty Lines with Ex Command"
+  },
+  {
+    "text": ":w !sudo tee % >/dev/null",
+    "source": "Neovim/Vim: Save Sudo-Protected File from Normal Session"
+  },
+  {
+    "text": ":%s/foo/bar/gc",
+    "source": "Neovim/Vim: Global Interactive Find and Replace"
+  },
+  {
+    "text": "vim.keymap.set('n', '<C-s>', '<cmd>write<CR>', { desc = 'Save buffer' })\nvim.keymap.set('i', 'jk', '<Esc>', { desc = 'Quick escape to normal mode' })",
+    "source": "Neovim/Vim: Ergonomic Keybindings"
+  },
+  {
+    "text": "vim.diagnostic.config({\n  virtual_text = true,\n  signs = true,\n  underline = true,\n  update_in_insert = false,\n  severity_sort = true,\n})",
+    "source": "Neovim/Vim: Built-In Diagnostic Display Configuration"
+  },
+  {
+    "text": "vim.api.nvim_create_autocmd('TextYankPost', {\n  desc = 'Highlight when yanking',\n  group = vim.api.nvim_create_augroup('highlight-yank', { clear = true }),\n  callback = function()\n    vim.highlight.on_yank({ timeout = 200 })\n  end,\n})",
+    "source": "Neovim/Vim: Yank Highlight Autocommand Group"
+  },
+  {
+    "text": "local lazypath = vim.fn.stdpath(\"data\") .. \"/lazy/lazy.nvim\"\nif not vim.loop.fs_stat(lazypath) then\n  vim.fn.system({\n    \"git\", \"clone\", \"--filter=blob:none\",\n    \"https://github.com/folke/lazy.nvim.git\", \"--branch=stable\", lazypath,\n  })\nend\nvim.opt.rtp:prepend(lazypath)",
+    "source": "Neovim/Vim: lazy.nvim Bootstrap Sequence"
+  },
+  {
+    "text": "require('nvim-treesitter.configs').setup({\n  ensure_installed = { 'svelte', 'typescript', 'rust', 'lua', 'html', 'css' },\n  highlight = { enable = true },\n})",
+    "source": "Neovim/Vim: Treesitter Multi-Language Setup"
+  },
+  {
+    "text": "local lspconfig = require('lspconfig')\nlspconfig.rust_analyzer.setup({\n  settings = {\n    ['rust-analyzer'] = {\n      checkOnSave = { command = 'clippy' },\n    },\n  },\n})",
+    "source": "Neovim/Vim: LSP Configuration for rust-analyzer"
+  },
+  {
+    "text": "local buf = vim.api.nvim_create_buf(false, true)\nlocal width = 60\nlocal height = 10\nlocal win = vim.api.nvim_open_win(buf, true, {\n  relative = 'editor',\n  width = width,\n  height = height,\n  col = (vim.o.columns - width) / 2,\n  row = (vim.o.lines - height) / 2,\n  style = 'minimal',\n  border = 'rounded',\n})",
+    "source": "Neovim/Vim: Centered floating scratchpad window API creation"
+  },
+  {
+    "text": "vim.opt.number = true\nvim.opt.relativenumber = true\nvim.opt.expandtab = true\nvim.opt.shiftwidth = 2\nvim.opt.tabstop = 2\nvim.opt.smartindent = true\nvim.opt.termguicolors = true",
+    "source": "Neovim/Vim: Essential ergonomic editor option defaults"
+  },
+  {
+    "text": "local function format_buffer()\n  local clients = vim.lsp.get_clients({ bufnr = 0 })\n  if #clients > 0 then\n    vim.lsp.buf.format({ async = true })\n  else\n    vim.cmd('normal! gg=G')\n  end\nend",
+    "source": "Neovim/Vim: LSP formatting function with fallback indentation"
+  },
+  {
+    "text": "vim.api.nvim_create_user_command('Scratch', function()\n  vim.cmd('vsplit | enew')\n  vim.bo.buftype = 'nofile'\n  vim.bo.bufhidden = 'wipe'\n  vim.bo.swapfile = false\nend, { desc = 'Open disposable scratch buffer' })",
+    "source": "Neovim/Vim: Custom user command for scratch buffer"
+  }
+]

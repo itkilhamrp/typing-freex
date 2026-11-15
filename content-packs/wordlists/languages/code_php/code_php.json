@@ -1,0 +1,8 @@
+{
+  "id": "code_php",
+  "name": "PHP",
+  "version": "1.0.0",
+  "language": "code_php",
+  "type": "wordlist",
+  "packed": "echo\nprint\nfunction\nclass\ninterface\ntrait\nenum\nextends\nimplements\nabstract\nfinal\nreadonly\npublic\nprotected\nprivate\nstatic\nconst\nvar\nnew\nclone\ninstanceof\nglobal\nreturn\nyield\nfrom\ntry\ncatch\nfinally\nthrow\nif\nelseif\nelse\nendif\nswitch\ncase\ndefault\nendswitch\nmatch\nwhile\nendwhile\ndo\nfor\nendfor\nforeach\nas\nendforeach\nbreak\ncontinue\ngoto\ndeclare\nenddeclare\ninclude\ninclude_once\nrequire\nrequire_once\nuse\nnamespace\nas\nfn\ntrue\nfalse\nnull\narray\ncallable\niterable\nbool\nint\nfloat\nstring\nobject\nmixed\nnever\nvoid\nself\nparent\nstatic\nisset\nempty\nunset\neval\ndie\nexit\nlist\narray_map\narray_filter\narray_reduce\narray_merge\narray_keys\narray_values\nin_array\narray_key_exists\ncount\nstrlen\nstrpos\nstr_contains\nstr_starts_with\nstr_ends_with\nsubstr\nstr_replace\npreg_match\npreg_replace\nexplode\nimplode\ntrim\nltrim\nrtrim\nstrtolower\nstrtoupper\nucfirst\njson_encode\njson_decode\nserialize\nunserialize\nheader\nhttp_response_code\nsetcookie\nsession_start\nsession_destroy\npassword_hash\npassword_verify\nPDO\nPDOStatement\nprepare\nexecute\nfetch\nfetchAll\nException\nThrowable\nError\nTypeError\nValueError"
+}

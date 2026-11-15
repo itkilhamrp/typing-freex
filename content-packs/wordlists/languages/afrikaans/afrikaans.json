@@ -1,0 +1,22 @@
+{
+  "id": "afrikaans",
+  "name": "Afrikaans",
+  "version": "1.0.0",
+  "language": "afrikaans",
+  "type": "wordlist",
+  "items": [
+    "die", "en", "van", "te", "om", "is", "in", "vir", "hy", "op",
+    "nie", "dit", "aan", "met", "se", "was", "het", "sy", "wat", "ons",
+    "dat", "daar", "ook", "sal", "so", "as", "maar", "wie", "by", "na",
+    "uit", "kan", "nog", "haar", "hom", "toe", "hulle", "kom", "gaan", "word",
+    "gee", "baie", "weet", "wil", "moet", "man", "sien", "nou", "dink", "tyd",
+    "meer", "geen", "werk", "goed", "een", "dag", "twee", "mense", "voor", "weer",
+    "soos", "net", "loop", "jaar", "groot", "hand", "lewe", "self", "vrou", "staan",
+    "dalk", "kind", "lank", "water", "selfs", "klein", "nuwe", "vraag", "huis", "ander",
+    "altyd", "vandag", "hart", "plek", "geld", "land", "broer", "suster", "ma", "pa",
+    "waar", "hoe", "waarom", "droom", "slaap", "praat", "eet", "drink", "son", "maan",
+    "lug", "wind", "vuur", "grond", "reen", "boom", "blom", "pad", "stad", "dier",
+    "hond", "kat", "mooi", "lelik", "vinnig", "stadig", "warm", "koud", "lig", "donker",
+    "reg", "verkeerd", "waarheid", "oop", "toe", "bo", "onder", "agter", "binne", "buite"
+  ]
+}

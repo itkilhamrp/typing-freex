@@ -1,0 +1,58 @@
+[
+  {
+    "text": "puts \"Hello, World!\"",
+    "source": "Ruby: Canonical Hello World Output"
+  },
+  {
+    "text": "chunks = (1..100).each_slice(10).to_a",
+    "source": "Ruby: Enumerable each_slice Batching"
+  },
+  {
+    "text": "attr_reader :id, :name, :created_at\nprivate :id",
+    "source": "Ruby: Encapsulated Attribute Reader with Access Modifier"
+  },
+  {
+    "text": "users.select(&:active?).map(&:email).compact",
+    "source": "Ruby: Symbol-to-Proc Functional Pipeline"
+  },
+  {
+    "text": "names.join(', ').tap { |str| logger.debug(\"Rendered names: #{str}\") }",
+    "source": "Ruby: Side-Effect Logging with tap"
+  },
+  {
+    "text": "config = params.fetch(:database) { raise KeyError, 'Database config missing' }",
+    "source": "Ruby: Hash fetch with Fallback Exception Block"
+  },
+  {
+    "text": "class Service\n  def self.call(*args, **kwargs, &block)\n    new(*args, **kwargs).call(&block)\n  end\nend",
+    "source": "Ruby: Callable Service Object Pattern"
+  },
+  {
+    "text": "case status\nin :pending | :processing then log_in_progress\nin :completed, result then handle_success(result)\nin :failed, error then handle_failure(error)\nend",
+    "source": "Ruby: Ruby 3 Pattern Matching in Case Statements"
+  },
+  {
+    "text": "fibonacci = Hash.new { |h, k| h[k] = k < 2 ? k : h[k - 1] + h[k - 2] }\nputs fibonacci[50]",
+    "source": "Ruby: Hash Default Proc Memoized Fibonacci"
+  },
+  {
+    "text": "def memoize(method_name)\n  cache = {}\n  original = instance_method(method_name)\n  define_method(method_name) do |*args|\n    cache[args] ||= original.bind_call(self, *args)\n  end\nend",
+    "source": "Ruby: Dynamic Method Memoization with Metaprogramming"
+  },
+  {
+    "text": "module Auditable\n  def self.included(base)\n    base.extend(ClassMethods)\n  end\n  module ClassMethods\n    def track_changes(*attributes)\n      @tracked_attributes = attributes\n    end\n    def tracked_attributes\n      @tracked_attributes || []\n    end\n  end\nend",
+    "source": "Ruby: Module mixin hook with class level configuration"
+  },
+  {
+    "text": "queue = Thread::Queue.new\nproducer = Thread.new { 10.times { |i| queue << i } }\nconsumer = Thread.new { 10.times { puts \"Consumed: #{queue.pop}\" } }\n[producer, consumer].each(&:join)",
+    "source": "Ruby: Thread-safe queue producer-consumer pattern"
+  },
+  {
+    "text": "User = Data.define(:name, :email, :active) do\n  def display_label\n    \"#{name} <#{email}>\"\n  end\nend",
+    "source": "Ruby: Ruby 3.2+ Immutable Data.define construct"
+  },
+  {
+    "text": "def build_html(&block)\n  builder = HtmlBuilder.new\n  builder.instance_eval(&block)\n  builder.render\nend",
+    "source": "Ruby: Clean DSL execution with instance_eval"
+  }
+]

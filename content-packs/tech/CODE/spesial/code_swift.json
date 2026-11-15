@@ -1,0 +1,58 @@
+[
+  {
+    "text": "import Foundation\n\nprint(\"Hello, World!\")",
+    "source": "Swift: Canonical Hello World Output"
+  },
+  {
+    "text": "guard let unwrapped = optionalValue else {\n    logger.error(\"Value must be present to continue\")\n    return\n}",
+    "source": "Swift: Guard Let Early Return Pattern"
+  },
+  {
+    "text": "let sorted = people.sorted(by: { $0.age < $1.age })",
+    "source": "Swift: Closure-Based Sorting"
+  },
+  {
+    "text": "let doubledEvenNumbers = (1...50)\n    .filter { $0.isMultiple(of: 2) }\n    .map { $0 * 2 }",
+    "source": "Swift: Functional Range Transformation with Shorthand Arguments"
+  },
+  {
+    "text": "extension Collection {\n    var isNotEmpty: Bool {\n        !isEmpty\n    }\n}",
+    "source": "Swift: Collection Protocol Extension"
+  },
+  {
+    "text": "defer {\n    fileHandle.closeFile()\n    logger.info(\"File descriptor closed\")\n}",
+    "source": "Swift: Defer Block Resource Cleanup"
+  },
+  {
+    "text": "enum Result<Success, Failure: Error> {\n    case success(Success)\n    case failure(Failure)\n}",
+    "source": "Swift: Generic Result Enum"
+  },
+  {
+    "text": "protocol IdentifiableEntity: Identifiable {\n    associatedtype ID: Hashable\n    var id: ID { get }\n    var createdAt: Date { get }\n}",
+    "source": "Swift: Protocol with Associated Type"
+  },
+  {
+    "text": "func fetchProfile(id: UUID) async throws -> Profile {\n    guard let url = URL(string: \"https://api.example.com/users/\\(id)\") else {\n        throw NetworkError.invalidURL\n    }\n    let (data, response) = try await URLSession.shared.data(from: url)\n    guard (response as? HTTPURLResponse)?.statusCode == 200 else {\n        throw NetworkError.serverError\n    }\n    return try JSONDecoder().decode(Profile.self, from: data)\n}",
+    "source": "Swift: Modern Async/Await Network Request"
+  },
+  {
+    "text": "@MainActor\nfinal class ViewModel: ObservableObject {\n    @Published private(set) var items: [String] = []\n    func load() async {\n        self.items = await repository.fetchItems()\n    }\n}",
+    "source": "Swift: MainActor Isolated Observable ViewModel"
+  },
+  {
+    "text": "actor MemoryCache<Key: Hashable, Value> {\n    private var storage: [Key: Value] = [:]\n    func get(_ key: Key) -> Value? { storage[key] }\n    func set(_ key: Key, value: Value) { storage[key] = value }\n    func clear() { storage.removeAll() }\n}",
+    "source": "Swift: Thread-safe in-memory cache using Actor isolation"
+  },
+  {
+    "text": "func fetchAllMetrics(urls: [URL]) async -> [Metric] {\n    await withTaskGroup(of: Metric?.self) { group in\n        for url in urls {\n            group.addTask { await fetchSingleMetric(url) }\n        }\n        var results: [Metric] = []\n        for await metric in group {\n            if let m = metric { results.append(m) }\n        }\n        return results\n    }\n}",
+    "source": "Swift: Structured concurrency with TaskGroup"
+  },
+  {
+    "text": "@propertyWrapper\nstruct Clamped<T: Comparable> {\n    var value: T\n    let range: ClosedRange<T>\n    init(wrappedValue: T, _ range: ClosedRange<T>) {\n        self.range = range\n        self.value = min(max(wrappedValue, range.lowerBound), range.upperBound)\n    }\n    var wrappedValue: T {\n        get { value }\n        set { value = min(max(newValue, range.lowerBound), range.upperBound) }\n    }\n}",
+    "source": "Swift: Custom @Clamped Property Wrapper"
+  },
+  {
+    "text": "struct UserDTO: Codable, Sendable {\n    let id: String\n    let displayName: String\n    let email: String?\n}",
+    "source": "Swift: Sendable and Codable data transfer object"
+  }
+]

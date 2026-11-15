@@ -1,0 +1,30 @@
+app-id: com.typing_freex.i18n
+runtime: org.gnome.Platform
+runtime-version: '47'
+sdk: org.gnome.Sdk
+command: typing_freex
+
+finish-args:
+  - --share=ipc
+  - --socket=fallback-x11
+  - --socket=wayland
+  - --socket=pulseaudio
+  - --device=dri
+
+modules:
+  - name: typing-freex
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 typing_freex /app/bin/typing_freex
+      - install -Dm644 com.typing_freex.i18n.desktop /app/share/applications/com.typing_freex.i18n.desktop
+      - install -Dm644 icon-128.png /app/share/icons/hicolor/128x128/apps/com.typing_freex.i18n.png
+      - install -Dm644 com.typing_freex.i18n.metainfo.xml /app/share/metainfo/com.typing_freex.i18n.metainfo.xml
+    sources:
+      - type: file
+        path: typing_freex
+      - type: file
+        path: com.typing_freex.i18n.desktop
+      - type: file
+        path: icon-128.png
+      - type: file
+        path: com.typing_freex.i18n.metainfo.xml

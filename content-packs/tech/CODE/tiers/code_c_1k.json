@@ -1,0 +1,42 @@
+[
+  {
+    "text": "void swap(int *a, int *b) {\n    if (a != b) {\n        *a ^= *b;\n        *b ^= *a;\n        *a ^= *b;\n    }\n}",
+    "source": "C 1k: Pointer XOR Bitwise Swap"
+  },
+  {
+    "text": "size_t my_strlen(const char *str) {\n    const char *s = str;\n    while (*s)\n        s++;\n    return s - str;\n}",
+    "source": "C 1k: Pointer Arithmetic String Length"
+  },
+  {
+    "text": "typedef struct Node {\n    int data;\n    struct Node *next;\n} Node;\n\nNode* reverse(Node *head) {\n    Node *prev = NULL, *curr = head, *next = NULL;\n    while (curr) {\n        next = curr->next;\n        curr->next = prev;\n        prev = curr;\n        curr = next;\n    }\n    return prev;\n}",
+    "source": "C 1k: Singly Linked List Reversal"
+  },
+  {
+    "text": "int binary_search(const int arr[], int size, int target) {\n    int low = 0, high = size - 1;\n    while (low <= high) {\n        int mid = low + (high - low) / 2;\n        if (arr[mid] == target) return mid;\n        else if (arr[mid] < target) low = mid + 1;\n        else high = mid - 1;\n    }\n    return -1;\n}",
+    "source": "C 1k: Integer Binary Search"
+  },
+  {
+    "text": "#define ALIGN_UP(val, align) (((val) + (align) - 1) & ~((align) - 1))",
+    "source": "C 1k: Memory Address Power-of-Two Alignment Macro"
+  },
+  {
+    "text": "void *my_memcpy(void *dest, const void *src, size_t n) {\n    char *d = (char *)dest;\n    const char *s = (const char *)src;\n    while (n--)\n        *d++ = *s++;\n    return dest;\n}",
+    "source": "C 1k: Raw Memory Copy Implementation"
+  },
+  {
+    "text": "int is_power_of_two(unsigned int n) {\n    return n && !(n & (n - 1));\n}",
+    "source": "C 1k: Fast Bitwise Power-of-Two Check"
+  },
+  {
+    "text": "int count_set_bits(unsigned int n) {\n    int count = 0;\n    while (n) {\n        n &= (n - 1);\n        count++;\n    }\n    return count;\n}",
+    "source": "C 1k: Brian Kernighan Bit Counting Algorithm"
+  },
+  {
+    "text": "typedef int (*Comparator)(const void *, const void *);\nqsort(array, count, sizeof(int), (Comparator)int_cmp);",
+    "source": "C 1k: Function Pointer Comparator Pattern"
+  },
+  {
+    "text": "#define CONTAINER_OF(ptr, type, member) \\\n    ((type *)((char *)(ptr) - offsetof(type, member)))",
+    "source": "C 1k: Linux Kernel container_of Macro"
+  }
+]

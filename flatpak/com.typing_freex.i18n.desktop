@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Typing FreeX
+Comment=High-performance strictly offline typing test engine
+Exec=typing_freex
+Icon=com.typing_freex.i18n
+Terminal=false
+Type=Application
+Categories=Education;Utility;
+Keywords=typing;speed;wpm;cpm;practice;keyboard;
+StartupWMClass=typing_freex

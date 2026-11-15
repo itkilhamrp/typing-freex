@@ -1,0 +1,58 @@
+[
+  {
+    "text": "const std = @import(\"std\");\n\npub fn main() void {\n    std.debug.print(\"Hello, World!\\n\", .{});\n}",
+    "source": "Zig: Canonical Hello World Entrypoint"
+  },
+  {
+    "text": "const clamped = std.math.clamp(value, min_val, max_val);",
+    "source": "Zig: Math Utilities Clamp Function"
+  },
+  {
+    "text": "var i: usize = 0;\nwhile (i < slice.len) : (i += 1) {\n    if (slice[i] == target) return i;\n}",
+    "source": "Zig: While Loop with Continue Expression"
+  },
+  {
+    "text": "const stdout = std.io.getStdOut().writer();\ntry stdout.print(\"Hello, {s}! Val: {d}\\n\", .{\"Zig\", 42});",
+    "source": "Zig: Compile-Time Checked Formatted Output"
+  },
+  {
+    "text": "const FileOpenError = error{\n    AccessDenied,\n    OutOfMemory,\n    FileNotFound,\n};",
+    "source": "Zig: Custom Error Set Declaration"
+  },
+  {
+    "text": "const Tag = enum { circle, square, triangle };\nconst Shape = union(Tag) {\n    circle: f32,\n    square: f32,\n    triangle: struct { base: f32, height: f32 },\n};",
+    "source": "Zig: Tagged Union Memory Layout"
+  },
+  {
+    "text": "test \"array equality\" {\n    const expected = [_]i32{ 1, 2, 3 };\n    const actual = [_]i32{ 1, 2, 3 };\n    try std.testing.expectEqualSlices(i32, &expected, &actual);\n}",
+    "source": "Zig: Built-In Unit Testing Framework"
+  },
+  {
+    "text": "fn readFile(path: []const u8, allocator: std.mem.Allocator) ![]u8 {\n    const file = try std.fs.cwd().openFile(path, .{});\n    defer file.close();\n    return try file.readToEndAlloc(allocator, 1024 * 1024);\n}",
+    "source": "Zig: Idiomatic File Read with Error Union ![]u8"
+  },
+  {
+    "text": "pub fn List(comptime T: type) type {\n    return struct {\n        items: []T,\n        capacity: usize,\n        \n        pub fn init(allocator: std.mem.Allocator) !@This() {\n            return .{ .items = &.{}, .capacity = 0 };\n        }\n    };\n}",
+    "source": "Zig: Generic Data Structure via Comptime Type Function"
+  },
+  {
+    "text": "comptime {\n    if (@sizeOf(usize) != 8) {\n        @compileError(\"64-bit architecture required\");\n    }\n}",
+    "source": "Zig: Compile-Time Assertion with @compileError"
+  },
+  {
+    "text": "test \"detect memory leak with GPA\" {\n    var gpa = std.heap.GeneralPurposeAllocator(.{}){};\n    defer {\n        const deinit_status = gpa.deinit();\n        if (deinit_status == .leak) @panic(\"Memory leak detected!\");\n    }\n    const allocator = gpa.allocator();\n    const bytes = try allocator.alloc(u8, 100);\n    allocator.free(bytes);\n}",
+    "source": "Zig: GeneralPurposeAllocator memory leak detection in tests"
+  },
+  {
+    "text": "pub const Vector2 = struct {\n    x: f32,\n    y: f32,\n    pub fn add(self: Vector2, other: Vector2) Vector2 {\n        return .{ .x = self.x + other.x, .y = self.y + other.y };\n    }\n    pub fn dot(self: Vector2, other: Vector2) f32 {\n        return self.x * other.x + self.y * other.y;\n    }\n};",
+    "source": "Zig: 2D vector struct with methods and value semantics"
+  },
+  {
+    "text": "var mutex = std.Thread.Mutex{};\nvar shared_val: i32 = 0;\n\nfn increment() void {\n    mutex.lock();\n    defer mutex.unlock();\n    shared_val += 1;\n}",
+    "source": "Zig: Thread-safe state synchronization with defer unlock"
+  },
+  {
+    "text": "const SliceWindow = struct {\n    ptr: [*]const u8,\n    len: usize,\n    pub fn sub(self: SliceWindow, start: usize, end: usize) !SliceWindow {\n        if (end > self.len or start > end) return error.OutOfBounds;\n        return .{ .ptr = self.ptr + start, .len = end - start };\n    }\n};",
+    "source": "Zig: Manual slice bounds validation with error set"
+  }
+]

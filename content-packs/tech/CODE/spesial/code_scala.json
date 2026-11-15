@@ -1,0 +1,58 @@
+[
+  {
+    "text": "@main def hello(): Unit =\n  println(\"Hello, World!\")",
+    "source": "Scala: Canonical Hello World Entrypoint"
+  },
+  {
+    "text": "val doubledEvens: List[Int] = numbers\n  .filter(_ % 2 == 0)\n  .map(_ * 2)\n  .sorted",
+    "source": "Scala: Functional List Transformations"
+  },
+  {
+    "text": "case class User(id: Long, name: String, email: String) {\n  def displayName: String = if name.nonEmpty then name else email\n}",
+    "source": "Scala: Case Class with Method"
+  },
+  {
+    "text": "extension (s: String)\n  def toSlug: String = s.toLowerCase.replaceAll(\"[^a-z0-9]+\", \"-\").stripPrefix(\"-\")",
+    "source": "Scala: Extension Method Syntax"
+  },
+  {
+    "text": "enum Option[+T]:\n  case Some(x: T)\n  case None",
+    "source": "Scala: Algebraic Data Type Enum"
+  },
+  {
+    "text": "def describe(x: Any): String = x match\n  case i: Int if i > 0 => s\"positive int: $i\"\n  case s: String => s\"string of len ${s.length}\"\n  case _ => \"other\"",
+    "source": "Scala: Pattern Matching with Guards"
+  },
+  {
+    "text": "opaque type UserId = Long\nobject UserId:\n  def apply(id: Long): UserId = id",
+    "source": "Scala: Zero-Cost Opaque Type Alias"
+  },
+  {
+    "text": "val combined = for\n  user <- fetchUser(id)\n  profile <- fetchProfile(user.profileId)\nyield (user, profile)",
+    "source": "Scala: For-Comprehension Monadic Pipeline"
+  },
+  {
+    "text": "given Ordering[User] with\n  def compare(a: User, b: User): Int = a.name.compareTo(b.name)",
+    "source": "Scala: Given Type Class Instance"
+  },
+  {
+    "text": "import scala.concurrent.{Future, ExecutionContext.Implicits.global}\nval asyncData = Future {\n  Thread.sleep(100)\n  \"computation complete\"\n}",
+    "source": "Scala: Future Async Concurrency"
+  },
+  {
+    "text": "trait Repository[F[_], T]:\n  def find(id: String): F[Option[T]]\n  def save(entity: T): F[Unit]",
+    "source": "Scala: Higher-Kinded Type (Tagless Final) abstraction"
+  },
+  {
+    "text": "type Result[T] = Either[String, T]\ndef parseNumber(s: String): Result[Int] =\n  s.toIntOption.toRight(s\"Invalid number format: '$s'\")",
+    "source": "Scala: Either monadic error validation type alias"
+  },
+  {
+    "text": "inline def debugLog(inline message: String): Unit =\n  ${ debugLogImpl('message) }",
+    "source": "Scala 3: Metaprogramming with inline definitions and quotes"
+  },
+  {
+    "text": "enum Shape derives CanEqual:\n  case Circle(radius: Double)\n  case Rectangle(width: Double, height: Double)",
+    "source": "Scala 3: Multiversal equality derivation on Enum"
+  }
+]

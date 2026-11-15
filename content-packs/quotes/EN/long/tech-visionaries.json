@@ -1,0 +1,46 @@
+[
+  {
+    "text": "Software engineering is what happens to programming when you add time and other programmers. It demands empathy, rigorous discipline, thoughtful trade-offs, and an unyielding commitment to simplicity above all else.",
+    "source": "Titus Winters"
+  },
+  {
+    "text": "There are two ways of constructing a software design: One way is to make it so simple that there are obviously no deficiencies, and the other way is to make it so complicated that there are no obvious deficiencies.",
+    "source": "C.A.R. Hoare"
+  },
+  {
+    "text": "Don't judge each day by the harvest you reap but by the seeds that you plant. The quiet labor of today forms the foundation of tomorrow's triumph, even when no one is watching and applause is nowhere to be heard.",
+    "source": "Robert Louis Stevenson"
+  },
+  {
+    "text": "To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment. Never trade your authenticity for approval, and never compromise your standards for convenience.",
+    "source": "Ralph Waldo Emerson"
+  },
+  {
+    "text": "The greatest enemy of knowledge is not ignorance, it is the illusion of knowledge. When we believe we understand everything, we stop looking, we stop listening, and we stop growing. Humility before truth is the highest virtue of any thinker.",
+    "source": "Daniel J. Boorstin"
+  },
+  {
+    "text": "Premature optimization is the root of all evil in programming. We should forget about small efficiencies about 97 percent of the time: premature optimization is the root of all evil. Yet we should not pass up our opportunities in that critical three percent.",
+    "source": "Donald Knuth"
+  },
+  {
+    "text": "A complex system that works is invariably found to have evolved from a simple system that worked. A complex system designed from scratch never works and cannot be patched up to make it work. You have to start over with a working simple system.",
+    "source": "John Gall"
+  },
+  {
+    "text": "The function of good software is to make the complex appear simple. If you find yourself tangled in layers of abstractions that obscure the truth, it is time to dismantle the machine and build something you can reason about with confidence.",
+    "source": "Grady Booch"
+  },
+  {
+    "text": "The art of programming is the art of organizing complexity, of mastering multitude and avoiding its bastard chaos as effectively as possible. When code becomes too complicated to understand, it ceases to be an asset and becomes a liability.",
+    "source": "Edsger W. Dijkstra"
+  },
+  {
+    "text": "Two possibilities exist: either we are alone in the Universe or we are not. Both are equally terrifying. And yet, this uncertainty should not paralyze us; it should inspire us to explore, to question, and to cherish every single heartbeat on this pale blue planet.",
+    "source": "Arthur C. Clarke"
+  },
+  {
+    "text": "Space is big. You just won't believe how vastly, hugely, mind-bogglingly big it is. I mean, you may think it's a long way down the road to the chemist's, but that's just peanuts to space. Listen, and you will realize that human existence is an astonishingly brief footnote in the cosmic library.",
+    "source": "Douglas Adams"
+  }
+]

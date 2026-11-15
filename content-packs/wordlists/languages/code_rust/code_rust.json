@@ -1,0 +1,8 @@
+{
+  "id": "code_rust",
+  "name": "Rust",
+  "version": "1.0.0",
+  "language": "code_rust",
+  "type": "wordlist",
+  "packed": "fn\nlet\nmut\npub\nstruct\nenum\ntrait\nimpl\nfor\nin\nwhere\ntype\nconst\nstatic\nmatch\nif\nelse\nwhile\nloop\nbreak\ncontinue\nreturn\nasync\nawait\nunsafe\nextern\nmod\nuse\nas\nself\nSelf\nsuper\ncrate\nref\nmove\ndyn\nmacro_rules\nprintln\nprint\neprintln\nformat\nvec\npanic\ntodo\nunimplemented\nunreachable\nassert\nassert_eq\nassert_ne\ndebug_assert\nOption\nSome\nNone\nResult\nOk\nErr\nVec\nString\nstr\nu8\nu16\nu32\nu64\nu128\nusize\ni8\ni16\ni32\ni64\ni128\nisize\nf32\nf64\nbool\nchar\nBox\nRc\nArc\nCell\nRefCell\nMutex\nRwLock\nClone\nCopy\nDebug\nDisplay\nDefault\nPartialEq\nEq\nPartialOrd\nOrd\nHash\nIterator\nIntoIterator\nFrom\nInto\nTryFrom\nTryInto\nAsRef\nAsMut\nDeref\nDerefMut\nDrop\nSend\nSync\nSized\nUnpin\nunwrap\nexpect\nmap\nand_then\nor_else\nunwrap_or\nunwrap_or_default\nunwrap_or_else\nfilter\ncollect\nfold\niter\niter_mut\ninto_iter\npush\npop\ninsert\nremove\nlen\nis_empty\ncapacity\nreserve\nclear\ntruncate\nsplit\nlines\nchars\nbytes\ntrim\nto_string\nto_owned\nas_str\nas_bytes\nborrow\nborrow_mut\nlock\nspawn\njoin"
+}

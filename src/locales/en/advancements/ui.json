@@ -1,0 +1,39 @@
+{
+  "title": "Advancements & Progressive Tiers",
+  "subtitle": "Track your long-term milestones, skill progression, and mastery ranks.",
+  "ladderTitle": "Advancement Ladder",
+  "tierProgressOverview": "Tier Progress Overview",
+  "tiersUnlocked": "Tiers Mastered",
+  "masteredCount": "{count} / {total} Mastered",
+  "nextTier": "Next Rank",
+  "maxTierReached": "Peak Rank Achieved",
+  "tierTarget": "Target: {target}",
+  "tierStatusCompleted": "Completed",
+  "tierStatusCurrent": "Current Objective",
+  "tierStatusLocked": "Locked",
+  "viewLadder": "View Advancement Ladder",
+  "filterAll": "All Advancements",
+  "rank": {
+    "locked": "Locked",
+    "common": "Common",
+    "uncommon": "Uncommon",
+    "rare": "Rare",
+    "epic": "Epic",
+    "legendary": "Legendary",
+    "mythic": "Mythic"
+  },
+  "tier": {
+    "locked": "Locked",
+    "bronze": "Bronze",
+    "silver": "Silver",
+    "gold": "Gold",
+    "platinum": "Platinum",
+    "diamond": "Diamond",
+    "heroic": "Heroic",
+    "eliteHeroic": "Elite Heroic",
+    "master": "Master",
+    "eliteMaster": "Elite Master",
+    "grandmaster": "Grandmaster"
+  }
+}
+

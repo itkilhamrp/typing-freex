@@ -1,0 +1,58 @@
+[
+  {
+    "text": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Hello World</title>\n</head>\n<body>\n  <h1>Hello, World!</h1>\n</body>\n</html>",
+    "source": "HTML/CSS: Canonical Hello World Document"
+  },
+  {
+    "text": "* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n}\nhtml {\n  text-rendering: optimizeLegibility;\n  -webkit-font-smoothing: antialiased;\n}",
+    "source": "HTML/CSS: Universal Box-Sizing Reset and Font Smoothing"
+  },
+  {
+    "text": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover\">\n<meta name=\"color-scheme\" content=\"dark light\">",
+    "source": "HTML/CSS: Mobile Responsive Viewport and Color-Scheme Meta"
+  },
+  {
+    "text": "button:focus-visible {\n  outline: 2px solid var(--color-primary);\n  outline-offset: 2px;\n}",
+    "source": "HTML/CSS: Accessible Focus-Visible Keyboard Ring"
+  },
+  {
+    "text": ":root {\n  --color-primary: hsl(220 90% 56%);\n  --color-surface: hsl(220 20% 98%);\n  --radius-md: 0.5rem;\n  color-scheme: light dark;\n}",
+    "source": "HTML/CSS: Design Tokens with HSL Space-Separated Syntax"
+  },
+  {
+    "text": ".grid-container {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));\n  gap: clamp(1rem, 2.5vw, 2rem);\n  align-items: start;\n}",
+    "source": "HTML/CSS: Responsive Auto-Fit Grid with Clamp"
+  },
+  {
+    "text": "<picture>\n  <source srcset=\"hero.avif\" type=\"image/avif\">\n  <source srcset=\"hero.webp\" type=\"image/webp\">\n  <img src=\"hero.jpg\" alt=\"Hero banner\" loading=\"lazy\" decoding=\"async\">\n</picture>",
+    "source": "HTML/CSS: Responsive Picture with Next-Gen Formats"
+  },
+  {
+    "text": "@container (min-width: 400px) {\n  .card-layout {\n    display: flex;\n    flex-direction: row;\n    gap: 1.5rem;\n  }\n}",
+    "source": "HTML/CSS: Modern Container Query Layout"
+  },
+  {
+    "text": "@keyframes subtle-pulse {\n  0%, 100% { opacity: 1; transform: scale(1); }\n  50% { opacity: 0.85; transform: scale(0.98); }\n}\n.animate-pulse {\n  animation: subtle-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;\n}",
+    "source": "HTML/CSS: Smooth Hardware-Accelerated Keyframe Animation"
+  },
+  {
+    "text": ".glassmorphism {\n  background: rgba(255, 255, 255, 0.08);\n  backdrop-filter: blur(12px) saturate(180%);\n  -webkit-backdrop-filter: blur(12px) saturate(180%);\n  border: 1px solid rgba(255, 255, 255, 0.12);\n}",
+    "source": "HTML/CSS: Premium Glassmorphism Backdrop Filter"
+  },
+  {
+    "text": "<dialog id=\"confirm-modal\" class=\"modal-box\">\n  <form method=\"dialog\">\n    <h2>Confirm Action</h2>\n    <p>Are you sure you want to proceed with this operation?</p>\n    <menu>\n      <button value=\"cancel\">Cancel</button>\n      <button value=\"confirm\" class=\"btn-danger\">Confirm</button>\n    </menu>\n  </form>\n</dialog>",
+    "source": "HTML/CSS: Native HTML5 dialog modal element with form method"
+  },
+  {
+    "text": ".card-grid {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  gap: 1rem;\n}\n.card-item {\n  display: grid;\n  grid-row: span 3;\n  grid-template-rows: subgrid;\n}",
+    "source": "HTML/CSS: Modern CSS Subgrid nested alignment"
+  },
+  {
+    "text": "@media (prefers-reduced-motion: reduce) {\n  *,\n  *::before,\n  *::after {\n    animation-duration: 0.01ms !important;\n    animation-iteration-count: 1 !important;\n    transition-duration: 0.01ms !important;\n    scroll-behavior: auto !important;\n  }\n}",
+    "source": "HTML/CSS: Accessibility prefers-reduced-motion reset"
+  },
+  {
+    "text": "input:user-invalid {\n  border-color: hsl(0 84% 60%);\n  background-color: hsl(0 84% 97%);\n}\ninput:user-valid {\n  border-color: hsl(142 71% 45%);\n}",
+    "source": "HTML/CSS: CSS user-invalid pseudo-class for respectful form feedback"
+  }
+]

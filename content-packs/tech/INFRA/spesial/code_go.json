@@ -1,0 +1,58 @@
+[
+  {
+    "text": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tfmt.Println(\"Hello, World!\")\n}",
+    "source": "Go: Canonical Hello World entrypoint"
+  },
+  {
+    "text": "count := 42\nstatus := \"active\"\nfmt.Printf(\"Status: %s (id: %d)\\n\", status, count)",
+    "source": "Go: Short variable declaration and formatted print"
+  },
+  {
+    "text": "val, ok := cache[key]\nif !ok {\n\treturn nil, errors.New(\"key not found\")\n}",
+    "source": "Go: Map comma-ok idiom lookup"
+  },
+  {
+    "text": "func safeDivide(a, b float64) (float64, error) {\n\tif b == 0 {\n\t\treturn 0, errors.New(\"cannot divide by zero\")\n\t}\n\treturn a / b, nil\n}",
+    "source": "Go: Multiple return values with error"
+  },
+  {
+    "text": "file, err := os.Open(\"data.txt\")\nif err != nil {\n\tlog.Fatalf(\"failed to open file: %v\", err)\n}\ndefer file.Close()",
+    "source": "Go: Resource management with defer"
+  },
+  {
+    "text": "type Repository[T any] interface {\n\tFindByID(ctx context.Context, id string) (T, error)\n\tSave(ctx context.Context, entity T) error\n}",
+    "source": "Go: Generic interface specification"
+  },
+  {
+    "text": "var wg sync.WaitGroup\nfor i := 0; i < 5; i++ {\n\twg.Add(1)\n\tgo func(id int) {\n\t\tdefer wg.Done()\n\t\tprocessTask(id)\n\t}(i)\n}\nwg.Wait()",
+    "source": "Go: Concurrent wait group goroutine orchestration"
+  },
+  {
+    "text": "select {\ncase msg := <-messages:\n\tfmt.Println(\"Received message:\", msg)\ncase sig := <-signals:\n\tfmt.Println(\"Received signal:\", sig)\ncase <-time.After(500 * time.Millisecond):\n\tfmt.Println(\"Operation timed out\")\n}",
+    "source": "Go: Channel select with timeout branch"
+  },
+  {
+    "text": "type User struct {\n\tID        int64     `json:\"id\"`\n\tUsername  string    `json:\"username\"`\n\tCreatedAt time.Time `json:\"createdAt\"`\n}\n\nfunc (u User) Display() string {\n\treturn fmt.Sprintf(\"%s (#%d)\", u.Username, u.ID)\n}",
+    "source": "Go: Struct declaration with JSON struct tags and method"
+  },
+  {
+    "text": "ctx, cancel := context.WithTimeout(context.Background(), 2*time.Second)\ndefer cancel()\n\nreq, err := http.NewRequestWithContext(ctx, http.MethodGet, url, nil)\nif err != nil {\n\treturn err\n}",
+    "source": "Go: HTTP client request with context cancellation"
+  },
+  {
+    "text": "func MapSlice[T, U any](items []T, fn func(T) U) []U {\n\tresult := make([]U, len(items))\n\tfor i, v := range items {\n\t\tresult[i] = fn(v)\n\t}\n\treturn result\n}",
+    "source": "Go: Generic slice map transformation"
+  },
+  {
+    "text": "type WorkerPool struct {\n\tjobs    chan Job\n\tresults chan Result\n\tworkers int\n}\n\nfunc (p *WorkerPool) Start(ctx context.Context) {\n\tfor i := 0; i < p.workers; i++ {\n\t\tgo func() {\n\t\t\tfor {\n\t\t\t\tselect {\n\t\t\t\tcase <-ctx.Done():\n\t\t\t\t\treturn\n\t\t\t\tcase job, ok := <-p.jobs:\n\t\t\t\t\tif !ok {\n\t\t\t\t\t\treturn\n\t\t\t\t\t}\n\t\t\t\t\tp.results <- job.Execute()\n\t\t\t\t}\n\t\t\t}\n\t\t}()\n\t}\n}",
+    "source": "Go: Bounded worker pool concurrency with context shutdown"
+  },
+  {
+    "text": "mux := http.NewServeMux()\nmux.HandleFunc(\"GET /health\", func(w http.ResponseWriter, r *http.Request) {\n\tw.Header().Set(\"Content-Type\", \"application/json\")\n\tw.WriteHeader(http.StatusOK)\n\tw.Write([]byte(`{\"status\":\"healthy\"}`))\n})",
+    "source": "Go: Go 1.22 enhanced HTTP routing mux"
+  },
+  {
+    "text": "func retryWithBackoff(ctx context.Context, attempts int, op func() error) error {\n\tvar err error\n\tfor i := 0; i < attempts; i++ {\n\t\tif err = op(); err == nil {\n\t\t\treturn nil\n\t\t}\n\t\tselect {\n\t\tcase <-ctx.Done():\n\t\t\treturn ctx.Err()\n\t\tcase <-time.After(time.Duration(1<<i) * 100 * time.Millisecond):\n\t\t}\n\t}\n\treturn fmt.Errorf(\"exhausted retries: %w\", err)\n}",
+    "source": "Go: Exponential backoff retry with context cancellation"
+  }
+]

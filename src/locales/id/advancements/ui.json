@@ -1,0 +1,39 @@
+{
+  "title": "Advancement & Jenjang Berkelanjutan",
+  "subtitle": "Pantau tonggak jangka panjang, kemajuan keahlian, dan peringkat kemahiran Anda.",
+  "ladderTitle": "Tangga Progres Advancement",
+  "tierProgressOverview": "Ringkasan Progres Jenjang",
+  "tiersUnlocked": "Jenjang Dikuasai",
+  "masteredCount": "{count} / {total} Dikuasai",
+  "nextTier": "Peringkat Berikutnya",
+  "maxTierReached": "Peringkat Puncak Telah Dicapai",
+  "tierTarget": "Sasaran: {target}",
+  "tierStatusCompleted": "Tuntas",
+  "tierStatusCurrent": "Sasaran Saat Ini",
+  "tierStatusLocked": "Terkunci",
+  "viewLadder": "Lihat Tangga Progres",
+  "filterAll": "Semua Advancement",
+  "rank": {
+    "locked": "Terkunci",
+    "common": "Umum",
+    "uncommon": "Tidak Umum",
+    "rare": "Langka",
+    "epic": "Epik",
+    "legendary": "Legendaris",
+    "mythic": "Mitis"
+  },
+  "tier": {
+    "locked": "Terkunci",
+    "bronze": "Perunggu",
+    "silver": "Perak",
+    "gold": "Emas",
+    "platinum": "Platina",
+    "diamond": "Berlian",
+    "heroic": "Heroik",
+    "eliteHeroic": "Heroik Elit",
+    "master": "Master",
+    "eliteMaster": "Master Elit",
+    "grandmaster": "Grandmaster"
+  }
+}
+

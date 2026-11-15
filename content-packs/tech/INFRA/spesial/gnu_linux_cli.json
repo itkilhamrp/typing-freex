@@ -1,0 +1,58 @@
+[
+  {
+    "text": "echo \"Hello, World!\" | tee greeting.txt\ncat greeting.txt",
+    "source": "GNU/Linux CLI: Echo and tee standard stream pipeline"
+  },
+  {
+    "text": "uname -srm\ncat /etc/os-release | grep PRETTY_NAME",
+    "source": "GNU/Linux CLI: Kernel architecture and distribution metadata"
+  },
+  {
+    "text": "cat /proc/cpuinfo | grep 'model name' | uniq -c\nfree -h --giga",
+    "source": "GNU/Linux CLI: Hardware CPU and RAM inspection"
+  },
+  {
+    "text": "ps aux --sort=-%mem | head -n 15",
+    "source": "GNU/Linux CLI: Inspect top memory-consuming processes"
+  },
+  {
+    "text": "lsof -i :8080 -sTCP:LISTEN\nss -tulpn | grep 8080",
+    "source": "GNU/Linux CLI: Port listening socket inspection"
+  },
+  {
+    "text": "grep -rnI \"TODO\" ./src | cut -d: -f1 | sort -u",
+    "source": "GNU/Linux CLI: Grep, cut, and sort pipeline"
+  },
+  {
+    "text": "awk -F',' '$3 > 100 { print $1, $3 }' transactions.csv | column -t",
+    "source": "GNU/Linux CLI: Awk filter and column formatted output"
+  },
+  {
+    "text": "find . -type f -name \"*.log\" -mtime +30 -exec rm -f {} +",
+    "source": "GNU/Linux CLI: Batch prune old logs with find"
+  },
+  {
+    "text": "tar -czvf project-$(date +%Y%m%d).tar.gz --exclude=\"target\" ./src",
+    "source": "GNU/Linux CLI: Gzip compressed tarball generation"
+  },
+  {
+    "text": "journalctl -u nginx.service -f --since \"1 hour ago\"",
+    "source": "GNU/Linux CLI: Follow systemd journal service logs"
+  },
+  {
+    "text": "rsync -avzP --delete --exclude=\".git\" /var/www/ user@backup:/srv/www/\nxargs -I {} -P 4 sh -c 'gzip \"$1\"' _ {}",
+    "source": "GNU/Linux CLI: Incremental rsync transfer and parallel processing"
+  },
+  {
+    "text": "du -ah ./src | sort -rh | head -n 20\ndf -hT /",
+    "source": "GNU/Linux CLI: Disk space utilization and filesystem inspection"
+  },
+  {
+    "text": "sudo ufw default deny incoming\nsudo ufw default allow outgoing\nsudo ufw allow ssh\nsudo ufw allow 80/tcp\nsudo ufw allow 443/tcp\nsudo ufw enable",
+    "source": "GNU/Linux CLI: Uncomplicated Firewall security baseline setup"
+  },
+  {
+    "text": "systemctl list-units --type=service --state=running\nsystemctl is-active --quiet docker && echo \"Daemon active\"",
+    "source": "GNU/Linux CLI: Systemd daemon service inspection"
+  }
+]

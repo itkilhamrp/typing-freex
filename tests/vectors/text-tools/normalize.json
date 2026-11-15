@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Exotic spaces conversion and zero-width stripping",
+    "options": { "exoticSpaces": true },
+    "input": "Word\u00A0One\u2002Two\u2003Three\u200BZero\uFEFFWidth",
+    "expected": "Word One Two ThreeZeroWidth"
+  },
+  {
+    "name": "Typographic to ASCII punctuation",
+    "options": { "typographicToAscii": true },
+    "input": "\u201CHello\u201D and \u2018world\u2019 \u2013 test \u2014 more\u2026 \u2022 item",
+    "expected": "\"Hello\" and 'world' - test - more... - item"
+  },
+  {
+    "name": "Tab expansion to single space",
+    "options": { "tabs": "spaces-1" },
+    "input": "One\tTwo\tThree",
+    "expected": "One Two Three"
+  },
+  {
+    "name": "Tab expansion to four spaces",
+    "options": { "tabs": "spaces-4" },
+    "input": "def\tfoo():",
+    "expected": "def    foo():"
+  },
+  {
+    "name": "ASCII fold diacritics",
+    "options": { "asciiFoldDiacritics": true },
+    "input": "Caf\u00e9, se\u00f1or, \u00fcber",
+    "expected": "Cafe, senor, uber"
+  },
+  {
+    "name": "Strip Markdown syntax",
+    "options": { "stripMarkdown": true },
+    "input": "# Title\n\nThis is **bold** and *italic* and [a link](https://example.com).\n\n> A quote\n\n```ts\nconst x = 1;\n```",
+    "expected": "Title\n\nThis is bold and italic and a link.\n\nA quote\n\nconst x = 1;"
+  }
+]

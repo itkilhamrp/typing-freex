@@ -1,0 +1,58 @@
+[
+  {
+    "text": "console.log(\"Hello, World!\");",
+    "source": "JavaScript: Canonical Hello World output"
+  },
+  {
+    "text": "const userRole = profile?.settings?.role ?? \"guest\";",
+    "source": "JavaScript: Optional chaining with nullish coalescing"
+  },
+  {
+    "text": "const { id, username, ...rest } = payload;\nconst merged = { ...rest, active: true };",
+    "source": "JavaScript: Object destructuring and spread operator"
+  },
+  {
+    "text": "const tags = posts.flatMap(post => post.tags).reduce((acc, tag) => {\n  acc[tag] = (acc[tag] || 0) + 1;\n  return acc;\n}, {});",
+    "source": "JavaScript: Functional aggregation with flatMap and reduce"
+  },
+  {
+    "text": "const results = await Promise.allSettled([\n  fetch(\"/api/users\").then(r => r.json()),\n  fetch(\"/api/orders\").then(r => r.json()),\n]);\nconst successful = results.filter(r => r.status === \"fulfilled\");",
+    "source": "JavaScript: Concurrent async handling with Promise.allSettled"
+  },
+  {
+    "text": "function debounce(fn, delayMs = 300) {\n  let timer;\n  return (...args) => {\n    clearTimeout(timer);\n    timer = setTimeout(() => fn(...args), delayMs);\n  };\n}",
+    "source": "JavaScript: Higher-order debounce timing closure"
+  },
+  {
+    "text": "const validator = {\n  set(target, key, value) {\n    if (key === \"age\" && (typeof value !== \"number\" || value < 0)) {\n      throw new TypeError(\"Age must be a non-negative number\");\n    }\n    target[key] = value;\n    return true;\n  }\n};\nconst person = new Proxy({}, validator);",
+    "source": "JavaScript: Metaprogramming validation with Proxy"
+  },
+  {
+    "text": "class EventEmitter {\n  constructor() {\n    this.events = new Map();\n  }\n  on(event, listener) {\n    if (!this.events.has(event)) this.events.set(event, new Set());\n    this.events.get(event).add(listener);\n    return () => this.events.get(event).delete(listener);\n  }\n  emit(event, ...args) {\n    const listeners = this.events.get(event);\n    if (listeners) listeners.forEach(fn => fn(...args));\n  }\n}",
+    "source": "JavaScript: Custom publish-subscribe EventEmitter class"
+  },
+  {
+    "text": "async function* streamLines(responseStream) {\n  const reader = responseStream.getReader();\n  const decoder = new TextDecoder();\n  try {\n    while (true) {\n      const { done, value } = await reader.read();\n      if (done) break;\n      yield decoder.decode(value, { stream: true });\n    }\n  } finally {\n    reader.releaseLock();\n  }\n}",
+    "source": "JavaScript: Async generator stream reader"
+  },
+  {
+    "text": "function deepClone(obj, hash = new WeakMap()) {\n  if (Object(obj) !== obj) return obj;\n  if (hash.has(obj)) return hash.get(obj);\n  const result = Array.isArray(obj) ? [] : Object.create(Object.getPrototypeOf(obj));\n  hash.set(obj, result);\n  return Object.assign(result, ...Object.keys(obj).map(key => ({\n    [key]: deepClone(obj[key], hash)\n  })));\n}",
+    "source": "JavaScript: Recursive deep clone with WeakMap circular guard"
+  },
+  {
+    "text": "const controller = new AbortController();\nconst timeoutId = setTimeout(() => controller.abort(), 5000);\n\ntry {\n  const res = await fetch(url, { signal: controller.signal });\n  const data = await res.json();\n} finally {\n  clearTimeout(timeoutId);\n}",
+    "source": "JavaScript: Fetch request cancellation with AbortController"
+  },
+  {
+    "text": "const pipeline = (...fns) => (val) => fns.reduce((acc, fn) => fn(acc), val);\nconst sanitize = pipeline(\n  s => s.trim(),\n  s => s.toLowerCase(),\n  s => s.replace(/[^a-z0-9]/g, \"-\")\n);",
+    "source": "JavaScript: Functional composition pipeline"
+  },
+  {
+    "text": "const memoize = (fn) => {\n  const cache = new Map();\n  return (...args) => {\n    const key = JSON.stringify(args);\n    if (cache.has(key)) return cache.get(key);\n    const result = fn(...args);\n    cache.set(key, result);\n    return result;\n  };\n};",
+    "source": "JavaScript: Generic function memoizer"
+  },
+  {
+    "text": "class LRUCache {\n  constructor(capacity) {\n    this.capacity = capacity;\n    this.map = new Map();\n  }\n  get(key) {\n    if (!this.map.has(key)) return undefined;\n    const val = this.map.get(key);\n    this.map.delete(key);\n    this.map.set(key, val);\n    return val;\n  }\n  put(key, val) {\n    if (this.map.has(key)) this.map.delete(key);\n    else if (this.map.size >= this.capacity) {\n      this.map.delete(this.map.keys().next().value);\n    }\n    this.map.set(key, val);\n  }\n}",
+    "source": "JavaScript: Least Recently Used (LRU) Cache using Map"
+  }
+]

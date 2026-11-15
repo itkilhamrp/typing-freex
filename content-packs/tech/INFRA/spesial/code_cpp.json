@@ -1,0 +1,58 @@
+[
+  {
+    "text": "#include <iostream>\n\nint main() {\n    std::cout << \"Hello, World!\" << std::endl;\n    return 0;\n}",
+    "source": "C++: Canonical Hello World entrypoint"
+  },
+  {
+    "text": "struct Point {\n    int x, y;\n    auto operator<=>(const Point&) const = default;\n};",
+    "source": "C++: Three-way comparison spaceship operator"
+  },
+  {
+    "text": "auto isEven = [](int n) noexcept -> bool {\n    return n % 2 == 0;\n};\nauto count = std::count_if(nums.begin(), nums.end(), isEven);",
+    "source": "C++: Lambda predicate with noexcept specifier"
+  },
+  {
+    "text": "std::optional<std::string> findConfig(const std::string& key) {\n    auto it = configMap.find(key);\n    if (it != configMap.end()) return it->second;\n    return std::nullopt;\n}",
+    "source": "C++: std::optional safe lookup return value"
+  },
+  {
+    "text": "void processString(std::string_view sv) {\n    if (sv.starts_with(\"DEBUG\")) {\n        std::cout << \"Logging debug text: \" << sv << '\\n';\n    }\n}",
+    "source": "C++: std::string_view zero-copy string parameter"
+  },
+  {
+    "text": "#include <memory>\n\nauto ptr = std::make_unique<Widget>(42);\nptr->doSomething();\n// Resource automatically cleaned up via RAII",
+    "source": "C++: std::make_unique RAII smart pointer management"
+  },
+  {
+    "text": "template <typename... Args>\nvoid logAll(Args&&... args) {\n    (std::cout << ... << args) << '\\n';\n}",
+    "source": "C++: Variadic template fold expression"
+  },
+  {
+    "text": "template <typename T>\nconcept Numeric = std::is_arithmetic_v<T>;\n\ntemplate <Numeric T>\nT add(T a, T b) {\n    return a + b;\n}",
+    "source": "C++: Concepts compile-time constraint definition"
+  },
+  {
+    "text": "class DatabaseConnection {\npublic:\n    DatabaseConnection() { connect(); }\n    ~DatabaseConnection() { disconnect(); }\n    DatabaseConnection(const DatabaseConnection&) = delete;\n    DatabaseConnection& operator=(const DatabaseConnection&) = delete;\n};",
+    "source": "C++: RAII rule of five with deleted copy semantics"
+  },
+  {
+    "text": "#include <ranges>\n\nauto evens = numbers\n    | std::views::filter([](int n) { return n % 2 == 0; })\n    | std::views::transform([](int n) { return n * n; });",
+    "source": "C++: Range pipeline with composable views"
+  },
+  {
+    "text": "#include <queue>\n#include <mutex>\n#include <condition_variable>\n\ntemplate <typename T>\nclass ThreadSafeQueue {\n    std::queue<T> q;\n    mutable std::mutex mtx;\n    std::condition_variable cv;\npublic:\n    void push(T val) {\n        std::lock_guard<std::mutex> lock(mtx);\n        q.push(std::move(val));\n        cv.notify_one();\n    }\n    T pop() {\n        std::unique_lock<std::mutex> lock(mtx);\n        cv.wait(lock, [this] { return !q.empty(); });\n        T val = std::move(q.front());\n        q.pop();\n        return val;\n    }\n};",
+    "source": "C++: Thread-safe concurrent queue with condition variable"
+  },
+  {
+    "text": "template <typename Derived>\nclass Singleton {\nprotected:\n    Singleton() = default;\npublic:\n    Singleton(const Singleton&) = delete;\n    Singleton& operator=(const Singleton&) = delete;\n    static Derived& instance() {\n        static Derived inst;\n        return inst;\n    }\n};",
+    "source": "C++: CRTP Curiously Recurring Template Pattern"
+  },
+  {
+    "text": "#include <variant>\n\nusing Command = std::variant<QuitCmd, MoveCmd, WriteCmd>;\n\nvoid execute(const Command& cmd) {\n    std::visit([](auto&& arg) {\n        using T = std::decay_t<decltype(arg)>;\n        if constexpr (std::is_same_v<T, QuitCmd>) exit(0);\n        else arg.run();\n    }, cmd);\n}",
+    "source": "C++: std::variant pattern matching with std::visit"
+  },
+  {
+    "text": "constexpr uint64_t hashString(std::string_view str) {\n    uint64_t hash = 14695981039346656037ULL;\n    for (char c : str) {\n        hash ^= static_cast<uint64_t>(c);\n        hash *= 1099511628211ULL;\n    }\n    return hash;\n}",
+    "source": "C++: Compile-time FNV-1a constexpr string hash"
+  }
+]

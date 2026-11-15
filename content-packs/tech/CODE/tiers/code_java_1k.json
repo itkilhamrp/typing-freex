@@ -1,0 +1,42 @@
+[
+  {
+    "text": "public record User(String id, String username, String email) {\n    public User {\n        Objects.requireNonNull(id, \"id cannot be null\");\n        Objects.requireNonNull(email, \"email cannot be null\");\n    }\n}",
+    "source": "Java 1k: Java 17+ Compact Constructor Record"
+  },
+  {
+    "text": "Map<Department, List<Employee>> byDept = employees.stream()\n    .filter(Employee::isActive)\n    .collect(Collectors.groupingBy(Employee::department));",
+    "source": "Java 1k: Stream groupingBy Collector"
+  },
+  {
+    "text": "try (var executor = Executors.newVirtualThreadPerTaskExecutor()) {\n    IntStream.range(0, 10_000).forEach(i -> executor.submit(() -> {\n        Thread.sleep(Duration.ofMillis(10));\n        return i;\n    }));\n}",
+    "source": "Java 1k: Java 21 Virtual Threads Executor"
+  },
+  {
+    "text": "String formatter = switch (obj) {\n    case Integer i -> String.format(\"int: %d\", i);\n    case Long l    -> String.format(\"long: %d\", l);\n    case String s  -> String.format(\"string: %s\", s);\n    default        -> obj.toString();\n};",
+    "source": "Java 1k: Pattern Matching Switch Expression"
+  },
+  {
+    "text": "CompletableFuture.supplyAsync(() -> fetchUserData(userId))\n    .thenApply(this::enrichUserProfile)\n    .thenAccept(this::renderProfile)\n    .exceptionally(ex -> { log.error(\"Pipeline failed\", ex); return null; });",
+    "source": "Java 1k: Asynchronous CompletableFuture Pipeline"
+  },
+  {
+    "text": "Optional<String> result = Optional.ofNullable(config.getProperty(\"timeout\"))\n    .filter(s -> !s.isBlank())\n    .map(String::trim);",
+    "source": "Java 1k: Functional Optional Chain"
+  },
+  {
+    "text": "public static <T extends Comparable<? super T>> int binarySearch(List<T> list, T key) {\n    int low = 0, high = list.size() - 1;\n    while (low <= high) {\n        int mid = (low + high) >>> 1;\n        int cmp = list.get(mid).compareTo(key);\n        if (cmp < 0) low = mid + 1;\n        else if (cmp > 0) high = mid - 1;\n        else return mid;\n    }\n    return -(low + 1);\n}",
+    "source": "Java 1k: Unsigned Shift Binary Search"
+  },
+  {
+    "text": "var message = \"\"\"\n    {\n        \"status\": \"healthy\",\n        \"uptime\": 86400\n    }\n    \"\"\";",
+    "source": "Java 1k: Multi-line Text Block"
+  },
+  {
+    "text": "ConcurrentMap<String, AtomicLong> metrics = new ConcurrentHashMap<>();\nmetrics.computeIfAbsent(\"api_hits\", k -> new AtomicLong()).incrementAndGet();",
+    "source": "Java 1k: ConcurrentHashMap computeIfAbsent Counter"
+  },
+  {
+    "text": "List<String> unmodifiable = List.of(\"alpha\", \"beta\", \"gamma\");",
+    "source": "Java 1k: Modern Immutable List Factory"
+  }
+]

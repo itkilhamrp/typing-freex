@@ -1,0 +1,8 @@
+{
+  "id": "code_git",
+  "name": "Git",
+  "version": "1.0.0",
+  "language": "code_git",
+  "type": "wordlist",
+  "packed": "git\ninit\nclone\nadd\ncommit\nstatus\ndiff\nbranch\ncheckout\nswitch\nrestore\nmerge\nrebase\nreset\nrevert\ncherry-pick\nfetch\npull\npush\nremote\nlog\nshow\ntag\nstash\nsave\npop\napply\nlist\ndrop\nclear\nclean\nblame\nbisect\nworktree\nsubmodule\narchive\nam\napply\nformat-patch\nreflog\nfsck\ngc\nconfig\nhelp\nversion\norigin\nupstream\nmain\nmaster\ndevelop\nHEAD\nFETCH_HEAD\nORIG_HEAD\nMERGE_HEAD\n--all\n--force\n--hard\n--soft\n--mixed\n--amend\n--no-edit\n--graph\n--oneline\n--decorate\n--patch\n--stat\n--staged\n--cached\n--untracked\n--rebase\n--tags\n--prune\n--set-upstream\n--delete\n--message\n--quiet\n--verbose\nfast-forward\nsquash\nconflict\nthree-way\nworking-tree\nindex\nstage\nrepository\ncommit-hash\ntree\nblob\nparent\nauthor\ncommitter\ngitignore\ngitattributes\ngitmodules"
+}

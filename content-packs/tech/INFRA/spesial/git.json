@@ -1,0 +1,58 @@
+[
+  {
+    "text": "git init\necho \"Hello, World!\" > README.md\ngit add README.md\ngit commit -m \"chore: initial commit\"",
+    "source": "Git: Repository initialization and first commit"
+  },
+  {
+    "text": "git status -sb",
+    "source": "Git: Short branch status overview"
+  },
+  {
+    "text": "git branch -M main\ngit remote add origin git@github.com:user/repo.git\ngit push -u origin main",
+    "source": "Git: Rename default branch and configure remote origin"
+  },
+  {
+    "text": "git status -sb\ngit add -p\ngit commit -m \"feat: implement feature validation\"",
+    "source": "Git: Interactive staging and conventional commit"
+  },
+  {
+    "text": "git diff --staged --stat\ngit diff HEAD~1..HEAD",
+    "source": "Git: Staged diff and commit delta stats"
+  },
+  {
+    "text": "git checkout -b feat/new-engine\ngit push -u origin feat/new-engine",
+    "source": "Git: Branch creation and upstream tracking"
+  },
+  {
+    "text": "git stash push -m \"wip-feature-test\" --include-untracked\ngit stash pop",
+    "source": "Git: Stash untracked changes and restore"
+  },
+  {
+    "text": "git log --graph --oneline --decorate --all -n 20",
+    "source": "Git: Visual commit branch history graph"
+  },
+  {
+    "text": "git cherry-pick 7f8a3d1\ngit cherry-pick --continue",
+    "source": "Git: Isolated commit cherry-picking"
+  },
+  {
+    "text": "git rebase -i HEAD~3\ngit commit --amend --no-edit",
+    "source": "Git: Interactive rebase and commit amending"
+  },
+  {
+    "text": "git worktree add ../feature-branch feature\ngit worktree remove ../feature-branch",
+    "source": "Git: Isolated concurrent worktree management"
+  },
+  {
+    "text": "git bisect start\ngit bisect bad HEAD\ngit bisect good v1.0.0\ngit bisect run pnpm test",
+    "source": "Git: Automated regression bisect with test runner"
+  },
+  {
+    "text": "git submodule update --init --recursive\ngit submodule foreach git pull origin main",
+    "source": "Git: Recursive submodule initialization and synchronization"
+  },
+  {
+    "text": "git reflog -n 10\ngit reset --hard HEAD@{1}",
+    "source": "Git: Reflog audit inspection and hard reset recovery"
+  }
+]

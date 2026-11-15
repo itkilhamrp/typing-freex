@@ -1,0 +1,8 @@
+{
+  "id": "code_css",
+  "name": "CSS",
+  "version": "1.0.0",
+  "language": "code_css",
+  "type": "wordlist",
+  "packed": "align-content\nalign-items\nalign-self\nanimation\nbackdrop-filter\nbackground\nbackground-color\nbackground-image\nbackground-position\nbackground-repeat\nbackground-size\nborder\nborder-radius\nborder-color\nborder-width\nborder-style\nbox-shadow\nbox-sizing\ncolor\ncolumn-gap\ncontain\ncontent\ncursor\ndisplay\nflex\nflex-direction\nflex-wrap\nflex-grow\nflex-shrink\nflex-basis\nfloat\nfont-family\nfont-size\nfont-weight\nfont-style\ngap\ngrid\ngrid-template-columns\ngrid-template-rows\ngrid-column\ngrid-row\nheight\nmin-height\nmax-height\njustify-content\njustify-items\njustify-self\nleft\nright\ntop\nbottom\nletter-spacing\nline-height\nlist-style\nmargin\nmargin-top\nmargin-bottom\nmargin-left\nmargin-right\nopacity\norder\noutline\noverflow\noverflow-x\noverflow-y\npadding\npadding-top\npadding-bottom\npadding-left\npadding-right\npointer-events\nposition\nresize\nrow-gap\ntable\ntext-align\ntext-decoration\ntext-overflow\ntext-transform\ntransform\ntransition\nuser-select\nvisibility\nwhite-space\nwidth\nmin-width\nmax-width\nwill-change\nword-break\nz-index\nabsolute\nrelative\nfixed\nsticky\nstatic\nnone\nblock\ninline\ninline-block\nflex\ngrid\nhidden\nvisible\nauto\ncover\ncontain\ncenter\ninherit\ninitial\nunset\nrevert\nsolid\ndashed\ndotted\ntransparent\nimportant"
+}

@@ -1,0 +1,84 @@
+/**
+ * Typing Arena Specialized Styles (§6.3, FR-TYP-*)
+ * Lokasi: src/lib/shared/styles/typing-arena.css
+ */
+
+.typing-arena-container {
+  font-family: var(--tt-font-typing);
+  font-size: var(--tt-text-arena);
+  line-height: var(--tt-line-height-arena);
+  letter-spacing: 0.05em;
+  position: relative;
+  outline: none;
+  /* Ribuan <span> karakter: isolasi agar update status karakter
+   * tidak memicu recalc layout/style di luar arena. */
+  contain: layout style;
+  /* Monospace + letter-spacing: kerning & ligature tidak berpengaruh visual,
+   * jadi dimatikan untuk mempercepat shaping teks. */
+  font-kerning: none;
+  font-variant-ligatures: none;
+}
+
+.char-untyped {
+  color: var(--tt-untyped);
+}
+
+.char-correct {
+  color: var(--tt-correct);
+}
+
+.char-incorrect {
+  color: var(--tt-incorrect);
+  background-color: rgba(215, 0, 21, 0.12);
+  text-decoration: underline wavy var(--tt-incorrect);
+  text-underline-offset: 4px;
+  border-radius: 2px;
+}
+
+.char-extra {
+  color: var(--tt-extra);
+  background-color: rgba(201, 52, 0, 0.16);
+  text-decoration: underline dashed var(--tt-extra);
+  text-underline-offset: 4px;
+  border-radius: 2px;
+}
+
+.char-missed {
+  color: var(--tt-incorrect);
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+
+.char-node {
+  line-height: var(--tt-line-height-arena);
+}
+
+.char-enter {
+  display: inline-block;
+  line-height: var(--tt-line-height-arena);
+  min-height: var(--tt-line-height-arena);
+  vertical-align: baseline;
+}
+
+.caret-pulse {
+  position: absolute;
+  width: 2.5px;
+  background-color: var(--tt-caret);
+  border-radius: 2px;
+  pointer-events: none;
+  /* Animasi opacity berjalan di compositor, tidak memicu layout/paint */
+  will-change: opacity;
+  animation: caret-blink 1s ease-in-out infinite;
+}
+
+@keyframes caret-blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}

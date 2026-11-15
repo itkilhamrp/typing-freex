@@ -1,0 +1,8 @@
+{
+  "id": "code_cpp",
+  "name": "C++",
+  "version": "1.0.0",
+  "language": "code_cpp",
+  "type": "wordlist",
+  "packed": "alignas\nalignof\nand\nand_eq\nasm\nauto\nbitand\nbitor\nbool\nbreak\ncase\ncatch\nchar\nchar8_t\nchar16_t\nchar32_t\nclass\ncompl\nconcept\nconst\nconsteval\nconstexpr\nconstinit\nconst_cast\ncontinue\nco_await\nco_return\nco_yield\ndecltype\ndefault\ndelete\ndo\ndouble\ndynamic_cast\nelse\nenum\nexplicit\nexport\nextern\nfalse\nfloat\nfor\nfriend\ngoto\nif\ninline\nint\nlong\nmutable\nnamespace\nnew\nnoexcept\nnot\nnot_eq\nnullptr\noperator\nor\nor_eq\nprivate\nprotected\npublic\nregister\nreinterpret_cast\nrequires\nreturn\nshort\nsigned\nsizeof\nstatic\nstatic_assert\nstatic_cast\nstruct\nswitch\ntemplate\nthis\nthread_local\nthrow\ntrue\ntry\ntypedef\ntypeid\ntypename\nunion\nunsigned\nusing\nvirtual\nvoid\nvolatile\nwchar_t\nwhile\nxor\nxor_eq\nstd\ncout\ncin\ncerr\nendl\nvector\nstring\nmap\nset\nunordered_map\nunordered_set\npair\ntuple\nqueue\ndeque\nstack\npriority_queue\noptional\nvariant\nany\nspan\nunique_ptr\nshared_ptr\nweak_ptr\nmake_unique\nmake_shared\nmove\nforward\nbegin\nend\nrbegin\nrend\nsize\nempty\nclear\npush_back\nemplace_back\npop_back\ninsert\nerase\nfind\ncount\nsort\nreverse\naccumulate\ntransform\nfor_each\nmin\nmax\nclamp\nswap"
+}

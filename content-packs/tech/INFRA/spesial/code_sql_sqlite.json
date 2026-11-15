@@ -1,0 +1,58 @@
+[
+  {
+    "text": "SELECT 'Hello, World!' AS message;",
+    "source": "SQLite: Canonical Hello World query"
+  },
+  {
+    "text": "PRAGMA journal_mode = WAL;\nPRAGMA synchronous = NORMAL;\nPRAGMA foreign_keys = ON;",
+    "source": "SQLite: Performance pragmas and write-ahead logging"
+  },
+  {
+    "text": "CREATE TABLE IF NOT EXISTS notes (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    title TEXT NOT NULL,\n    body TEXT NOT NULL,\n    updated_at DATETIME DEFAULT (datetime('now'))\n);",
+    "source": "SQLite: Schema DDL with default timestamp"
+  },
+  {
+    "text": "INSERT INTO users (username, email)\nVALUES ('linus', 'torvalds@kernel.org')\nRETURNING id, created_at;",
+    "source": "SQLite: INSERT statement with RETURNING clause"
+  },
+  {
+    "text": "INSERT INTO settings (key, value)\nVALUES ('theme', 'dark')\nON CONFLICT(key) DO UPDATE SET\n    value = excluded.value,\n    updated_at = datetime('now');",
+    "source": "SQLite: UPSERT with EXCLUDED target replacement"
+  },
+  {
+    "text": "CREATE TRIGGER update_timestamp AFTER UPDATE ON products\nBEGIN\n    UPDATE products SET updated_at = datetime('now') WHERE id = NEW.id;\nEND;",
+    "source": "SQLite: Automated timestamp update trigger"
+  },
+  {
+    "text": "SELECT \n    id,\n    json_extract(payload, '$.user.name') AS user_name,\n    value AS tag\nFROM events, json_each(events.payload, '$.tags');",
+    "source": "SQLite: JSON extraction and table-valued json_each expansion"
+  },
+  {
+    "text": "WITH RECURSIVE cnt(x) AS (\n    SELECT 1\n    UNION ALL\n    SELECT x + 1 FROM cnt\n    LIMIT 10\n)\nSELECT x FROM cnt;",
+    "source": "SQLite: Recursive common table expression generator"
+  },
+  {
+    "text": "CREATE VIRTUAL TABLE documents_fts USING fts5(\n    title,\n    content,\n    tokenize = 'porter unicode61'\n);",
+    "source": "SQLite: FTS5 full-text search virtual table setup"
+  },
+  {
+    "text": "SELECT title\nFROM documents_fts\nWHERE documents_fts MATCH 'sqlite NEAR/2 embedded'\nORDER BY rank;",
+    "source": "SQLite: FTS5 proximity ranked match query"
+  },
+  {
+    "text": "VACUUM INTO 'backup.sqlite';",
+    "source": "SQLite: Safe online transactional database snapshot"
+  },
+  {
+    "text": "CREATE TABLE orders (\n    id INTEGER PRIMARY KEY,\n    order_uuid TEXT NOT NULL UNIQUE,\n    total_cents INTEGER NOT NULL CHECK (total_cents >= 0),\n    status TEXT NOT NULL CHECK (status IN ('pending', 'paid', 'shipped')),\n    created_at INTEGER NOT NULL DEFAULT (unixepoch())\n) STRICT;",
+    "source": "SQLite: STRICT table mode with check constraints and unix epoch"
+  },
+  {
+    "text": "WITH RECURSIVE org_chart(id, name, manager_id, level) AS (\n    SELECT id, name, manager_id, 0\n    FROM employees\n    WHERE manager_id IS NULL\n    UNION ALL\n    SELECT e.id, e.name, e.manager_id, o.level + 1\n    FROM employees e\n    JOIN org_chart o ON e.manager_id = o.id\n)\nSELECT printf('%*s%s', level * 2, '', name) AS org_hierarchy FROM org_chart;",
+    "source": "SQLite: Hierarchical organization chart recursive tree traversal"
+  },
+  {
+    "text": "BEGIN TRANSACTION;\nINSERT INTO inventory_logs (item_id, delta, reason)\nVALUES (101, -1, 'purchase');\nUPDATE inventory SET stock = stock - 1\nWHERE item_id = 101 AND stock >= 1;\nCOMMIT;",
+    "source": "SQLite: Safe inventory decrement transaction with stock invariant"
+  }
+]

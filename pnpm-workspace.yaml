@@ -1,0 +1,6 @@
+allowBuilds:
+  esbuild: true
+  vue-demi: true
+overrides:
+  handlebars@>=3.0.0 <=4.7.9: ^4.7.10
+  source-map-js@>=1.0.0 <1.2.2: ^1.2.2

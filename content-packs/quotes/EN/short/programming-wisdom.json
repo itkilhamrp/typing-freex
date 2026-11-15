@@ -1,0 +1,130 @@
+[
+  {
+    "text": "Software is like sex: it's better when it's free.",
+    "source": "Linus Torvalds"
+  },
+  {
+    "text": "Intelligence is the ability to avoid doing work, yet getting the work done.",
+    "source": "Linus Torvalds"
+  },
+  {
+    "text": "Theory and practice sometimes clash. And when that happens, theory loses. Every single time.",
+    "source": "Linus Torvalds"
+  },
+  {
+    "text": "Do you pine for the nice days of Minix-1.1, when men were men and wrote their own device drivers?",
+    "source": "Linus Torvalds"
+  },
+  {
+    "text": "We do not break userspace!",
+    "source": "Linus Torvalds"
+  },
+  {
+    "text": "Given enough eyeballs, all bugs are shallow.",
+    "source": "Eric S. Raymond"
+  },
+  {
+    "text": "Every good work of software starts by scratching a developer's personal itch.",
+    "source": "Eric S. Raymond"
+  },
+  {
+    "text": "Good programmers know what to write. Great ones know what to rewrite (and reuse).",
+    "source": "Eric S. Raymond"
+  },
+  {
+    "text": "Release early. Release often. And listen to your customers.",
+    "source": "Eric S. Raymond"
+  },
+  {
+    "text": "Smart data structures and dumb code works a lot better than the other way around.",
+    "source": "Eric S. Raymond"
+  },
+  {
+    "text": "To solve an interesting problem, start by finding a problem that is interesting to you.",
+    "source": "Eric S. Raymond"
+  },
+  {
+    "text": "Write simple parts connected by clean interfaces.",
+    "source": "Eric S. Raymond"
+  },
+  {
+    "text": "Clarity is better than cleverness.",
+    "source": "Eric S. Raymond"
+  },
+  {
+    "text": "When a program has nothing surprising to say, it should say nothing.",
+    "source": "Eric S. Raymond"
+  },
+  {
+    "text": "When you must fail, fail noisily and as soon as possible.",
+    "source": "Eric S. Raymond"
+  },
+  {
+    "text": "Computers are good at following instructions, but not at reading your mind.",
+    "source": "Donald Knuth"
+  },
+  {
+    "text": "There are only two hard things in Computer Science: cache invalidation and naming things.",
+    "source": "Phil Karlton"
+  },
+  {
+    "text": "A good programmer is someone who always looks both ways before crossing a one-way street.",
+    "source": "Doug Linder"
+  },
+  {
+    "text": "Write programs that do one thing and do it well. Write programs to work together.",
+    "source": "Doug McIlroy"
+  },
+  {
+    "text": "Beware of bugs in the above code; I have only proved it correct, not tried it.",
+    "source": "Donald Knuth"
+  },
+  {
+    "text": "Program testing can be used to show the presence of bugs, but never to show their absence!",
+    "source": "Edsger W. Dijkstra"
+  },
+  {
+    "text": "Controlling complexity is the essence of computer programming.",
+    "source": "Brian Kernighan"
+  },
+  {
+    "text": "The best way to predict the future is to invent it.",
+    "source": "Alan Kay"
+  },
+  {
+    "text": "Design and programming are human activities; forget that and all is lost.",
+    "source": "Bjarne Stroustrup"
+  },
+  {
+    "text": "Before software can be reusable it first has to be usable.",
+    "source": "Ralph Johnson"
+  },
+  {
+    "text": "Code is like humor. When you have to explain it, it's bad.",
+    "source": "Cory House"
+  },
+  {
+    "text": "Sharing is good, and with digital technology, sharing is easy.",
+    "source": "Richard Stallman"
+  },
+  {
+    "text": "Proprietary software keeps users divided and helpless.",
+    "source": "Richard Stallman"
+  },
+  {
+    "text": "Open source is a development methodology; free software is a social movement.",
+    "source": "Richard Stallman"
+  },
+  {
+    "text": "When a program has an owner, the users lose freedom to control part of their own lives.",
+    "source": "Richard Stallman"
+  },
+  {
+    "text": "Without requirements or design, programming is the art of adding bugs to an empty text file.",
+    "source": "Louis Srygley"
+  },
+  {
+    "text": "It is not enough to be industrious; so are the ants. What are you industrious about?",
+    "source": "Henry David Thoreau"
+  }
+]

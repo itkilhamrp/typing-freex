@@ -1,0 +1,8 @@
+{
+  "id": "code_go",
+  "name": "Go",
+  "version": "1.0.0",
+  "language": "code_go",
+  "type": "wordlist",
+  "packed": "package\nimport\nfunc\nreturn\nvar\nconst\ntype\nstruct\ninterface\nmap\nchan\ngo\ndefer\nif\nelse\nswitch\ncase\ndefault\nfor\nrange\nbreak\ncontinue\nfallthrough\ngoto\nselect\nmake\nnew\nappend\ncopy\ndelete\nlen\ncap\nclose\npanic\nrecover\nprint\nprintln\ncomplex\nreal\nimag\nbool\nstring\nint\nint8\nint16\nint32\nint64\nuint\nuint8\nuint16\nuint32\nuint64\nuintptr\nbyte\nrune\nfloat32\nfloat64\ncomplex64\ncomplex128\nerror\ntrue\nfalse\niota\nnil\nfmt\nPrintln\nPrintf\nSprintf\nErrorf\nScan\nScanf\nScanln\nos\nOpen\nCreate\nReadFile\nWriteFile\nExit\nGetenv\nSetenv\nio\nReader\nWriter\nCloser\nReadCloser\nWriteCloser\nReadAll\nCopy\nsync\nMutex\nRWMutex\nWaitGroup\nOnce\nPool\nCond\ncontext\nContext\nBackground\nTODO\nWithCancel\nWithDeadline\nWithTimeout\nWithValue\ntime\nNow\nSince\nUntil\nSleep\nAfter\nTick\nNewTicker\nDuration\nSecond\nMillisecond\nMinute\nHour\nstrings\nSplit\nJoin\nContains\nHasPrefix\nHasSuffix\nReplace\nReplaceAll\nToLower\nToUpper\nTrim\nTrimSpace\nIndex\nstrconv\nItoa\nAtoi\nFormatInt\nParseInt\nParseFloat\njson\nMarshal\nUnmarshal\nEncoder\nDecoder\nhttp\nGet\nPost\nClient\nServer\nRequest\nResponse\nHandler\nHandleFunc\nListenAndServe"
+}

@@ -1,0 +1,492 @@
+/* ═══════════════════════════════════════════════════
+   ModeRibbon.css — Edge-to-Edge Horizontal Chevron Ribbon
+   PS2-style console mode selection ribbon
+   ═══════════════════════════════════════════════════ */
+
+/* ─── Ribbon Container ─── */
+.mode-ribbon {
+  --ribbon-accent: var(--tt-primary, #007aff);
+
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  width: 78%;
+  max-width: 68rem;
+  min-height: 136px;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  contain: layout style;
+  transition:
+    transform 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    filter 200ms ease;
+}
+
+/* ─── Edge-Docked Zigzag Stagger & Symmetric Direction ─── */
+/* Idle state pre-bleeds 10px past viewport edge so sliding on hover/focus
+   never detaches the ribbon base from the left/right screen edge */
+.mode-ribbon--stagger-left {
+  align-self: flex-start;
+  margin-left: 0;
+  flex-direction: row;
+  transform: translateX(-10px);
+}
+
+.mode-ribbon--stagger-right {
+  align-self: flex-end;
+  margin-right: 0;
+  flex-direction: row-reverse;
+  transform: translateX(10px);
+}
+
+/* ─── Ribbon Body (flush rectangular surface docked to screen edge) ─── */
+.mode-ribbon__body {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.125rem 1.5rem 1.125rem 2.25rem;
+  background: var(--tt-surface);
+  border-top: 1px solid var(--tt-mode-card-border);
+  border-bottom: 1px solid var(--tt-mode-card-border);
+  border-left: none;
+  border-right: none;
+  border-radius: 0;
+  contain: layout style;
+  z-index: 1;
+  transition:
+    border-color 180ms ease,
+    box-shadow 200ms ease;
+}
+
+.mode-ribbon--stagger-right .mode-ribbon__body {
+  flex-direction: row-reverse;
+  padding: 1.125rem 2.25rem 1.125rem 1.5rem;
+}
+
+/* Subtle accent tint overlay for body */
+.mode-ribbon__body::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--ribbon-accent) 10%, transparent) 0%,
+    color-mix(in srgb, var(--ribbon-accent) 2%, transparent) 100%
+  );
+}
+
+.mode-ribbon--stagger-right .mode-ribbon__body::before {
+  background: linear-gradient(
+    270deg,
+    color-mix(in srgb, var(--ribbon-accent) 10%, transparent) 0%,
+    color-mix(in srgb, var(--ribbon-accent) 2%, transparent) 100%
+  );
+}
+
+/* Inner rim highlight */
+.mode-ribbon__body::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+  box-shadow: var(--tt-mode-card-rim);
+}
+
+/* ─── Chevron Arrow Tip (CSS clip-path triangle) ─── */
+.mode-ribbon__chevron {
+  position: relative;
+  flex-shrink: 0;
+  width: 72px;
+  align-self: stretch;
+  background: var(--tt-surface);
+  clip-path: polygon(0 0, 0% 100%, 100% 50%);
+  z-index: 1;
+}
+
+.mode-ribbon--stagger-right .mode-ribbon__chevron {
+  clip-path: polygon(100% 0, 100% 100%, 0 50%);
+}
+
+/* Border outline for chevron via pseudo-element */
+.mode-ribbon__chevron::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--tt-mode-card-border);
+  clip-path: polygon(
+    0 0,
+    0% 100%,
+    100% 50%,
+    calc(100% - 2px) 50%,
+    0 calc(100% - 1.5px),
+    0 1.5px
+  );
+  pointer-events: none;
+  transition: background-color 180ms ease;
+}
+
+.mode-ribbon--stagger-right .mode-ribbon__chevron::before {
+  clip-path: polygon(
+    100% 0,
+    100% 100%,
+    0 50%,
+    2px 50%,
+    100% calc(100% - 1.5px),
+    100% 1.5px
+  );
+}
+
+/* Chevron inner accent indicator */
+.mode-ribbon__chevron::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 38%;
+  width: 10px;
+  height: 10px;
+  transform: translate(-50%, -50%) rotate(45deg);
+  border-top: 2.5px solid var(--ribbon-accent);
+  border-right: 2.5px solid var(--ribbon-accent);
+  opacity: 0.65;
+  pointer-events: none;
+  transition:
+    transform 180ms ease,
+    opacity 180ms ease;
+}
+
+.mode-ribbon--stagger-right .mode-ribbon__chevron::after {
+  left: 62%;
+  transform: translate(-50%, -50%) rotate(-135deg);
+}
+
+/* ─── Info Section (icon + text + status) ─── */
+.mode-ribbon__info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+  min-width: 180px;
+  position: relative;
+  z-index: 2;
+}
+
+.mode-ribbon--stagger-right .mode-ribbon__info {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+.mode-ribbon__icon {
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--ribbon-accent);
+  background-color: color-mix(in srgb, var(--ribbon-accent) 14%, var(--tt-surface-2));
+  border: 1px solid color-mix(in srgb, var(--ribbon-accent) 28%, transparent);
+}
+
+.mode-ribbon__text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.mode-ribbon--stagger-right .mode-ribbon__text {
+  align-items: flex-end;
+}
+
+.mode-ribbon__header-line {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  flex-wrap: wrap;
+}
+
+.mode-ribbon--stagger-right .mode-ribbon__header-line {
+  flex-direction: row-reverse;
+}
+
+.mode-ribbon__title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--tt-text);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin: 0;
+}
+
+.mode-ribbon__subtitle {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--ribbon-accent);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-family: var(--tt-font-typing);
+  margin: 0;
+}
+
+.mode-ribbon__desc {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--tt-text-secondary);
+  line-height: 1.45;
+  margin: 0.125rem 0 0;
+  max-width: 36ch;
+}
+
+/* ─── ASCII Art Preview Box ─── */
+.mode-ribbon__preview {
+  position: relative;
+  flex-shrink: 0;
+  width: 264px;
+  aspect-ratio: 128 / 70;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--tt-mode-thumb-bg);
+  border: 1px solid var(--tt-mode-thumb-border);
+  box-shadow: var(--tt-mode-thumb-shadow);
+  contain: paint layout;
+  z-index: 2;
+  transition:
+    opacity 180ms ease,
+    border-color 180ms ease;
+}
+
+.mode-ribbon__preview > .ascii-art-wrap {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+}
+
+/* ─── Status Badge (Solid surface tone, WCAG AA compliant, zero border-slop) ─── */
+.mode-ribbon__status {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.mode-ribbon__badge {
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.625rem;
+  border-radius: 9999px;
+  border: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  white-space: nowrap;
+}
+
+.mode-ribbon__badge--ready {
+  background: color-mix(in srgb, var(--color-status-green) 18%, var(--tt-surface-2));
+  color: var(--tt-success);
+}
+
+.mode-ribbon__badge--locked {
+  background: var(--tt-surface-2);
+  color: var(--tt-text-secondary);
+}
+
+/* ═══════════════════════════════════════════════════
+   INTERACTION STATES
+   ═══════════════════════════════════════════════════ */
+
+/* Hover: slide inward toward chevron tip while staying flush to screen edge */
+.mode-ribbon--stagger-left:hover {
+  transform: translateX(0);
+}
+
+.mode-ribbon--stagger-right:hover {
+  transform: translateX(0);
+}
+
+.mode-ribbon:hover .mode-ribbon__body {
+  border-color: color-mix(in srgb, var(--ribbon-accent) 48%, var(--tt-mode-card-border));
+  box-shadow:
+    0 8px 22px -6px color-mix(in srgb, var(--ribbon-accent) 22%, transparent),
+    0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.mode-ribbon:hover .mode-ribbon__chevron::before {
+  background: color-mix(in srgb, var(--ribbon-accent) 48%, var(--tt-mode-card-border));
+}
+
+.mode-ribbon:hover .mode-ribbon__chevron::after {
+  opacity: 1;
+}
+
+.mode-ribbon:hover .mode-ribbon__preview {
+  border-color: color-mix(in srgb, var(--ribbon-accent) 40%, var(--tt-mode-thumb-border));
+}
+
+/* Locked hover: subtler movement */
+.mode-ribbon--locked.mode-ribbon--stagger-left:hover {
+  transform: translateX(-4px);
+}
+
+.mode-ribbon--locked.mode-ribbon--stagger-right:hover {
+  transform: translateX(4px);
+}
+
+.mode-ribbon--locked .mode-ribbon__preview {
+  opacity: 0.86;
+}
+
+.mode-ribbon--locked:hover .mode-ribbon__preview,
+.mode-ribbon--focused.mode-ribbon--locked .mode-ribbon__preview {
+  opacity: 1;
+}
+
+/* Keyboard Focus: slide inward + accent ring */
+.mode-ribbon--focused.mode-ribbon--stagger-left {
+  transform: translateX(0);
+}
+
+.mode-ribbon--focused.mode-ribbon--stagger-right {
+  transform: translateX(0);
+}
+
+.mode-ribbon--focused .mode-ribbon__body {
+  border-color: color-mix(in srgb, var(--ribbon-accent) 65%, var(--tt-mode-card-border));
+  box-shadow:
+    inset 0 0 0 2px color-mix(in srgb, var(--ribbon-accent) 55%, transparent),
+    0 8px 24px -6px color-mix(in srgb, var(--ribbon-accent) 24%, transparent);
+}
+
+.mode-ribbon--focused .mode-ribbon__chevron::before {
+  background: color-mix(in srgb, var(--ribbon-accent) 65%, var(--tt-mode-card-border));
+}
+
+.mode-ribbon--focused .mode-ribbon__chevron::after {
+  opacity: 1;
+}
+
+.mode-ribbon:focus-visible .mode-ribbon__body {
+  box-shadow:
+    inset 0 0 0 2.5px var(--ribbon-accent),
+    0 8px 24px -6px color-mix(in srgb, var(--ribbon-accent) 26%, transparent);
+}
+
+/* Flash animation (coming soon feedback) */
+.mode-ribbon--flash {
+  animation: ribbon-flash 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes ribbon-flash {
+  0%   { filter: brightness(1); }
+  18%  { filter: brightness(1.14); }
+  100% { filter: brightness(1); }
+}
+
+/* Per-mode accent colors */
+.mode-ribbon--classic  { --ribbon-accent: var(--tt-primary, #007aff); }
+.mode-ribbon--learning { --ribbon-accent: var(--color-ios-indigo, #5856d6); }
+.mode-ribbon--games    { --ribbon-accent: var(--color-ios-green, #34c759); }
+
+/* ═══════════════════════════════════════════════════
+   REDUCED MOTION (WCAG 2.3.1)
+   ═══════════════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  .mode-ribbon,
+  .mode-ribbon__body,
+  .mode-ribbon__chevron::before,
+  .mode-ribbon__chevron::after,
+  .mode-ribbon__preview {
+    transition: none !important;
+    transform: none !important;
+  }
+  .mode-ribbon--stagger-left,
+  .mode-ribbon--stagger-right,
+  .mode-ribbon--stagger-left:hover,
+  .mode-ribbon--stagger-right:hover,
+  .mode-ribbon--focused.mode-ribbon--stagger-left,
+  .mode-ribbon--focused.mode-ribbon--stagger-right {
+    transform: none !important;
+  }
+  .mode-ribbon--flash {
+    animation: none !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════
+   RESPONSIVE BREAKPOINTS
+   ═══════════════════════════════════════════════════ */
+
+/* Tablet */
+@media (max-width: 1023px) {
+  .mode-ribbon {
+    width: 88%;
+    min-height: 118px;
+  }
+  .mode-ribbon__preview {
+    width: 210px;
+  }
+  .mode-ribbon__chevron {
+    width: 54px;
+  }
+  .mode-ribbon__desc {
+    display: none;
+  }
+}
+
+/* Small Tablet / Large Mobile */
+@media (max-width: 767px) {
+  .mode-ribbon {
+    width: 94%;
+    min-height: 98px;
+  }
+  .mode-ribbon__body {
+    gap: 0.875rem;
+    padding: 0.75rem 1rem 0.75rem 1.5rem;
+  }
+  .mode-ribbon--stagger-right .mode-ribbon__body {
+    padding: 0.75rem 1.5rem 0.75rem 1rem;
+  }
+  .mode-ribbon__info {
+    min-width: 120px;
+    gap: 0.625rem;
+  }
+  .mode-ribbon__icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 10px;
+  }
+  .mode-ribbon__title {
+    font-size: 1.125rem;
+  }
+  .mode-ribbon__subtitle {
+    font-size: 0.5625rem;
+  }
+  .mode-ribbon__preview {
+    width: 150px;
+  }
+  .mode-ribbon__chevron {
+    width: 38px;
+  }
+}
+
+/* Compact Mobile (<480px) */
+@media (max-width: 479px) {
+  .mode-ribbon__preview {
+    display: none;
+  }
+  .mode-ribbon__info {
+    flex: 1;
+  }
+}

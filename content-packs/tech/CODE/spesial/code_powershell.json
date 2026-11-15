@@ -1,0 +1,58 @@
+[
+  {
+    "text": "Write-Host \"Hello, World!\"",
+    "source": "PowerShell: Canonical Hello World Output"
+  },
+  {
+    "text": "Get-Service | Where-Object Status -eq 'Running' | Select-Object -Property Name, DisplayName, StartType",
+    "source": "PowerShell: System Service Status Query"
+  },
+  {
+    "text": "Compress-Archive -Path \"./dist/*\" -DestinationPath \"./bundle.zip\" -CompressionLevel Optimal -Force",
+    "source": "PowerShell: Native Archive Compression"
+  },
+  {
+    "text": "$cleanText = [regex]::Replace($inputString, \"[^a-zA-Z0-9]\", \"-\").Trim(\"-\").ToLower()",
+    "source": "PowerShell: .NET Regex Method Invocation"
+  },
+  {
+    "text": "Get-Process | Where-Object { $_.WorkingSet -gt 100MB } | Sort-Object -Property WorkingSet -Descending | Select-Object -First 10",
+    "source": "PowerShell: Pipeline Memory Inspection"
+  },
+  {
+    "text": "$config = @{\n    Host = \"127.0.0.1\"\n    Port = 8080\n    Debug = $false\n}\n$config | ConvertTo-Json -Depth 3 | Set-Content -Path \"config.json\"",
+    "source": "PowerShell: Hashtable to JSON Serialization"
+  },
+  {
+    "text": "Invoke-RestMethod -Uri \"https://api.github.com/repos/sveltejs/svelte/releases/latest\" -Headers @{ \"User-Agent\" = \"PowerShell\" }",
+    "source": "PowerShell: REST API Request with JSON Deserialization"
+  },
+  {
+    "text": "try {\n    $connection = Test-NetConnection -ComputerName \"localhost\" -Port 5432\n    if (-not $connection.TcpTestSucceeded) { throw \"Database offline\" }\n} catch {\n    Write-Error \"Health check failed: $_\"\n}",
+    "source": "PowerShell: Network Port Test with Try/Catch"
+  },
+  {
+    "text": "function Get-ProjectStats {\n    [CmdletBinding()]\n    param([Parameter(Mandatory)][string]$Path)\n    Get-ChildItem -Path $Path -Recurse -File | Measure-Object -Property Length -Sum\n}",
+    "source": "PowerShell: Advanced Function with CmdletBinding"
+  },
+  {
+    "text": "1..50 | ForEach-Object -Parallel {\n    Start-Sleep -Milliseconds 20\n    \"Processed item: $_ on thread $($Host.InstanceId)\"\n} -ThrottleLimit 8",
+    "source": "PowerShell: Multithreaded Parallel Pipeline"
+  },
+  {
+    "text": "$job = Start-Job -ScriptBlock {\n    param($target)\n    Test-Connection -ComputerName $target -Count 4\n} -ArgumentList \"1.1.1.1\"\n\nWait-Job -Job $job -Timeout 10\n$result = Receive-Job -Job $job\nRemove-Job -Job $job",
+    "source": "PowerShell: Background Job lifecycle with timeout wait"
+  },
+  {
+    "text": "$sb = [System.Text.StringBuilder]::new()\n1..100 | ForEach-Object { [void]$sb.Append(\"item-$_; \") }\n$sb.ToString()",
+    "source": "PowerShell: High-performance .NET StringBuilder utilization"
+  },
+  {
+    "text": "Get-ChildItem -Path Cert:\\CurrentUser\\My | Where-Object { $_.NotAfter -gt (Get-Date) } | Select-Object Subject, Thumbprint, NotAfter",
+    "source": "PowerShell: Certificate provider query for valid user certificates"
+  },
+  {
+    "text": "$credential = Get-Credential -UserName \"admin\" -Message \"Enter service secret\"\n$securePass = $credential.GetNetworkCredential().Password",
+    "source": "PowerShell: Secure credential prompt dialog"
+  }
+]

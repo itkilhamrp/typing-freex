@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Typing FreeX Content Pack Schema",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "version",
+    "language",
+    "type"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "language": {
+      "type": "string"
+    },
+    "type": {
+      "enum": [
+        "wordlist",
+        "quotes",
+        "keyboard-layout"
+      ]
+    },
+    "items": {
+      "type": "array"
+    },
+    "packed": {
+      "type": "string",
+      "description": "Newline-delimited word list (compact representation)"
+    }
+  }
+}

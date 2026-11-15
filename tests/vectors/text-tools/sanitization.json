@@ -1,0 +1,38 @@
+[
+  {
+    "name": "plain_ascii",
+    "input": "The quick brown fox jumps over the lazy dog.",
+    "expected_sanitized": "The quick brown fox jumps over the lazy dog.",
+    "expected_issues": []
+  },
+  {
+    "name": "crlf_normalization",
+    "input": "Line 1\r\nLine 2\rLine 3\nLine 4",
+    "expected_sanitized": "Line 1\nLine 2\nLine 3\nLine 4",
+    "expected_issues": []
+  },
+  {
+    "name": "bidi_override_stripping",
+    "input": "Normal text \u202Ereversed text\u202C normal again",
+    "expected_sanitized": "Normal text reversed text normal again",
+    "expected_issues": ["CONTROL_CHAR"]
+  },
+  {
+    "name": "smart_quotes_and_dashes",
+    "input": "“Hello” — said ‘Alice’…",
+    "expected_sanitized": "“Hello” — said ‘Alice’…",
+    "expected_issues": ["SMART_PUNCTUATION"]
+  },
+  {
+    "name": "tabs_and_multiple_spaces",
+    "input": "Word1\tWord2  Word3",
+    "expected_sanitized": "Word1\tWord2  Word3",
+    "expected_issues": ["TAB_CHARACTER", "MULTIPLE_SPACES"]
+  },
+  {
+    "name": "long_word",
+    "input": "Supercalifragilisticexpialidociousiswaytoolong",
+    "expected_sanitized": "Supercalifragilisticexpialidociousiswaytoolong",
+    "expected_issues": ["LONG_WORD:Supercalifragilisticexpialidociousiswaytoolong"]
+  }
+]

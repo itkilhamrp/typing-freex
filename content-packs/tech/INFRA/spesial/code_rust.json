@@ -1,0 +1,58 @@
+[
+  {
+    "text": "fn main() {\n    println!(\"Hello, World!\");\n}",
+    "source": "Rust: Canonical Hello World entrypoint"
+  },
+  {
+    "text": "let mut count: i32 = 0;\ncount += 1;\nprintln!(\"Count: {}\", count);",
+    "source": "Rust: Mutable variable binding"
+  },
+  {
+    "text": "let doubled: Vec<i32> = vec![1, 2, 3, 4, 5]\n    .into_iter()\n    .map(|x| x * 2)\n    .collect();",
+    "source": "Rust: Iterator map transformation"
+  },
+  {
+    "text": "fn divide(a: f64, b: f64) -> Result<f64, &'static str> {\n    if b == 0.0 {\n        Err(\"division by zero\")\n    } else {\n        Ok(a / b)\n    }\n}",
+    "source": "Rust: Result error handling"
+  },
+  {
+    "text": "match optional_val {\n    Some(val) if val > 10 => println!(\"High: {}\", val),\n    Some(val) => println!(\"Normal: {}\", val),\n    None => println!(\"Empty\"),\n}",
+    "source": "Rust: Pattern matching with match guard"
+  },
+  {
+    "text": "pub struct Buffer<T> {\n    data: Vec<T>,\n    capacity: usize,\n}\n\nimpl<T> Buffer<T> {\n    pub fn new(capacity: usize) -> Self {\n        Self { data: Vec::with_capacity(capacity), capacity }\n    }\n}",
+    "source": "Rust: Generic struct implementation"
+  },
+  {
+    "text": "pub trait Summary {\n    fn summarize_author(&self) -> String;\n    fn summarize(&self) -> String {\n        format!(\"(Read more from {}...)\", self.summarize_author())\n    }\n}",
+    "source": "Rust: Trait definition with default method"
+  },
+  {
+    "text": "use std::sync::{Arc, Mutex};\nuse std::thread;\n\nlet counter = Arc::new(Mutex::new(0));\nlet mut handles = vec![];\n\nfor _ in 0..10 {\n    let counter_clone = Arc::clone(&counter);\n    let handle = thread::spawn(move || {\n        let mut num = counter_clone.lock().unwrap();\n        *num += 1;\n    });\n    handles.push(handle);\n}\n\nfor handle in handles {\n    handle.join().unwrap();\n}",
+    "source": "Rust: Multithreaded state sharing with Arc and Mutex"
+  },
+  {
+    "text": "tokio::select! {\n    val = rx1.recv() => {\n        println!(\"Channel 1 emitted: {:?}\", val);\n    }\n    val = rx2.recv() => {\n        println!(\"Channel 2 emitted: {:?}\", val);\n    }\n    _ = tokio::time::sleep(tokio::time::Duration::from_millis(100)) => {\n        println!(\"Timeout elapsed\");\n    }\n}",
+    "source": "Rust: Tokio select macro concurrency"
+  },
+  {
+    "text": "use serde::{Deserialize, Serialize};\n\n#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]\n#[serde(rename_all = \"camelCase\")]\npub struct UserProfile {\n    pub id: u64,\n    pub username: String,\n    pub is_active: bool,\n    #[serde(default)]\n    pub tags: Vec<String>,\n}",
+    "source": "Rust: Serde derived serialization"
+  },
+  {
+    "text": "use std::io::{self, BufRead, BufReader};\nuse std::fs::File;\n\nfn count_lines(path: &str) -> io::Result<usize> {\n    let file = File::open(path)?;\n    let reader = BufReader::new(file);\n    Ok(reader.lines().count())\n}",
+    "source": "Rust: Buffered file reader with question mark operator"
+  },
+  {
+    "text": "use std::cell::RefCell;\nuse std::rc::Rc;\n\nstruct TreeNode {\n    val: i32,\n    left: Option<Rc<RefCell<TreeNode>>>,\n    right: Option<Rc<RefCell<TreeNode>>>,\n}\n\nimpl TreeNode {\n    fn new(val: i32) -> Rc<RefCell<Self>> {\n        Rc::new(RefCell::new(TreeNode { val, left: None, right: None }))\n    }\n}",
+    "source": "Rust: Interior mutability with Rc and RefCell"
+  },
+  {
+    "text": "pub enum SystemEvent {\n    Connected(String),\n    PayloadReceived(Vec<u8>),\n    Heartbeat { seq: u64, timestamp: i64 },\n    Disconnected,\n}",
+    "source": "Rust: Tagged enum algebraic data type"
+  },
+  {
+    "text": "pub async fn fetch_all<T, F, Fut>(items: Vec<T>, worker: F) -> Vec<Result<Fut::Output, &'static str>>\nwhere\n    F: Fn(T) -> Fut + Send + Sync + 'static,\n    Fut: std::future::Future + Send + 'static,\n    Fut::Output: Send + 'static,\n    T: Send + 'static,\n{\n    let mut handles = Vec::new();\n    for item in items {\n        handles.push(tokio::spawn(worker(item)));\n    }\n    let mut results = Vec::new();\n    for handle in handles {\n        results.push(handle.await.map_err(|_| \"task failed\"));\n    }\n    results\n}",
+    "source": "Rust: Async bounded worker pool with Tokio join handles"
+  }
+]

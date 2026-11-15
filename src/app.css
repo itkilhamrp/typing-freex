@@ -1,0 +1,129 @@
+/* =============================================
+ * Typing FreeX - Main CSS Entry Point
+ * Tailwind v4 CSS-first configuration (Svelte 5)
+ * Lokasi: src/app.css
+ * ============================================= */
+
+/* 1. Tailwind v4 core */
+@import "tailwindcss";
+
+/* 2. Skeleton UI v5 & Theme */
+@import "@skeletonlabs/skeleton";
+@import "@skeletonlabs/skeleton-svelte";
+@import "@skeletonlabs/skeleton/themes/cerberus";
+
+/* 3. Typing FreeX design tokens & custom styles */
+@import "./lib/shared/styles/tokens.css";
+@import "./lib/shared/styles/base.css";
+
+/* 4a. Tema yang MEREFERENSI CSS variable runtime (light/dark via tokens.css).
+ *     Memakai `inline` agar utility langsung menulis var(--tt-*) di elemen itu sendiri.
+ *     Tanpa `inline`, nilai di-resolve sekali di :root, sehingga override `.dark`
+ *     pada elemen turunan tidak ikut berubah, dan ada rantai var() ekstra. */
+@theme inline {
+  --color-tt-bg: var(--tt-bg);
+  --color-tt-surface: var(--tt-surface);
+  --color-tt-surface-2: var(--tt-surface-2);
+  --color-tt-surface-3: var(--tt-surface-3);
+  --color-tt-surface-elevated: var(--tt-surface-elevated);
+  --color-tt-glass-bg: var(--tt-glass-bg);
+  --color-tt-glass-border: var(--tt-glass-border);
+  --color-tt-separator: var(--tt-separator);
+  --color-tt-text: var(--tt-text);
+  --color-tt-text-secondary: var(--tt-text-secondary);
+  --color-tt-text-muted: var(--tt-text-secondary);
+  --color-tt-primary: var(--tt-primary);
+  --color-tt-untyped: var(--tt-untyped);
+  --color-tt-correct: var(--tt-correct);
+  --color-tt-incorrect: var(--tt-incorrect);
+  --color-tt-extra: var(--tt-extra);
+  --color-tt-success: var(--tt-success);
+  --color-tt-caret: var(--tt-caret);
+  --color-tt-focus-ring: var(--tt-focus-ring);
+
+  --radius-card: var(--tt-radius-card, 14px);
+  --radius-control: var(--tt-radius-control, 10px);
+  --radius-surface: 16px;
+
+  --spacing-sidebar: var(--tt-sidebar-width, 240px);
+  --spacing-sidebar-collapsed: var(--tt-sidebar-width-collapsed, 64px);
+
+  --duration-fast: var(--tt-motion-fast, 120ms);
+  --duration-base: var(--tt-motion-base, 220ms);
+
+  --shadow-glass: var(--tt-glass-shadow);
+  --shadow-glass-scroll: var(--tt-glass-shadow-scroll);
+  --blur-glass: var(--tt-glass-blur, 8px);
+}
+
+/* 4b. Tema statis (nilai literal) */
+@theme {
+  /* Semantic Status Palette */
+  --color-status-red: #ff3b30;
+  --color-status-orange: #ff9500;
+  --color-status-yellow: #ffcc00;
+  --color-status-green: #34c759;
+  --color-status-mint: #00c7be;
+  --color-status-teal: #30b0c7;
+  --color-status-cyan: #32ade6;
+  --color-status-blue: #007aff;
+  --color-status-indigo: #5856d6;
+  --color-status-purple: #af52de;
+  --color-status-pink: #ff2d55;
+  --color-status-brown: #a2845e;
+  --color-status-gray: #8e8e93;
+
+  /* Backward-compatible alias for ios-* during migration (active subset only) */
+  --color-ios-red: #ff3b30;
+  --color-ios-orange: #ff9500;
+  --color-ios-green: #34c759;
+  --color-ios-blue: #007aff;
+  --color-ios-indigo: #5856d6;
+  --color-ios-pink: #ff2d55;
+  --color-ios-gray: #8e8e93;
+
+  --font-typing: 'Typing FreeX Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-ui: -apple-system, 'SF Pro Text', 'SF UI Text', system-ui, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-display: -apple-system, 'SF Pro Display', 'SF Pro Text', system-ui, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+  --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+
+  --text-2xs: 0.625rem;
+  --text-2xs--line-height: 0.875rem;
+  --text-3xs: 0.5rem;
+  --text-3xs--line-height: 0.75rem;
+}
+
+/* 5. Dark mode support via class strategy */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* 6. Custom utility classes */
+@utility animate-fade-in {
+  animation: fade-in var(--tt-motion-base, 220ms) var(--tt-ease-default, cubic-bezier(0.16, 1, 0.3, 1));
+}
+
+/* Opt-in untuk list/konten sangat panjang (ratusan item+).
+ * Browser melewati layout & paint item yang di luar layar.
+ * Pakai: class="tt-cv-auto" lalu sesuaikan --tt-cv-height dengan tinggi item rata-rata. */
+@utility tt-cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: auto var(--tt-cv-height, 56px);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Monkeytype-style auto-hidden mouse pointer during active typing */
+body.cursor-hidden,
+body.cursor-hidden * {
+  cursor: none !important;
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "text": "template <typename T>\nconcept Numeric = std::is_arithmetic_v<T>;\n\ntemplate <Numeric T>\nT add(T a, T b) {\n    return a + b;\n}",
+    "source": "C++ 1k: C++20 Concept Constraint"
+  },
+  {
+    "text": "auto even_squares = numbers \n    | std::views::filter([](int n) { return n % 2 == 0; })\n    | std::views::transform([](int n) { return n * n; });",
+    "source": "C++ 1k: C++20 std::ranges Pipeline View"
+  },
+  {
+    "text": "class ScopeGuard {\n    std::function<void()> cleanup;\npublic:\n    explicit ScopeGuard(std::function<void()> f) : cleanup(std::move(f)) {}\n    ~ScopeGuard() { if (cleanup) cleanup(); }\n    ScopeGuard(const ScopeGuard&) = delete;\n    ScopeGuard& operator=(const ScopeGuard&) = delete;\n};",
+    "source": "C++ 1k: RAII ScopeGuard with Non-Copyable Semantics"
+  },
+  {
+    "text": "constexpr int fibonacci(int n) {\n    if (n <= 1) return n;\n    int a = 0, b = 1;\n    for (int i = 2; i <= n; ++i) {\n        int c = a + b;\n        a = b;\n        b = c;\n    }\n    return b;\n}",
+    "source": "C++ 1k: Compile-Time constexpr Fibonacci"
+  },
+  {
+    "text": "template <typename... Args>\nauto sum(Args... args) {\n    return (... + args);\n}",
+    "source": "C++ 1k: C++17 Variadic Fold Expression"
+  },
+  {
+    "text": "auto ptr = std::make_unique<Resource>(param);\nauto shared = std::make_shared<Context>(std::move(ptr));",
+    "source": "C++ 1k: Smart Pointer Ownership Transfer"
+  },
+  {
+    "text": "struct LRUCache {\n    int capacity;\n    std::list<std::pair<int, int>> items;\n    std::unordered_map<int, std::list<std::pair<int, int>>::iterator> cache;\n};",
+    "source": "C++ 1k: LRU Cache Structure with List and Map"
+  },
+  {
+    "text": "std::vector<int> v = {5, 2, 8, 1, 9};\nstd::sort(std::execution::par, v.begin(), v.end());",
+    "source": "C++ 1k: Parallel STL Sorting with Execution Policy"
+  },
+  {
+    "text": "template <typename T>\nvoid print_type(T&& arg) {\n    using Decayed = std::decay_t<T>;\n    std::cout << typeid(Decayed).name() << std::endl;\n}",
+    "source": "C++ 1k: Universal Reference and std::decay"
+  },
+  {
+    "text": "if (auto [it, inserted] = set.insert(val); !inserted) {\n    std::cout << \"Duplicate element detected\\n\";\n}",
+    "source": "C++ 1k: Structured Binding with If-Initialization"
+  }
+]

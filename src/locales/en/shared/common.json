@@ -1,0 +1,90 @@
+{
+  "app": {
+    "name": "Typing FreeX",
+    "tagline": "Offline Typing Test Engine",
+    "loading": "Loading..."
+  },
+  "nav": {
+    "typing": "Typing",
+    "classic": "Classic",
+    "arena": "Classic",
+    "customText": "Custom Text",
+    "analytics": "Analytics",
+    "history": "History",
+    "profiles": "Profiles",
+    "data": "Data Tools",
+    "settings": "Settings",
+    "collapseSidebar": "Collapse sidebar",
+    "expandSidebar": "Expand sidebar",
+    "exitMainMenu": "Main Menu",
+    "mainAriaLabel": "Main Navigation",
+    "mobileAriaLabel": "Mobile Navigation"
+  },
+  "unit": {
+    "wpm": "WPM",
+    "cpm": "CPM",
+    "wpmLong": "Words per minute",
+    "cpmLong": "Characters per minute"
+  },
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "back": "Back",
+    "done": "Done",
+    "loading": "Loading...",
+    "error": "Error: {message}",
+    "success": "Success",
+    "close": "Close",
+    "confirm": "Confirm",
+    "warning": "Warning",
+    "less": "Less",
+    "more": "More",
+    "open": "Open",
+    "selectPlaceholder": "Select option...",
+    "dropdownAriaLabel": "Dropdown select",
+    "searchPlaceholder": "Search...",
+    "clearSearch": "Clear search",
+    "clear": "Clear",
+    "previousPage": "Previous page",
+    "nextPage": "Next page",
+    "showingRangePrefix": "Showing",
+    "showingRangeOf": "of",
+    "noItemsFound": "No {label} found",
+    "defaultItemLabel": "runs",
+    "lineChartAriaLabel": "Line chart",
+    "chartHoverHint": "hover chart for session details",
+    "chartValueFallback": "Value",
+    "chartNetFallback": "net",
+    "chartRawFallback": "Raw"
+  },
+  "splash": {
+    "title": "Typing FreeX",
+    "loading": "Loading...",
+    "engineBadge": "TYPING ENGINE"
+  },
+  "firstRun": {
+    "welcome": "Welcome to Typing FreeX",
+    "tagline": "The high-performance, strictly offline typing test engine.",
+    "chooseLanguage": "Choose Interface Language",
+    "createProfilePrompt": "Enter your name or callsign to create your initial profile:",
+    "privacyNotice": "Zero telemetry, zero external network requests. All your typing data and personal bests stay 100% on your local disk.",
+    "getStarted": "Get Started",
+    "profilePlaceholder": "e.g. MasterTypist",
+    "errorEmptyName": "Please enter a valid profile name.",
+    "errorCreateFailed": "Failed to create profile"
+  },
+  "modeFormat": {
+    "modeTime": "Time",
+    "modeWords": "Words",
+    "modeQuote": "Quote",
+    "modeTech": "Tech",
+    "modeZen": "Zen",
+    "modeCustom": "Custom",
+    "modeUnknown": "Unknown",
+    "infinity": "Infinity",
+    "secondsSuffix": "{seconds}s",
+    "wordsVariant": "{words} Words"
+  }
+}

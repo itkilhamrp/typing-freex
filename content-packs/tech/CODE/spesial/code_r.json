@@ -1,0 +1,58 @@
+[
+  {
+    "text": "cat(\"Hello, World!\\n\")",
+    "source": "R: Canonical Hello World Console Output"
+  },
+  {
+    "text": "factors <- factor(c(\"low\", \"medium\", \"high\", \"medium\"), levels = c(\"low\", \"medium\", \"high\"), ordered = TRUE)",
+    "source": "R: Ordered Factor Categorical Encoding"
+  },
+  {
+    "text": "saveRDS(linear_model, file = \"model.rds\")\nrestored_model <- readRDS(\"model.rds\")",
+    "source": "R: Binary Object Serialization and Deserialization"
+  },
+  {
+    "text": "sample_vec <- seq(from = 1, to = 100, by = 3)\nsquared_values <- sample_vec[sample_vec %% 2 == 0]^2",
+    "source": "R: Vectorized Filtering and Power Operations"
+  },
+  {
+    "text": "dataset <- tryCatch({\n  read.csv(\"metrics.csv\", stringsAsFactors = FALSE)\n}, error = function(err) {\n  warning(\"Could not load metrics: \", err$message)\n  data.frame()\n})",
+    "source": "R: Robust File Ingestion with tryCatch Fallback"
+  },
+  {
+    "text": "grouped_means <- vapply(split(mtcars$mpg, mtcars$gear), mean, numeric(1))",
+    "source": "R: Type-Safe Split-Apply-Combine via vapply"
+  },
+  {
+    "text": "normalized_matrix <- apply(numeric_matrix, MARGIN = 2, function(x) {\n  (x - mean(x)) / sd(x)\n})",
+    "source": "R: Matrix Standard Normalization with apply"
+  },
+  {
+    "text": "data |>\n  dplyr::filter(!is.na(score) & score >= 75) |>\n  dplyr::group_by(cohort) |>\n  dplyr::summarise(mean_score = mean(score), total = dplyr::n())",
+    "source": "R: Native Pipe Syntax with Tidyverse Aggregation"
+  },
+  {
+    "text": "linear_model <- lm(mpg ~ wt + hp + qsec, data = mtcars)\nsummary(linear_model)",
+    "source": "R: Multiple Linear Regression and Model Diagnostics"
+  },
+  {
+    "text": "ggplot(data = mtcars, aes(x = wt, y = mpg, color = factor(cyl))) +\n  geom_point(size = 3, alpha = 0.8) +\n  geom_smooth(method = \"lm\", se = FALSE) +\n  theme_minimal()",
+    "source": "R: ggplot2 Scatter Plot with Regression Trend"
+  },
+  {
+    "text": "library(data.table)\ndt <- as.data.table(mtcars)\nresult <- dt[cyl == 6, .(avg_mpg = mean(mpg), count = .N), by = gear]",
+    "source": "R: Fast in-memory data.table aggregation"
+  },
+  {
+    "text": "new_report <- function(title, pages = 1) {\n  structure(list(title = title, pages = pages), class = \"report\")\n}\nprint.report <- function(x, ...) {\n  cat(sprintf(\"Report: '%s' (%d pages)\\n\", x$title, x$pages))\n}",
+    "source": "R: S3 object-oriented class and print method dispatch"
+  },
+  {
+    "text": "res <- parallel::mclapply(1:4, function(i) {\n  Sys.sleep(0.1)\n  i^2\n}, mc.cores = 2)",
+    "source": "R: Forked multicore parallel execution with mclapply"
+  },
+  {
+    "text": "tidy_summary <- function(df, num_col) {\n  stopifnot(is.data.frame(df))\n  col_data <- df[[num_col]]\n  list(\n    mean = mean(col_data, na.rm = TRUE),\n    median = median(col_data, na.rm = TRUE),\n    iqr = IQR(col_data, na.rm = TRUE)\n  )\n}",
+    "source": "R: Defensive programming utility with stopifnot assertion"
+  }
+]

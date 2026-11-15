@@ -1,0 +1,8 @@
+{
+  "id": "code_c",
+  "name": "C",
+  "version": "1.0.0",
+  "language": "code_c",
+  "type": "wordlist",
+  "packed": "auto\nbreak\ncase\nchar\nconst\ncontinue\ndefault\ndo\ndouble\nelse\nenum\nextern\nfloat\nfor\ngoto\nif\ninline\nint\nlong\nregister\nrestrict\nreturn\nshort\nsigned\nsizeof\nstatic\nstruct\nswitch\ntypedef\nunion\nunsigned\nvoid\nvolatile\nwhile\n_Bool\n_Complex\n_Imaginary\ninclude\ndefine\nundef\nifdef\nifndef\nendif\nerror\npragma\nNULL\nsize_t\nssize_t\nintptr_t\nuintptr_t\nint8_t\nint16_t\nint32_t\nint64_t\nuint8_t\nuint16_t\nuint32_t\nuint64_t\nprintf\nscanf\nsprintf\nsnprintf\nfprintf\nfscanf\nfopen\nfclose\nfread\nfwrite\nfseek\nftell\nrewind\nfflush\ngetchar\nputchar\nputs\ngets\nmalloc\ncalloc\nrealloc\nfree\nexit\nabort\natof\natoi\natol\nstrtod\nstrtol\nrand\nsrand\nstrcpy\nstrncpy\nstrcat\nstrncat\nstrcmp\nstrncmp\nstrlen\nstrchr\nstrrchr\nstrstr\nstrtok\nmemcpy\nmemmove\nmemset\nmemcmp\nmemchr\nerrno\nperror\nstrerror\nassert\ntrue\nfalse\nbool\nFILE\nstdin\nstdout\nstderr\nEOF\nSEEK_SET\nSEEK_CUR\nSEEK_END\nEXIT_SUCCESS\nEXIT_FAILURE"
+}

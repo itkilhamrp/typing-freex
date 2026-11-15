@@ -1,0 +1,58 @@
+[
+  {
+    "text": "print(\"Hello, World!\")",
+    "source": "Lua: Canonical Hello World Output"
+  },
+  {
+    "text": "vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Fuzzy find files' })",
+    "source": "Lua: Neovim Keymap API Definition"
+  },
+  {
+    "text": "local function map(tbl, fn)\n    local res = {}\n    for k, v in pairs(tbl) do res[k] = fn(v) end\n    return res\nend",
+    "source": "Lua: Table Map Functional Utility"
+  },
+  {
+    "text": "local t = {}\nfor word in string.gmatch(text, \"%S+\") do\n    table.insert(t, word)\nend",
+    "source": "Lua: String Tokenization with Pattern Matching"
+  },
+  {
+    "text": "local ok, result = pcall(function()\n    return loadfile(\"config.lua\")()\nend)\nif not ok then print(\"Error loading config:\", result) end",
+    "source": "Lua: Protected Call Error Handling with pcall"
+  },
+  {
+    "text": "local co = coroutine.create(function()\n    for i = 1, 10 do\n        coroutine.yield(i * 2)\n    end\nend)",
+    "source": "Lua: Coroutine Generator Execution"
+  },
+  {
+    "text": "local Class = {}\nClass.__index = Class\nfunction Class:new(name)\n    local instance = setmetatable({}, self)\n    instance.name = name\n    return instance\nend",
+    "source": "Lua: Classic OOP Metatable Inheritance Pattern"
+  },
+  {
+    "text": "return setmetatable({}, {\n    __index = function(_, k)\n        error(\"Attempt to access undefined global variable: \" .. tostring(k), 2)\n    end\n})",
+    "source": "Lua: Strict Global Environment Guard"
+  },
+  {
+    "text": "local function memoize(f)\n    local cache = setmetatable({}, { __mode = \"k\" })\n    return function(x)\n        if cache[x] == nil then cache[x] = f(x) end\n        return cache[x]\n    end\nend",
+    "source": "Lua: Memoization with Weak-Key Table"
+  },
+  {
+    "text": "local deepcopy; deepcopy = function(orig)\n    local orig_type = type(orig)\n    local copy\n    if orig_type == 'table' then\n        copy = {}\n        for orig_key, orig_value in next, orig, nil do\n            copy[deepcopy(orig_key)] = deepcopy(orig_value)\n        end\n        setmetatable(copy, deepcopy(getmetatable(orig)))\n    else\n        copy = orig\n    end\n    return copy\nend",
+    "source": "Lua: Recursive Deep Table Clone"
+  },
+  {
+    "text": "local Vector = {}\nVector.__index = Vector\nfunction Vector.new(x, y)\n    return setmetatable({ x = x, y = y }, Vector)\nend\nfunction Vector.__add(a, b)\n    return Vector.new(a.x + b.x, a.y + b.y)\nend\nfunction Vector:length()\n    return math.sqrt(self.x^2 + self.y^2)\nend",
+    "source": "Lua: Vector arithmetic with metamethod operator overloading"
+  },
+  {
+    "text": "local function file_lines(filename)\n    local f = assert(io.open(filename, \"r\"))\n    return function()\n        local line = f:read(\"*l\")\n        if not line then f:close() end\n        return line\n    end\nend",
+    "source": "Lua: State-preserving file line iterator closure"
+  },
+  {
+    "text": "local bit = bit or require(\"bit\")\nlocal function has_flag(mask, flag)\n    return bit.band(mask, flag) == flag\nend",
+    "source": "Lua: Bitwise flag masking helper function"
+  },
+  {
+    "text": "local function serialize(o)\n    if type(o) == \"number\" then io.write(o)\n    elseif type(o) == \"string\" then io.write(string.format(\"%q\", o))\n    elseif type(o) == \"table\" then\n        io.write(\"{\")\n        for k, v in pairs(o) do\n            io.write(\"[\"); serialize(k); io.write(\"]=\"); serialize(v); io.write(\",\")\n        end\n        io.write(\"}\")\n    end\nend",
+    "source": "Lua: Table serialization printer algorithm"
+  }
+]

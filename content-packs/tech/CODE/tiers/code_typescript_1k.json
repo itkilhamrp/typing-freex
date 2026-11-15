@@ -1,0 +1,42 @@
+[
+  {
+    "text": "type DeepReadonly<T> = {\n  readonly [P in keyof T]: T[P] extends object ? DeepReadonly<T[P]> : T[P];\n};",
+    "source": "TypeScript 1k: Recursive DeepReadonly Type"
+  },
+  {
+    "text": "type NonEmptyArray<T> = [T, ...T[]];\n\nfunction head<T>(arr: NonEmptyArray<T>): T {\n  return arr[0];\n}",
+    "source": "TypeScript 1k: Non-Empty Array Type Guard"
+  },
+  {
+    "text": "type ReturnTypeOf<T> = T extends (...args: any[]) => infer R ? R : never;",
+    "source": "TypeScript 1k: Conditional ReturnType with infer"
+  },
+  {
+    "text": "function assertNever(x: never): never {\n  throw new Error(`Unexpected value: ${JSON.stringify(x)}`);\n}",
+    "source": "TypeScript 1k: Exhaustive Switch Exhaustion Guard"
+  },
+  {
+    "text": "type Brand<K, T> = K & { readonly __brand: T };\ntype UserId = Brand<string, 'UserId'>;\ntype OrderId = Brand<string, 'OrderId'>;",
+    "source": "TypeScript 1k: Nominal Branding Pattern"
+  },
+  {
+    "text": "export type Result<T, E = Error> =\n  | { readonly ok: true; readonly value: T }\n  | { readonly ok: false; readonly error: E };",
+    "source": "TypeScript 1k: Functional Result Monad Type"
+  },
+  {
+    "text": "type DeepPartial<T> = {\n  [P in keyof T]?: T[P] extends object ? DeepPartial<T[P]> : T[P];\n};",
+    "source": "TypeScript 1k: Recursive DeepPartial Utility"
+  },
+  {
+    "text": "type SnakeToCamel<S extends string> = S extends `${infer T}_${infer U}`\n  ? `${T}${Capitalize<SnakeToCamel<U>>}`\n  : S;",
+    "source": "TypeScript 1k: Template Literal Snake to CamelCase"
+  },
+  {
+    "text": "const createStore = <T>(initialState: T) => {\n  let state = initialState;\n  const listeners = new Set<(s: T) => void>();\n  return {\n    getState: () => state,\n    setState: (next: T) => { state = next; listeners.forEach((fn) => fn(state)); },\n    subscribe: (fn: (s: T) => void) => { listeners.add(fn); return () => listeners.delete(fn); },\n  };\n};",
+    "source": "TypeScript 1k: Generic State Store with Observer Pattern"
+  },
+  {
+    "text": "type TupleToUnion<T extends readonly unknown[]> = T[number];",
+    "source": "TypeScript 1k: Const Tuple to Union Converter"
+  }
+]

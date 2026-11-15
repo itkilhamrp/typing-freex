@@ -1,0 +1,29 @@
+{
+  "id": "indonesian",
+  "name": "Indonesian",
+  "version": "1.0.0",
+  "language": "indonesian",
+  "type": "wordlist",
+  "items": [
+    "yang", "di", "dan", "itu", "dengan", "untuk", "tidak", "ini", "dari", "dalam",
+    "akan", "pada", "juga", "saya", "ke", "karena", "tersebut", "bisa", "ada", "mereka",
+    "lebih", "tahun", "sudah", "oleh", "saat", "dapat", "ia", "hari", "orang", "satu",
+    "banyak", "setelah", "seperti", "dua", "atau", "hanya", "telah", "bagi", "secara", "semua",
+    "tetapi", "kita", "kamu", "bukan", "tentang", "harus", "antara", "menjadi", "lain", "masih",
+    "sangat", "sama", "waktu", "dunia", "hal", "besar", "jalan", "kata", "hidup", "tempat",
+    "mana", "lama", "kembali", "kerja", "lagi", "baru", "bawah", "atas", "sampai", "pun",
+    "tanpa", "masuk", "keluar", "datang", "pernah", "tahu", "mau", "ingin", "melihat", "mendengar",
+    "bicara", "baik", "buruk", "kecil", "tinggi", "rendah", "cepat", "lambat", "jauh", "dekat",
+    "pagi", "siang", "sore", "malam", "mata", "tangan", "kaki", "kepala", "hati", "jiwa",
+    "pikir", "rasa", "nama", "rumah", "kota", "negeri", "negara", "tanah", "air", "udara",
+    "api", "awan", "angin", "hujan", "panas", "dingin", "terang", "gelap", "putih", "hitam",
+    "merah", "biru", "hijau", "kuning", "buku", "tulis", "baca", "belajar", "ajar", "guru",
+    "teman", "sahabat", "keluarga", "anak", "ibu", "ayah", "saudara", "pria", "wanita", "manusia",
+    "hewan", "pohon", "bunga", "daun", "buah", "hutan", "laut", "gunung", "sungai", "pantai",
+    "jalan", "mobil", "motor", "sepeda", "kereta", "kapal", "pesawat", "uang", "pasar", "toko",
+    "harga", "beli", "jual", "makan", "minum", "tidur", "bangun", "duduk", "berdiri", "lari",
+    "buka", "tutup", "ambil", "beri", "bawa", "kirim", "terima", "cari", "temu", "ingat",
+    "lupa", "harap", "yakin", "percaya", "benar", "salah", "mudah", "susah", "sulit", "jelas",
+    "pasti", "mungkin", "penting", "biasa", "luar", "sekarang", "besok", "kemarin", "lalu", "depan"
+  ]
+}

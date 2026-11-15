@@ -1,0 +1,58 @@
+[
+  {
+    "text": "# Hello, World!\n\nWelcome to modern technical documentation with Markdown.",
+    "source": "Markdown: Canonical Hello World Document"
+  },
+  {
+    "text": "**Bold statement** with `inline code` and *italic emphasis*.",
+    "source": "Markdown: Inline Text Formatting Styles"
+  },
+  {
+    "text": "```bash\npnpm tauri dev --release\n```",
+    "source": "Markdown: Fenced Bash Code Block"
+  },
+  {
+    "text": "## Contributing Guidelines\n\n1. Fork the repository and create a feature branch.\n2. Ensure all tests pass with `pnpm test`.\n3. Keep commits atomic and adhere to Conventional Commits standard.",
+    "source": "Markdown: Numbered Ordered List"
+  },
+  {
+    "text": "For full technical governance details, please review [AGENTS.md](file:///AGENTS.md).",
+    "source": "Markdown: Clickable Markdown File Link"
+  },
+  {
+    "text": "- [x] Setup SvelteKit 3 static adapter\n- [x] Configure Tailwind CSS v4 via pure CSS\n- [x] Lock Skeleton UI v5.0.1\n- [ ] Expand quote content packs across world languages",
+    "source": "Markdown: Interactive Task Checklist"
+  },
+  {
+    "text": "### Footnotes & References\n\nHere is a reference point[^1] to the Unix philosophy.\n\n[^1]: Eric S. Raymond, *The Art of Unix Programming*, 2003.",
+    "source": "Markdown: Footnotes Syntax"
+  },
+  {
+    "text": "> [!IMPORTANT]\n> Skeleton UI is locked to version 5.0.1. Downgrading to v2 or v3 is strictly forbidden.",
+    "source": "Markdown: Modern GitHub Callout Alert"
+  },
+  {
+    "text": "| Command | Purpose | Expected Status |\n| :--- | :--- | :--- |\n| `pnpm typecheck` | Svelte & TypeScript check | 0 errors, 0 warnings |\n| `pnpm lint` | Architecture boundary validation | 0 errors |\n| `pnpm test` | Complete Vitest suite | 100% passing |",
+    "source": "Markdown: GitHub Flavored Markdown Table"
+  },
+  {
+    "text": "```mermaid\ngraph TD\n    A[Keystroke Event] --> B[InputProcessor]\n    B --> C[MetricCalculator]\n    C --> D[LiveStats UI]\n```",
+    "source": "Markdown: Mermaid Flowchart Diagram"
+  },
+  {
+    "text": "<details>\n<summary><strong>Advanced Configuration Flags</strong></summary>\n\n| Flag | Type | Default |\n| :--- | :--- | :--- |\n| `--release` | boolean | `false` |\n| `--target` | string | `x86_64-unknown-linux-gnu` |\n\n</details>",
+    "source": "Markdown: Collapsible details disclosure widget"
+  },
+  {
+    "text": "```rust\n/// Calculates WPM (Words Per Minute) based on net keystrokes.\n///\n/// # Examples\n/// ```\n/// let wpm = calculate_wpm(300, 60.0);\n/// assert_eq!(wpm, 60.0);\n/// ```\npub fn calculate_wpm(chars: usize, seconds: f64) -> f64 {\n    (chars as f64 / 5.0) / (seconds / 60.0)\n}\n```",
+    "source": "Markdown: Rustdoc documentation comment with doctest"
+  },
+  {
+    "text": "<!-- markdownlint-disable MD013 -->\n> [!TIP]\n> Pro-tip: Run `pnpm run check:budget` before every pull request to avoid bundle size regressions.\n<!-- markdownlint-enable MD013 -->",
+    "source": "Markdown: Linter inline suppression directive"
+  },
+  {
+    "text": "```math\n\\text{WPM} = \\frac{\\text{Chars} - \\text{Errors}}{5} \\times \\frac{60}{\\text{Time (s)}}\n```",
+    "source": "Markdown: LaTeX mathematical formula notation"
+  }
+]

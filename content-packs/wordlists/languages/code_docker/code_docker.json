@@ -1,0 +1,8 @@
+{
+  "id": "code_docker",
+  "name": "Docker",
+  "version": "1.0.0",
+  "language": "code_docker",
+  "type": "wordlist",
+  "packed": "FROM\nRUN\nCMD\nLABEL\nMAINTAINER\nEXPOSE\nENV\nADD\nCOPY\nENTRYPOINT\nVOLUME\nUSER\nWORKDIR\nARG\nONBUILD\nSTOPSIGNAL\nHEALTHCHECK\nSHELL\ndocker\nbuild\ntag\npush\npull\nrun\nstop\nstart\nrestart\nkill\nrm\nrmi\nps\nimages\nexec\nlogs\ninspect\ntop\nattach\ncp\ncommit\nevents\nhistory\ninfo\nversion\nnetwork\ncreate\nconnect\ndisconnect\nls\nvolume\nprune\nsystem\ndf\nstats\ncompose\nup\ndown\nbuild\nlogs\nps\nstop\nstart\nrestart\nservices\nversion\nimage\ncontainer_name\nports\nenvironment\nenv_file\ndepends_on\nrestart\nvolumes\nnetworks\ncommand\nentrypoint\nalways\nunless-stopped\non-failure\nbridge\nhost\noverlay\nmacvlan\nnone\nDockerfile\ndocker-compose\ncontainer\ndaemon\nregistry\nAlpine\nDebian\nUbuntu\nCentOS\nscratch"
+}

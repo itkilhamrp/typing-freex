@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "test_uuid": "golden-trace-01-time-15s",
+  "description": "Time 15s test with steady pace and timeline sampling",
+  "config": {
+    "mode": "time",
+    "timeLimit": 15
+  },
+  "targetText": "the quick brown fox jumps over the lazy dog and runs fast away now here",
+  "events": [
+    { "type": "CHARACTER_INPUT", "char": "t", "timestamp": 1000 },
+    { "type": "CHARACTER_INPUT", "char": "h", "timestamp": 1500 },
+    { "type": "CHARACTER_INPUT", "char": "e", "timestamp": 2000 },
+    { "type": "SPACE", "timestamp": 2500 },
+    { "type": "TICK", "timestamp": 3000 },
+    { "type": "CHARACTER_INPUT", "char": "q", "timestamp": 3500 },
+    { "type": "CHARACTER_INPUT", "char": "u", "timestamp": 4000 },
+    { "type": "CHARACTER_INPUT", "char": "i", "timestamp": 4500 },
+    { "type": "CHARACTER_INPUT", "char": "c", "timestamp": 5000 },
+    { "type": "CHARACTER_INPUT", "char": "k", "timestamp": 5500 },
+    { "type": "SPACE", "timestamp": 6000 },
+    { "type": "TICK", "timestamp": 7000 },
+    { "type": "CHARACTER_INPUT", "char": "b", "timestamp": 7500 },
+    { "type": "CHARACTER_INPUT", "char": "r", "timestamp": 8000 },
+    { "type": "CHARACTER_INPUT", "char": "o", "timestamp": 8500 },
+    { "type": "CHARACTER_INPUT", "char": "w", "timestamp": 9000 },
+    { "type": "CHARACTER_INPUT", "char": "n", "timestamp": 9500 },
+    { "type": "SPACE", "timestamp": 10000 },
+    { "type": "TICK", "timestamp": 11000 },
+    { "type": "TICK", "timestamp": 12000 },
+    { "type": "TICK", "timestamp": 13000 },
+    { "type": "TICK", "timestamp": 14000 },
+    { "type": "TICK", "timestamp": 15000 },
+    { "type": "TICK", "timestamp": 16000 }
+  ],
+  "expected": {
+    "wpm": 10.4,
+    "rawWpm": 12.8,
+    "accuracy": 100,
+    "consistency": 79.8,
+    "durationSeconds": 15,
+    "correctChars": 13,
+    "incorrectChars": 0,
+    "extraChars": 0
+  }
+}

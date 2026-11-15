@@ -1,0 +1,58 @@
+[
+  {
+    "text": "main :: IO ()\nmain = putStrLn \"Hello, World!\"",
+    "source": "Haskell: Canonical Hello World IO"
+  },
+  {
+    "text": "evenSquares = map (^2) . filter even",
+    "source": "Haskell: Point-Free Function Composition"
+  },
+  {
+    "text": "curry :: ((a, b) -> c) -> a -> b -> c\ncurry f x y = f (x, y)",
+    "source": "Haskell: Higher-Order Function Currying"
+  },
+  {
+    "text": "safeDivide :: Double -> Double -> Maybe Double\nsafeDivide _ 0 = Nothing\nsafeDivide x y = Just (x / y)",
+    "source": "Haskell: Maybe Monad Safe Division"
+  },
+  {
+    "text": "main :: IO ()\nmain = do\n    putStrLn \"Enter your name:\"\n    name <- getLine\n    putStrLn (\"Greetings, \" ++ name ++ \"!\")",
+    "source": "Haskell: Do-Notation Monadic IO Sequence"
+  },
+  {
+    "text": "data Tree a = EmptyTree | Node a (Tree a) (Tree a) deriving (Show, Read, Eq)",
+    "source": "Haskell: Algebraic Binary Tree Data Type"
+  },
+  {
+    "text": "foldr :: (a -> b -> b) -> b -> [a] -> b\nfoldr _ z []     = z\nfoldr f z (x:xs) = f x (foldr f z xs)",
+    "source": "Haskell: Fundamental Right Fold Implementation"
+  },
+  {
+    "text": "class Functor f where\n    fmap :: (a -> b) -> f a -> f b",
+    "source": "Haskell: Functor Typeclass Definition"
+  },
+  {
+    "text": "primes :: [Integer]\nprimes = sieve [2..]\n  where sieve (p:xs) = p : sieve [x | x <- xs, x `mod` p /= 0]",
+    "source": "Haskell: Sieve of Eratosthenes Infinite Prime Stream"
+  },
+  {
+    "text": "fibs :: [Integer]\nfibs = 0 : 1 : zipWith (+) fibs (tail fibs)",
+    "source": "Haskell: Infinite Lazy Fibonacci Stream with zipWith"
+  },
+  {
+    "text": "qsort :: Ord a => [a] -> [a]\nqsort [] = []\nqsort (x:xs) = qsort smaller ++ [x] ++ qsort larger\n  where smaller = [a | a <- xs, a <= x]\n        larger  = [b | b <- xs, b > x]",
+    "source": "Haskell: Elegantly concise Quicksort implementation"
+  },
+  {
+    "text": "newtype State s a = State { runState :: s -> (a, s) }\n\ninstance Functor (State s) where\n    fmap f (State g) = State $ \\s -> let (a, s') = g s in (f a, s')",
+    "source": "Haskell: State Monad custom type and Functor instance"
+  },
+  {
+    "text": "type Parser a = String -> [(a, String)]\n\nitem :: Parser Char\nitem []     = []\nitem (c:cs) = [(c, cs)]",
+    "source": "Haskell: Monadic parser combinator primitive definition"
+  },
+  {
+    "text": "data TrafficLight = Red | Yellow | Green\n\ninstance Eq TrafficLight where\n    Red == Red       = True\n    Yellow == Yellow = True\n    Green == Green   = True\n    _ == _           = False",
+    "source": "Haskell: Explicit Eq typeclass instance declaration"
+  }
+]

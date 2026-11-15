@@ -1,0 +1,58 @@
+[
+  {
+    "text": "const greeting: string = \"Hello, World!\";\nconsole.log(greeting);",
+    "source": "TypeScript: Typed Hello World declaration"
+  },
+  {
+    "text": "type Nullable<T> = T | null | undefined;\ntype ID = string | number;",
+    "source": "TypeScript: Union and utility type aliases"
+  },
+  {
+    "text": "function isDefined<T>(val: T | null | undefined): val is T {\n  return val !== null && val !== undefined;\n}\nconst valid = [1, null, 2, undefined].filter(isDefined);",
+    "source": "TypeScript: Custom type guard predicate"
+  },
+  {
+    "text": "type Prettify<T> = {\n  [K in keyof T]: T[K];\n} & {};\n\ntype UserProfile = Prettify<User & { role: 'admin' | 'guest' }>;",
+    "source": "TypeScript: Prettify helper type normalization"
+  },
+  {
+    "text": "interface Repository<T extends { id: string }> {\n  findById(id: string): Promise<T | null>;\n  save(entity: T): Promise<void>;\n  delete(id: string): Promise<boolean>;\n}",
+    "source": "TypeScript: Generic repository interface contract"
+  },
+  {
+    "text": "type NonEmptyArray<T> = [T, ...T[]];\n\nfunction head<T>(arr: NonEmptyArray<T>): T {\n  return arr[0];\n}",
+    "source": "TypeScript: Non-empty array tuple constraint"
+  },
+  {
+    "text": "type KeysOfType<T, U> = {\n  [K in keyof T]: T[K] extends U ? K : never;\n}[keyof T];",
+    "source": "TypeScript: Conditional key filter type"
+  },
+  {
+    "text": "const assertNever = (value: never): never => {\n  throw new Error(`Unexpected value: ${JSON.stringify(value)}`);\n};",
+    "source": "TypeScript: Exhaustive switch check assertNever"
+  },
+  {
+    "text": "type DeepReadonly<T> = {\n  readonly [K in keyof T]: T[K] extends object\n    ? DeepReadonly<T[K]>\n    : T[K];\n};",
+    "source": "TypeScript: DeepReadonly recursive mapped type"
+  },
+  {
+    "text": "export interface Store<T> {\n  readonly value: T;\n  subscribe(listener: (val: T) => void): () => void;\n  set(next: T): void;\n}",
+    "source": "TypeScript: Observable reactive store contract"
+  },
+  {
+    "text": "async function retry<T>(\n  fn: () => Promise<T>,\n  retries: number = 3,\n  delayMs: number = 500\n): Promise<T> {\n  try {\n    return await fn();\n  } catch (err) {\n    if (retries <= 0) throw err;\n    await new Promise((r) => setTimeout(r, delayMs));\n    return retry(fn, retries - 1, delayMs * 2);\n  }\n}",
+    "source": "TypeScript: Generic async retry with exponential backoff"
+  },
+  {
+    "text": "type DeepPartial<T> = {\n  [P in keyof T]?: T[P] extends (infer U)[]\n    ? DeepPartial<U>[]\n    : T[P] extends object\n    ? DeepPartial<T[P]>\n    : T[P];\n};",
+    "source": "TypeScript: Recursive DeepPartial mapped type"
+  },
+  {
+    "text": "type Path<T> = T extends object\n  ? { [K in keyof T]: `${Exclude<K, symbol>}${Path<T[K]> extends \"\" ? \"\" : `.${Path<T[K]>}`}` }[keyof T]\n  : \"\";",
+    "source": "TypeScript: Template literal string object path union"
+  },
+  {
+    "text": "class Result<T, E = Error> {\n  private constructor(\n    private readonly _value?: T,\n    private readonly _error?: E\n  ) {}\n  static ok<T>(value: T): Result<T, never> {\n    return new Result<T, never>(value, undefined);\n  }\n  static err<E>(error: E): Result<never, E> {\n    return new Result<never, E>(undefined, error);\n  }\n  isOk(): this is { unwrap(): T } {\n    return this._error === undefined;\n  }\n  unwrap(): T {\n    if (this._error !== undefined) throw this._error;\n    return this._value!;\n  }\n}",
+    "source": "TypeScript: Rust-like Result algebraic monad implementation"
+  }
+]

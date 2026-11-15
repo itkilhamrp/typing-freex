@@ -1,0 +1,195 @@
+/* Global resets & typography
+ * Lokasi: src/lib/shared/styles/base.css */
+:root {
+  /* 1. Default Comic Arrow Sprite (Cyan/Magenta chromatic shift + ink outline) */
+  --tt-cursor-default: url('/cursors/default.svg') 4 2, default;
+
+  /* 2. Interactive Pointer / Button Action Sprite (Spider-Verse Strike Pointer + Spark) */
+  --tt-cursor-pointer: url('/cursors/pointer.svg') 5 2, pointer;
+
+  /* 3. Text Input / Caret I-Beam Sprite (Spider-Verse Chromatic I-Beam) */
+  --tt-cursor-text: url('/cursors/text.svg') 14 14, text;
+
+  /* 4. Grab / Drag-Ready Sprite (Kinetic Crosshair Claw) */
+  --tt-cursor-grab: url('/cursors/grab.svg') 14 14, grab;
+
+  /* 5. Active Grabbing / Dragging Sprite (Locked Kinetic Core) */
+  --tt-cursor-grabbing: url('/cursors/grabbing.svg') 14 14, grabbing;
+
+  /* 6. Disabled / Blocked Sprite (Spider-Verse Glitch Hazard X) */
+  --tt-cursor-not-allowed: url('/cursors/not-allowed.svg') 14 14, not-allowed;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--tt-bg);
+  color: var(--tt-text);
+  font-family: var(--tt-font-ui);
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  overflow: hidden;
+  /* App desktop: tidak ada bounce / scroll chaining di level dokumen */
+  overscroll-behavior: none;
+  cursor: var(--tt-cursor-default) !important;
+}
+
+/* Lock default Spider-Verse cursor across all elements, corners, edges, and scrollbars */
+#app,
+*,
+*::before,
+*::after,
+.cursor-default,
+::-webkit-scrollbar,
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-corner {
+  cursor: var(--tt-cursor-default);
+}
+
+/* Interactive Pointer State (Buttons, Links, Options, Menu Items & Controls) */
+button:not(:disabled),
+a[href],
+[role="button"]:not([aria-disabled="true"]),
+[role="option"],
+[role="menuitem"],
+[role="tab"],
+select:not(:disabled),
+summary,
+label[for],
+.cursor-pointer {
+  cursor: var(--tt-cursor-pointer) !important;
+}
+
+/* Text / Caret State (Inputs, Textareas, Selectable Text) */
+input:not([type="checkbox"]):not([type="radio"]):not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="range"]):not(:disabled),
+textarea:not(:disabled),
+[contenteditable="true"],
+.tt-selectable,
+.cursor-text {
+  cursor: var(--tt-cursor-text) !important;
+}
+
+/* Grab & Grabbing States (Draggable FAB & Panels) */
+.cursor-grab {
+  cursor: var(--tt-cursor-grab) !important;
+}
+
+.cursor-grabbing {
+  cursor: var(--tt-cursor-grabbing) !important;
+}
+
+/* Disabled / Not-Allowed State */
+:disabled,
+[aria-disabled="true"],
+.cursor-not-allowed {
+  cursor: var(--tt-cursor-not-allowed) !important;
+}
+
+/* WKWebView (macOS Tauri) tidak bisa mengetik di input yang berada di bawah
+ * `user-select: none`, jadi field teks dikembalikan secara eksplisit. */
+input,
+textarea,
+[contenteditable="true"],
+.tt-selectable {
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--tt-bg);
+  color: var(--tt-text);
+}
+
+/* Typing Font Definition
+ * FIX: `monospace` bukan entri valid di `src` — satu token tidak valid membuat
+ * seluruh deklarasi src dibuang dan @font-face ini tidak pernah aktif. */
+@font-face {
+  font-family: "Typing FreeX Mono";
+  src: local("SF Mono"), local("Menlo"), local("Monaco"), local("Consolas");
+  font-display: swap;
+}
+
+/* Focus ring keyboard untuk elemen non-input */
+:focus-visible:not(input):not(textarea):not(select) {
+  outline: 1.5px solid var(--tt-focus-ring);
+  outline-offset: 1px;
+}
+
+/* Input iOS: satu highlight 1px + glow lembut, tanpa outline ganda.
+ * Warna glow berasal dari token (--tt-focus-glow) sehingga light/dark
+ * tidak perlu selector terpisah. */
+input:not([type="checkbox"]):not([type="radio"]):not([type="search"]):not([name="search"]):not(.sr-only),
+textarea,
+select {
+  outline: none;
+  transition: border-color var(--tt-motion-fast) var(--tt-ease-default),
+    box-shadow var(--tt-motion-fast) var(--tt-ease-default);
+}
+
+input:not([type="checkbox"]):not([type="radio"]):not([type="search"]):not([name="search"]):not(.sr-only):focus,
+textarea:focus,
+select:focus {
+  outline: none !important;
+  outline-offset: 0 !important;
+  border-color: var(--tt-primary) !important;
+  box-shadow: 0 0 0 2px var(--tt-focus-glow) !important;
+}
+
+/* Native select: konsisten light/dark */
+select {
+  background-color: var(--tt-surface);
+  color: var(--tt-text);
+  border-color: var(--tt-separator);
+}
+
+select option {
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+.dark select option,
+[data-theme="dark"] select option {
+  background-color: #1C1C1E;
+  color: #FFFFFF;
+}
+
+/* Scrollbar tipis.
+ * FIX: sebelumnya `* { scrollbar-width; scrollbar-color }` + ::-webkit-scrollbar.
+ * Di Chromium/WebView2 properti standar membuat gaya ::-webkit-scrollbar diabaikan,
+ * dan selector `*` memaksa style recalc untuk SETIAP elemen.
+ * Sekarang: ::-webkit-scrollbar untuk WebKit/WebView2, properti standar hanya
+ * fallback untuk engine yang tidak mengenal pseudo tersebut, dipasang di root saja.
+ * Catatan: scrollbar bergaya ini bukan overlay, ia memakai 6px lebar layout. */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(120, 120, 128, 0.25);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(120, 120, 128, 0.45);
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(120, 120, 128, 0.25) transparent;
+  }
+}

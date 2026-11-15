@@ -1,0 +1,58 @@
+[
+  {
+    "text": "docker run --rm hello-world",
+    "source": "Docker: Canonical hello-world test container"
+  },
+  {
+    "text": "docker ps -a --format \"table {{.ID}}\\t{{.Image}}\\t{{.Status}}\\t{{.Ports}}\"",
+    "source": "Docker: Formatted container status table listing"
+  },
+  {
+    "text": "FROM alpine:3.19\nRUN apk add --no-cache ca-certificates tzdata\nUSER nobody\nENTRYPOINT [\"/bin/sh\"]",
+    "source": "Docker: Minimal Alpine runner container"
+  },
+  {
+    "text": "ENV NODE_ENV=production\nENV PORT=8080\nEXPOSE 8080\nCMD [\"node\", \"server.js\"]",
+    "source": "Docker: Production server entrypoint directives"
+  },
+  {
+    "text": "docker run -d --name postgres-db \\\n  -e POSTGRES_PASSWORD=secret \\\n  -p 5432:5432 \\\n  postgres:16-alpine",
+    "source": "Docker: Running background database daemon"
+  },
+  {
+    "text": "HEALTHCHECK --interval=30s --timeout=3s --retries=3 \\\n  CMD curl -f http://localhost:8080/health || exit 1",
+    "source": "Docker: Container healthcheck probe"
+  },
+  {
+    "text": "docker build -t app:latest .\ndocker tag app:latest registry.internal/app:v1\ndocker push registry.internal/app:v1",
+    "source": "Docker: Build, tag, and publish workflow"
+  },
+  {
+    "text": "services:\n  web:\n    build: .\n    ports:\n      - \"3000:3000\"\n    restart: unless-stopped",
+    "source": "Docker: Multi-container compose definition"
+  },
+  {
+    "text": "FROM node:20-alpine AS builder\nWORKDIR /app\nCOPY package*.json ./\nRUN npm ci\nCOPY . .\nRUN npm run build",
+    "source": "Docker: Multi-stage Node.js build cache"
+  },
+  {
+    "text": "FROM golang:1.22-alpine AS build\nWORKDIR /src\nCOPY . .\nRUN CGO_ENABLED=0 go build -ldflags=\"-s -w\" -o /bin/server .",
+    "source": "Docker: Scratch-ready static binary compilation"
+  },
+  {
+    "text": "docker compose down -v\ndocker system prune -af --volumes",
+    "source": "Docker: Complete teardown and system prune"
+  },
+  {
+    "text": "docker buildx create --use --name multiarch-builder\ndocker buildx inspect --bootstrap\ndocker buildx build --platform linux/amd64,linux/arm64 -t app:latest --push .",
+    "source": "Docker: Multi-platform buildx cross-compilation pipeline"
+  },
+  {
+    "text": "services:\n  api:\n    image: node:20-alpine\n    ports:\n      - \"8080:8080\"\n    environment:\n      - DB_HOST=db\n    depends_on:\n      db:\n        condition: service_healthy\n  db:\n    image: postgres:16-alpine\n    environment:\n      - POSTGRES_PASSWORD=postgres\n    healthcheck:\n      test: [\"CMD-SHELL\", \"pg_isready -U postgres\"]\n      interval: 5s\n      timeout: 5s\n      retries: 5",
+    "source": "Docker: Service dependency healthcheck orchestration"
+  },
+  {
+    "text": "{\n  \"log-driver\": \"json-file\",\n  \"log-opts\": {\n    \"max-size\": \"10m\",\n    \"max-file\": \"3\"\n  },\n  \"icc\": false,\n  \"no-new-privileges\": true\n}",
+    "source": "Docker: Production daemon daemon.json security configuration"
+  }
+]

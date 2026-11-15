@@ -1,0 +1,8 @@
+{
+  "id": "code_typescript",
+  "name": "TypeScript",
+  "version": "1.0.0",
+  "language": "code_typescript",
+  "type": "wordlist",
+  "packed": "interface\ntype\nenum\nimplements\ndeclare\nnamespace\nabstract\nreadonly\nkeyof\ntypeof\ninfer\nnever\nunknown\nany\nvoid\nboolean\nnumber\nstring\nsymbol\nbigint\nobject\nRecord\nPartial\nRequired\nReadonly\nPick\nOmit\nExclude\nExtract\nNonNullable\nParameters\nConstructorParameters\nReturnType\nInstanceType\nThisParameterType\nOmitThisParameter\nThisType\nAwaited\nUppercase\nLowercase\nCapitalize\nUncapitalize\nas\nis\nasserts\nsatisfies\noverride\nprivate\nprotected\npublic\nstatic\ngeneric\nextends\nsuper\nthis\nnew\nimport\nexport\nfrom\ntype\nmodule\nglobal\nconst\nlet\nvar\nfunction\nreturn\nasync\nawait\npromise\nArray\nTuple\nUnion\nIntersection\nConditional\nMapped\nTemplateLiteral\nIndexAccess\nDiscriminatedUnion\nTypeGuard\nTypeAssertion\nGenericConstraint\nDefaultGeneric\nRecursiveType\nUtilityType\nAmbientDeclaration\nTripleSlashDirective\nCompilerOptions\nstrict\nnoImplicitAny\nstrictNullChecks\nstrictFunctionTypes\nstrictBindCallApply\nstrictPropertyInitialization\nnoImplicitThis\nalwaysStrict\nnoUnusedLocals\nnoUnusedParameters\nexactOptionalPropertyTypes\nnoImplicitReturns\nnoFallthroughCasesInSwitch\nnoUncheckedIndexedAccess\nnoImplicitOverride\nnoPropertyAccessFromIndexSignature\nallowUnusedLabels\nallowUnreachableCode\nesModuleInterop\nallowSyntheticDefaultImports\nmoduleResolution\ntarget\nlib\noutDir\nrootDir\npaths\nbasename"
+}

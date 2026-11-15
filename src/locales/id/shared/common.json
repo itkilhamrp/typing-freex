@@ -1,0 +1,90 @@
+{
+  "app": {
+    "name": "Typing FreeX",
+    "tagline": "Mesin Uji Ketik Offline",
+    "loading": "Memuat..."
+  },
+  "nav": {
+    "typing": "Typing",
+    "classic": "Klasik",
+    "arena": "Klasik",
+    "customText": "Teks Kustom",
+    "analytics": "Analisis",
+    "history": "Riwayat",
+    "profiles": "Profil",
+    "data": "Kelola Data",
+    "settings": "Pengaturan",
+    "collapseSidebar": "Ciutkan bilah samping",
+    "expandSidebar": "Perluas bilah samping",
+    "exitMainMenu": "Menu Utama",
+    "mainAriaLabel": "Navigasi Utama",
+    "mobileAriaLabel": "Navigasi Seluler"
+  },
+  "unit": {
+    "wpm": "WPM",
+    "cpm": "CPM",
+    "wpmLong": "Kata per menit",
+    "cpmLong": "Karakter per menit"
+  },
+  "common": {
+    "save": "Simpan",
+    "cancel": "Batal",
+    "delete": "Hapus",
+    "edit": "Ubah",
+    "back": "Kembali",
+    "done": "Selesai",
+    "loading": "Memuat...",
+    "error": "Galat: {message}",
+    "success": "Berhasil",
+    "close": "Tutup",
+    "confirm": "Konfirmasi",
+    "warning": "Peringatan",
+    "less": "Sedikit",
+    "more": "Banyak",
+    "open": "Buka",
+    "selectPlaceholder": "Pilih opsi...",
+    "dropdownAriaLabel": "Pilihan dropdown",
+    "searchPlaceholder": "Cari...",
+    "clearSearch": "Hapus pencarian",
+    "clear": "Bersihkan",
+    "previousPage": "Halaman sebelumnya",
+    "nextPage": "Halaman berikutnya",
+    "showingRangePrefix": "Menampilkan",
+    "showingRangeOf": "dari",
+    "noItemsFound": "Tidak ada {label} ditemukan",
+    "defaultItemLabel": "sesi",
+    "lineChartAriaLabel": "Grafik garis",
+    "chartHoverHint": "arahkan kursor untuk detail sesi",
+    "chartValueFallback": "Nilai",
+    "chartNetFallback": "bersih",
+    "chartRawFallback": "Kotor"
+  },
+  "splash": {
+    "title": "Typing FreeX",
+    "loading": "Memuat...",
+    "engineBadge": "MESIN KETIK"
+  },
+  "firstRun": {
+    "welcome": "Selamat Datang di Typing FreeX",
+    "tagline": "Mesin uji ketik offline berkinerja tinggi.",
+    "chooseLanguage": "Pilih Bahasa Antarmuka",
+    "createProfilePrompt": "Masukkan nama atau panggilan Anda untuk membuat profil awal:",
+    "privacyNotice": "Nol telemetri, nol permintaan jaringan eksternal. Semua data mengetik dan rekor terbaik Anda tersimpan 100% di penyimpanan lokal.",
+    "getStarted": "Mulai Sekarang",
+    "profilePlaceholder": "mis. JagoKetik",
+    "errorEmptyName": "Silakan masukkan nama profil yang valid.",
+    "errorCreateFailed": "Gagal membuat profil"
+  },
+  "modeFormat": {
+    "modeTime": "Waktu",
+    "modeWords": "Kata",
+    "modeQuote": "Kutipan",
+    "modeTech": "Teknis",
+    "modeZen": "Zen",
+    "modeCustom": "Kustom",
+    "modeUnknown": "Tidak Diketahui",
+    "infinity": "Tak Terbatas",
+    "secondsSuffix": "{seconds}d",
+    "wordsVariant": "{words} Kata"
+  }
+}

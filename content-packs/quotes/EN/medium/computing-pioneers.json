@@ -1,0 +1,94 @@
+[
+  {
+    "text": "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.",
+    "source": "Martin Fowler"
+  },
+  {
+    "text": "Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.",
+    "source": "Brian Kernighan"
+  },
+  {
+    "text": "Simplicity is prerequisite for reliability. Complex systems tend to fail in complex and unexpected ways.",
+    "source": "Edsger W. Dijkstra"
+  },
+  {
+    "text": "You cannot have great software without a great team, and most developers spend their careers searching for one.",
+    "source": "Joel Spolsky"
+  },
+  {
+    "text": "The computing scientist's main challenge is not to get confused by the complexities of his own making.",
+    "source": "Edsger W. Dijkstra"
+  },
+  {
+    "text": "Hackers should be judged by their hacking, not bogus criteria such as degrees, age, race, or position.",
+    "source": "Steven Levy"
+  },
+  {
+    "text": "The most disastrous omission in education is the neglect to train the mind to make choices and decisions.",
+    "source": "Charles William Eliot"
+  },
+  {
+    "text": "Walking on water and developing software from a specification are easy if both are frozen.",
+    "source": "Edward V. Berard"
+  },
+  {
+    "text": "Experience is the name everyone gives to their mistakes. The wiser among us learn to make fewer mistakes twice.",
+    "source": "Oscar Wilde"
+  },
+  {
+    "text": "Bad programmers worry about the code. Good programmers worry about data structures and their relationships.",
+    "source": "Linus Torvalds"
+  },
+  {
+    "text": "Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away.",
+    "source": "Antoine de Saint-Exupéry"
+  },
+  {
+    "text": "If you cannot explain it simply, you do not understand it well enough. True mastery speaks with clean clarity.",
+    "source": "Albert Einstein"
+  },
+  {
+    "text": "The computer was born to solve problems that did not exist before, yet it has become essential to modern thought.",
+    "source": "Bill Gates"
+  },
+  {
+    "text": "The Analytical Engine weaves algebraical patterns just as the Jacquard loom weaves flowers and leaves.",
+    "source": "Ada Lovelace"
+  },
+  {
+    "text": "Measuring programming progress by lines of code is like measuring aircraft building progress by weight.",
+    "source": "Bill Gates"
+  },
+  {
+    "text": "Any tool should be useful in the expected way, but a truly great tool lends itself to uses you never expected.",
+    "source": "Eric S. Raymond"
+  },
+  {
+    "text": "The next best thing to having good ideas is recognizing good ideas from your users. Sometimes the latter is better.",
+    "source": "Eric S. Raymond"
+  },
+  {
+    "text": "Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live.",
+    "source": "John Woods"
+  },
+  {
+    "text": "I'm doing a (free) operating system (just a hobby, won't be big and professional like gnu) for 386(486) AT clones.",
+    "source": "Linus Torvalds"
+  },
+  {
+    "text": "Real men don't use backups, they post their stuff on a public ftp server and let the rest of the world make copies.",
+    "source": "Linus Torvalds"
+  },
+  {
+    "text": "If you treat your beta-testers as if they're your most valuable resource, they will respond by becoming your most valuable resource.",
+    "source": "Eric S. Raymond"
+  },
+  {
+    "text": "Nobody should start to undertake a large project. You start with a small trivial project, and you should never expect it to get large.",
+    "source": "Linus Torvalds"
+  },
+  {
+    "text": "Most good programmers do programming not because they expect to get paid or get adulation by the public, but because it is fun to program.",
+    "source": "Linus Torvalds"
+  }
+]

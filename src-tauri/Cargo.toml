@@ -1,0 +1,44 @@
+[package]
+name = "typing_freex"
+version = "0.1.0"
+description = "Typing FreeX - Offline Typing Test Engine"
+authors = ["Typing FreeX Contributors"]
+license = "AGPL-3.0-only"
+edition = "2024"
+
+[lib]
+name = "typing_freex_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+[dependencies]
+tauri = { version = "2", features = [] }
+tauri-plugin-dialog = "2"
+tauri-plugin-single-instance = "2"
+tauri-plugin-window-state = "2"
+tauri-plugin-mcp-bridge = { package = "tauri-plugin-hushlor-mcp-bridge", version = "0.14", optional = true }
+rusqlite = { version = "0.41.1", features = ["bundled", "backup", "serde_json"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10"
+unicode-normalization = "0.1"
+uuid = { version = "1", features = ["v4"] }
+thiserror = "2"
+once_cell = "1.21"
+encoding_rs = "0.8"
+cpal = { version = "0.18.2", features = ["pulseaudio"] }
+
+[features]
+default = []
+mcp-dev = ["tauri-plugin-mcp-bridge"]
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = "s"
+panic = "abort"
+strip = true

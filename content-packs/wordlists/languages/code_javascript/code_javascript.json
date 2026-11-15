@@ -1,0 +1,21 @@
+{
+  "id": "code_javascript",
+  "name": "JavaScript",
+  "version": "1.0.0",
+  "language": "code_javascript",
+  "type": "wordlist",
+  "items": [
+    "function", "const", "let", "return", "async", "await", "import", "export", "from", "default",
+    "class", "extends", "super", "this", "new", "typeof", "instanceof", "if", "else", "switch",
+    "case", "break", "continue", "for", "while", "do", "try", "catch", "finally", "throw",
+    "yield", "null", "undefined", "true", "false", "void", "delete", "in", "of", "debugger",
+    "interface", "type", "enum", "private", "public", "protected", "readonly", "static", "as", "is",
+    "number", "string", "boolean", "symbol", "bigint", "object", "any", "unknown", "never", "void",
+    "Promise", "Array", "Object", "Map", "Set", "WeakMap", "WeakSet", "Date", "RegExp", "Error",
+    "console", "log", "warn", "error", "info", "table", "clear", "time", "timeEnd", "trace",
+    "document", "window", "element", "event", "addEventListener", "removeEventListener", "querySelector", "querySelectorAll",
+    "map", "filter", "reduce", "forEach", "find", "findIndex", "includes", "indexOf", "push", "pop",
+    "shift", "unshift", "slice", "splice", "concat", "join", "split", "replace", "replaceAll", "trim",
+    "toLowerCase", "toUpperCase", "startsWith", "endsWith", "charAt", "charCodeAt", "match", "test", "exec"
+  ]
+}

@@ -1,0 +1,58 @@
+[
+  {
+    "text": "podman run --rm docker.io/library/hello-world",
+    "source": "Podman: Canonical hello-world test container"
+  },
+  {
+    "text": "podman info --format '{{.Host.Security.Rootless}}'",
+    "source": "Podman: Check rootless execution status"
+  },
+  {
+    "text": "podman run -d --name webserver \\\n  --userns=keep-id \\\n  -p 8080:80 \\\n  docker.io/library/nginx:alpine",
+    "source": "Podman: Rootless container with keep-id mapping"
+  },
+  {
+    "text": "podman images --filter dangling=true -q | xargs -r podman rmi\npodman container prune -f",
+    "source": "Podman: Clean dangling images and stopped containers"
+  },
+  {
+    "text": "podman run --rm --security-opt label=disable \\\n  -v $(pwd):/workspace:Z \\\n  docker.io/rust:alpine cargo build --release",
+    "source": "Podman: Volume mount with SELinux relabeling flag"
+  },
+  {
+    "text": "podman pod create --name my-app-pod -p 8080:80 -p 5432:5432\npodman pod list",
+    "source": "Podman: Kubernetes-style Pod creation and listing"
+  },
+  {
+    "text": "podman run -d --pod my-app-pod --name api-service localhost/api:latest\npodman run -d --pod my-app-pod --name db-service postgres:16-alpine",
+    "source": "Podman: Deploying multi-container workloads in Pod"
+  },
+  {
+    "text": "podman generate systemd --new --files --name my-container\nsystemctl --user daemon-reload\nsystemctl --user enable --now container-my-container.service",
+    "source": "Podman: Generate native systemd service units"
+  },
+  {
+    "text": "podman kube play deployment.yaml\npodman kube down deployment.yaml",
+    "source": "Podman: Declarative Kubernetes YAML lifecycle"
+  },
+  {
+    "text": "# Quadlet container unit definition\n[Container]\nImage=docker.io/library/redis:alpine\nPublishPort=6379:6379\n[Service]\nRestart=always\n[Install]\nWantedBy=default.target",
+    "source": "Podman: Declarative systemd Quadlet container specification"
+  },
+  {
+    "text": "echo \"super_secret_db_password\" | podman secret create db_pass -\npodman run -d --secret db_pass postgres:16-alpine",
+    "source": "Podman: Secure secret management without plain text env"
+  },
+  {
+    "text": "podman auto-update\npodman auto-update --dry-run",
+    "source": "Podman: Automated container update check with systemd timer"
+  },
+  {
+    "text": "[Network]\nSubnet=10.89.0.0/24\nGateway=10.89.0.1\n[Service]\nRestart=always",
+    "source": "Podman: Quadlet network unit definition"
+  },
+  {
+    "text": "podman system service --time=0 unix:///tmp/podman.sock &\nexport DOCKER_HOST=unix:///tmp/podman.sock",
+    "source": "Podman: Exposing Docker-compatible daemon emulation socket"
+  }
+]

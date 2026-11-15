@@ -1,0 +1,8 @@
+{
+  "id": "code_java",
+  "name": "Java",
+  "version": "1.0.0",
+  "language": "code_java",
+  "type": "wordlist",
+  "packed": "abstract\nassert\nboolean\nbreak\nbyte\ncase\ncatch\nchar\nclass\nconst\ncontinue\ndefault\ndo\ndouble\nelse\nenum\nextends\nfinal\nfinally\nfloat\nfor\ngoto\nif\nimplements\nimport\ninstanceof\nint\ninterface\nlong\nnative\nnew\npackage\nprivate\nprotected\npublic\nreturn\nshort\nstatic\nstrictfp\nsuper\nswitch\nsynchronized\nthis\nthrow\nthrows\ntransient\ntry\nvoid\nvolatile\nwhile\nrecord\nsealed\npermits\nyield\nvar\ntrue\nfalse\nnull\nString\nInteger\nLong\nDouble\nFloat\nBoolean\nByte\nShort\nCharacter\nObject\nClass\nSystem\nout\nprintln\nprint\nerr\nMath\nThread\nRunnable\nCallable\nFuture\nCompletableFuture\nException\nRuntimeException\nThrowable\nError\nNullPointerException\nIllegalArgumentException\nList\nArrayList\nLinkedList\nSet\nHashSet\nTreeSet\nMap\nHashMap\nTreeMap\nConcurrentHashMap\nQueue\nDeque\nArrayDeque\nPriorityQueue\nIterator\nIterable\nCollection\nCollections\nArrays\nStream\nOptional\nFunction\nConsumer\nSupplier\nPredicate\nBiFunction\nBiConsumer\nComparator\nComparable\nfilter\nmap\nflatMap\nreduce\ncollect\nforEach\nfindFirst\nfindAny\nanyMatch\nallMatch\nnoneMatch\ncount\ndistinct\nsorted\nlimit\nskip\ntoList\ntoSet\ntoMap\ngroupingBy\njoining\nget\nset\nadd\nremove\nsize\nisEmpty\ncontains\ncontainsKey\ncontainsValue\nput\nputIfAbsent\nreplace\nclear\nequals\nhashCode\ntoString\nclone"
+}

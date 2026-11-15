@@ -1,0 +1,58 @@
+[
+  {
+    "text": "<?php\n\necho \"Hello, World!\" . PHP_EOL;",
+    "source": "PHP: Canonical Hello World output"
+  },
+  {
+    "text": "$userCity = $order?->customer?->shippingAddress?->city ?? 'Unknown City';",
+    "source": "PHP: Nullsafe operator and null coalescing"
+  },
+  {
+    "text": "function calculateDiscount(float $price, float $percent = 0.1): float {\n    if ($price < 0 || $percent < 0) {\n        throw new InvalidArgumentException('Values cannot be negative');\n    }\n    return $price * (1 - $percent);\n}",
+    "source": "PHP: Strictly typed function declaration"
+  },
+  {
+    "text": "$statusCode = 404;\n$message = match ($statusCode) {\n    200, 201 => 'Request succeeded',\n    400 => 'Bad request payload',\n    404 => 'Resource not found',\n    500 => 'Internal server error',\n    default => 'Unknown status',\n};",
+    "source": "PHP: Match expression pattern evaluation"
+  },
+  {
+    "text": "$numbers = [1, 2, 3, 4, 5, 6];\n$squaredEvens = array_map(\n    fn(int $n): int => $n ** 2,\n    array_filter($numbers, fn(int $n): bool => $n % 2 === 0)\n);",
+    "source": "PHP: Arrow functions and array filter/map pipeline"
+  },
+  {
+    "text": "enum Status: string {\n    case DRAFT = 'draft';\n    case PUBLISHED = 'published';\n    case ARCHIVED = 'archived';\n\n    public function isVisible(): bool {\n        return $this === self::PUBLISHED;\n    }\n}",
+    "source": "PHP: Backed Enum with domain methods"
+  },
+  {
+    "text": "#[Attribute(Attribute::TARGET_METHOD)]\nclass Route {\n    public function __construct(\n        public string $path,\n        public string $method = 'GET',\n    ) {}\n}",
+    "source": "PHP: Custom Attribute with constructor promotion"
+  },
+  {
+    "text": "$config = json_decode(file_get_contents('config.json'), associative: true, flags: JSON_THROW_ON_ERROR);\nheader('Content-Type: application/json');\necho json_encode(['status' => 'ok', 'data' => $config]);",
+    "source": "PHP: JSON encoding with strict error flags"
+  },
+  {
+    "text": "$collection = collect($users)\n    ->filter(fn($u) => $u->isActive())\n    ->sortByDesc('created_at')\n    ->values();",
+    "source": "PHP: Fluent collection transformation pipeline"
+  },
+  {
+    "text": "try {\n    $pdo->beginTransaction();\n    $stmt = $pdo->prepare('UPDATE accounts SET balance = balance - :amt WHERE id = :id');\n    $stmt->execute([':amt' => 100, ':id' => 1]);\n    $pdo->commit();\n} catch (PDOException $e) {\n    $pdo->rollBack();\n    throw $e;\n}",
+    "source": "PHP: PDO transactional database execution"
+  },
+  {
+    "text": "function readCsvLines(string $filePath): Generator {\n    $handle = fopen($filePath, 'r');\n    try {\n        while (($line = fgetcsv($handle)) !== false) {\n            yield $line;\n        }\n    } finally {\n        fclose($handle);\n    }\n}",
+    "source": "PHP: Generator stream reader with safe resource cleanup"
+  },
+  {
+    "text": "final readonly class Money {\n    public function __construct(\n        public int $amount,\n        public string $currency = 'USD'\n    ) {\n        if ($amount < 0) throw new InvalidArgumentException('Negative amount');\n    }\n    public function add(Money $other): Money {\n        if ($this->currency !== $other->currency) throw new LogicException('Currency mismatch');\n        return new Money($this->amount + $other->amount, $this->currency);\n    }\n}",
+    "source": "PHP: Readonly value object domain pattern"
+  },
+  {
+    "text": "$fiber = new Fiber(function (): void {\n    $val = Fiber::suspend('paused');\n    echo \"Resumed with value: {$val}\" . PHP_EOL;\n});\n$init = $fiber->start();\n$fiber->resume('active_worker');",
+    "source": "PHP 8.1: Fiber lightweight concurrency primitive"
+  },
+  {
+    "text": "spl_autoload_register(function ($class) {\n    $prefix = 'App\\\\';\n    $baseDir = __DIR__ . '/src/';\n    $len = strlen($prefix);\n    if (strncmp($prefix, $class, $len) !== 0) return;\n    $relativeClass = substr($class, $len);\n    $file = $baseDir . str_replace('\\\\', '/', $relativeClass) . '.php';\n    if (file_exists($file)) require $file;\n});",
+    "source": "PHP: PSR-4 compliant autoloader implementation"
+  }
+]

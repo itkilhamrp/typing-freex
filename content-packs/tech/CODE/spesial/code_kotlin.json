@@ -1,0 +1,58 @@
+[
+  {
+    "text": "fun main() {\n    println(\"Hello, World!\")\n}",
+    "source": "Kotlin: Canonical Hello World Entrypoint"
+  },
+  {
+    "text": "val greeting = name?.let { \"Hello, $it!\" } ?: \"Welcome, Guest!\"",
+    "source": "Kotlin: Safe Call with let Scope Function"
+  },
+  {
+    "text": "val numbers = (1..100).filter { it % 3 == 0 }.sum()",
+    "source": "Kotlin: Collection Range Filter and Sum"
+  },
+  {
+    "text": "val config = File(\"config.json\").takeIf { it.exists() }?.readText() ?: \"{}\"",
+    "source": "Kotlin: Scope Function takeIf with Elvis Operator"
+  },
+  {
+    "text": "fun String.toSlug(): String = this.lowercase()\n    .replace(\"[^a-z0-9]\\\\s*\".toRegex(), \"-\")\n    .trim('-')",
+    "source": "Kotlin: Extension Function with Regex"
+  },
+  {
+    "text": "tailrec fun gcd(a: Int, b: Int): Int = if (b == 0) a else gcd(b, a % b)",
+    "source": "Kotlin: Tail-Recursive Greatest Common Divisor"
+  },
+  {
+    "text": "sealed interface UiState {\n    data object Loading : UiState\n    data class Success(val data: List<String>) : UiState\n    data class Error(val message: String) : UiState\n}",
+    "source": "Kotlin: Sealed Interface State Modeling"
+  },
+  {
+    "text": "val activeUsers = users\n    .asSequence()\n    .filter { it.isActive }\n    .map { it.username }\n    .take(10)\n    .toList()",
+    "source": "Kotlin: Lazy Evaluation with Sequence Pipeline"
+  },
+  {
+    "text": "suspend fun fetchUserDetails(userId: String): Result<User> = withContext(Dispatchers.IO) {\n    runCatching { apiClient.getUser(userId) }\n}",
+    "source": "Kotlin: Coroutine with Dispatchers.IO and runCatching"
+  },
+  {
+    "text": "inline fun <reified T> Gson.fromJson(json: String): T = fromJson(json, object : TypeToken<T>() {}.type)",
+    "source": "Kotlin: Reified Type Parameter Extension"
+  },
+  {
+    "text": "class MainViewModel(private val repository: UserRepository) : ViewModel() {\n    private val _uiState = MutableStateFlow<UiState>(UiState.Loading)\n    val uiState: StateFlow<UiState> = _uiState.asStateFlow()\n\n    fun loadData() {\n        viewModelScope.launch {\n            repository.getUsersFlow()\n                .catch { emit(UiState.Error(it.message ?: \"Error\")) }\n                .collect { _uiState.value = UiState.Success(it) }\n        }\n    }\n}",
+    "source": "Kotlin: StateFlow reactive state management in ViewModel"
+  },
+  {
+    "text": "fun <T> Flow<T>.throttleFirst(windowDuration: Long): Flow<T> = flow {\n    var lastEmissionTime = 0L\n    collect {\n        val currentTime = System.currentTimeMillis()\n        if (currentTime - lastEmissionTime >= windowDuration) {\n            lastEmissionTime = currentTime\n            emit(it)\n        }\n    }\n}",
+    "source": "Kotlin: Custom Coroutines Flow throttleFirst operator"
+  },
+  {
+    "text": "data class Person(val name: String, val age: Int) {\n    operator fun compareTo(other: Person): Int = this.age.compareTo(other.age)\n}",
+    "source": "Kotlin: Operator overloading for natural comparison"
+  },
+  {
+    "text": "val delegatedProperty: String by lazy(LazyThreadSafetyMode.SYNCHRONIZED) {\n    expensiveDatabaseInitialization()\n}",
+    "source": "Kotlin: Thread-safe synchronized lazy delegation"
+  }
+]

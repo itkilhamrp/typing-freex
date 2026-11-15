@@ -1,0 +1,42 @@
+[
+  {
+    "text": "WITH RECURSIVE CategoryPath AS (\n    SELECT id, name, parent_id, 1 AS depth\n    FROM categories\n    WHERE parent_id IS NULL\n    UNION ALL\n    SELECT c.id, c.name, c.parent_id, cp.depth + 1\n    FROM categories c\n    INNER JOIN CategoryPath cp ON c.parent_id = cp.id\n)\nSELECT * FROM CategoryPath ORDER BY depth, name;",
+    "source": "SQL 1k: Recursive CTE Hierarchy Traversal"
+  },
+  {
+    "text": "SELECT \n    employee_id,\n    department_id,\n    salary,\n    ROW_NUMBER() OVER (PARTITION BY department_id ORDER BY salary DESC) AS rank_in_dept,\n    AVG(salary) OVER (PARTITION BY department_id) AS dept_avg_salary\nFROM employees;",
+    "source": "SQL 1k: Window Functions with Partitioning"
+  },
+  {
+    "text": "INSERT INTO user_preferences (user_id, theme, updated_at)\nVALUES (42, 'dark', CURRENT_TIMESTAMP)\nON CONFLICT (user_id) DO UPDATE\nSET theme = EXCLUDED.theme, updated_at = CURRENT_TIMESTAMP;",
+    "source": "SQL 1k: Idempotent Upsert with ON CONFLICT"
+  },
+  {
+    "text": "SELECT \n    date_trunc('month', created_at) AS order_month,\n    COUNT(id) AS total_orders,\n    COALESCE(SUM(amount), 0.00) AS total_revenue\nFROM orders\nWHERE status = 'completed'\nGROUP BY 1\nORDER BY 1 DESC;",
+    "source": "SQL 1k: Monthly Aggregation with COALESCE"
+  },
+  {
+    "text": "SELECT p.id, p.title\nFROM posts p\nWHERE EXISTS (\n    SELECT 1 FROM comments c \n    WHERE c.post_id = p.id \n    AND c.is_flagged = FALSE\n);",
+    "source": "SQL 1k: Efficient Correlated Subquery with EXISTS"
+  },
+  {
+    "text": "CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_sessions_user_created \nON user_sessions (user_id, created_at DESC);",
+    "source": "SQL 1k: Non-Blocking Composite Index Creation"
+  },
+  {
+    "text": "SELECT \n    id,\n    amount,\n    SUM(amount) OVER (ORDER BY created_at ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS running_total\nFROM transactions;",
+    "source": "SQL 1k: Cumulative Running Total Window Frame"
+  },
+  {
+    "text": "BEGIN TRANSACTION;\nUPDATE accounts SET balance = balance - 100 WHERE id = 1 AND balance >= 100;\nUPDATE accounts SET balance = balance + 100 WHERE id = 2;\nCOMMIT;",
+    "source": "SQL 1k: Atomic Fund Transfer Transaction"
+  },
+  {
+    "text": "SELECT tag, COUNT(*) AS count\nFROM articles, json_each(articles.tags)\nGROUP BY tag\nHAVING count > 5\nORDER BY count DESC;",
+    "source": "SQL 1k: JSON Array Expansion and Aggregation"
+  },
+  {
+    "text": "VACUUM ANALYZE audit_logs;",
+    "source": "SQL 1k: Storage Compaction and Query Planner Statistics"
+  }
+]

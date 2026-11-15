@@ -1,0 +1,42 @@
+[
+  {
+    "text": "fn binary_search<T: Ord>(slice: &[T], target: &T) -> Option<usize> {\n    let mut low = 0;\n    let mut high = slice.len();\n    while low < high {\n        let mid = low + (high - low) / 2;\n        match slice[mid].cmp(target) {\n            std::cmp::Ordering::Less => low = mid + 1,\n            std::cmp::Ordering::Equal => return Some(mid),\n            std::cmp::Ordering::Greater => high = mid,\n        }\n    }\n    None\n}",
+    "source": "Rust 1k: Generic Binary Search"
+  },
+  {
+    "text": "use std::sync::{Arc, Mutex};\nuse std::thread;\n\nlet counter = Arc::new(Mutex::new(0));\nlet mut handles = vec![];\nfor _ in 0..10 {\n    let c = Arc::clone(&counter);\n    handles.push(thread::spawn(move || {\n        let mut num = c.lock().unwrap();\n        *num += 1;\n    }));\n}\nfor h in handles { h.join().unwrap(); }",
+    "source": "Rust 1k: Arc<Mutex<T>> Multithreading"
+  },
+  {
+    "text": "pub enum List<T> {\n    Empty,\n    Node(T, Box<List<T>>),\n}\nimpl<T> List<T> {\n    pub fn push(self, elem: T) -> Self {\n        List::Node(elem, Box::new(self))\n    }\n}",
+    "source": "Rust 1k: Immutable Cons List with Box"
+  },
+  {
+    "text": "fn partition<T: Ord>(slice: &mut [T]) -> usize {\n    let len = slice.len();\n    let mut pivot_idx = 0;\n    for i in 0..len - 1 {\n        if slice[i] <= slice[len - 1] {\n            slice.swap(i, pivot_idx);\n            pivot_idx += 1;\n        }\n    }\n    slice.swap(pivot_idx, len - 1);\n    pivot_idx\n}",
+    "source": "Rust 1k: In-Place Lomuto Partition"
+  },
+  {
+    "text": "let squares: Vec<i32> = (1..=100)\n    .filter(|&x| x % 2 == 0)\n    .map(|x| x * x)\n    .collect();",
+    "source": "Rust 1k: Zero-Cost Iterator Pipeline"
+  },
+  {
+    "text": "use std::collections::HashMap;\n\nlet mut counts: HashMap<&str, usize> = HashMap::new();\nfor word in words.iter() {\n    *counts.entry(word).or_insert(0) += 1;\n}",
+    "source": "Rust 1k: HashMap Entry API Frequency Counter"
+  },
+  {
+    "text": "#[derive(Debug, Clone, PartialEq, Eq)]\npub struct NonEmptyVec<T> {\n    head: T,\n    tail: Vec<T>,\n}\nimpl<T> NonEmptyVec<T> {\n    pub fn new(head: T, tail: Vec<T>) -> Self {\n        Self { head, tail }\n    }\n    pub fn first(&self) -> &T { &self.head }\n}",
+    "source": "Rust 1k: Compile-Time NonEmptyVec"
+  },
+  {
+    "text": "fn safe_divide(numerator: f64, denominator: f64) -> Result<f64, &'static str> {\n    if denominator.abs() < f64::EPSILON {\n        Err(\"Division by zero\")\n    } else {\n        Ok(numerator / denominator)\n    }\n}",
+    "source": "Rust 1k: Result-Based Division with EPSILON"
+  },
+  {
+    "text": "use std::cell::RefCell;\nuse std::rc::Rc;\n\ntype Link<T> = Option<Rc<RefCell<Node<T>>>>;\nstruct Node<T> {\n    value: T,\n    next: Link<T>,\n}",
+    "source": "Rust 1k: Interior Mutability Node with Rc<RefCell<T>>"
+  },
+  {
+    "text": "let folded = numbers.iter().fold(0, |acc, &x| acc ^ x);",
+    "source": "Rust 1k: XOR Fold Single Non-Duplicate Finder"
+  }
+]

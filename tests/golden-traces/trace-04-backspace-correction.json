@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "test_uuid": "golden-trace-04-backspace-correction",
+  "description": "Backspace correction within word and across word boundary",
+  "config": {
+    "mode": "words",
+    "wordLimit": 2,
+    "backspaceThroughWords": true
+  },
+  "targetText": "cat dog",
+  "events": [
+    { "type": "CHARACTER_INPUT", "char": "c", "timestamp": 1000 },
+    { "type": "CHARACTER_INPUT", "char": "x", "timestamp": 1200 },
+    { "type": "BACKSPACE", "timestamp": 1400 },
+    { "type": "CHARACTER_INPUT", "char": "a", "timestamp": 1600 },
+    { "type": "CHARACTER_INPUT", "char": "t", "timestamp": 1800 },
+    { "type": "SPACE", "timestamp": 2000 },
+    { "type": "BACKSPACE", "timestamp": 2200 },
+    { "type": "SPACE", "timestamp": 2400 },
+    { "type": "CHARACTER_INPUT", "char": "d", "timestamp": 2600 },
+    { "type": "CHARACTER_INPUT", "char": "o", "timestamp": 2800 },
+    { "type": "CHARACTER_INPUT", "char": "g", "timestamp": 3000 }
+  ],
+  "expected": {
+    "wpm": 36,
+    "rawWpm": 54,
+    "accuracy": 88.89,
+    "durationSeconds": 2,
+    "correctChars": 6,
+    "incorrectChars": 0,
+    "extraChars": 0
+  }
+}

@@ -1,0 +1,44 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules/
+.svelte-kit/
+dist/
+dist-ssr/
+*.local
+
+.codegraph/
+
+
+# Lockfiles from other package managers (PNPM only)
+package-lock.json
+yarn.lock
+
+# Test coverage
+coverage/
+*.lcov
+
+# Flatpak build artifacts
+flatpak/typing_freex
+flatpak/.flatpak-builder/
+flatpak/build-dir/
+flatpak/repo/
+flatpak/*.flatpak
+
+# AI AGENTS
+.kiro/
+.agent/
+.aiignore
+
+# Markdown files
+AGENTS.md
+CODE_OF_CONDUCT.md
+
+# Repo
+repo.bundle

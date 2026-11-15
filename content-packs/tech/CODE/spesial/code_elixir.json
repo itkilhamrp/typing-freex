@@ -1,0 +1,58 @@
+[
+  {
+    "text": "defmodule HelloWorld do\n  def hello do\n    IO.puts(\"Hello, World!\")\n  end\nend\n\nHelloWorld.hello()",
+    "source": "Elixir: Canonical Hello World Module"
+  },
+  {
+    "text": "@type result :: {:ok, term()} | {:error, String.t()}",
+    "source": "Elixir: Type Specification for Dialyzer"
+  },
+  {
+    "text": "defprotocol Printable do\n  def print(data)\nend",
+    "source": "Elixir: Polymorphic Protocol Definition"
+  },
+  {
+    "text": "result = \"  hello world  \"\n  |> String.trim()\n  |> String.upcase()\n  |> String.split(\" \")\n  |> Enum.join(\"-\")",
+    "source": "Elixir: Pipeline Operator String Transformation"
+  },
+  {
+    "text": "for {key, val} <- map, is_integer(val), val > 10, into: %{}, do: {key, val * 2}",
+    "source": "Elixir: Comprehensions with Filters and Collectable"
+  },
+  {
+    "text": "def sum_list([head | tail], acc), do: sum_list(tail, acc + head)\ndef sum_list([], acc), do: acc",
+    "source": "Elixir: Tail-Recursive List Traversal"
+  },
+  {
+    "text": "case HTTPoison.get(url) do\n  {:ok, %{status_code: 200, body: body}} -> {:ok, Jason.decode!(body)}\n  {:ok, %{status_code: 404}} -> {:error, :not_found}\n  {:error, %{reason: reason}} -> {:error, reason}\nend",
+    "source": "Elixir: Pattern Matching on Tuple Results"
+  },
+  {
+    "text": "with {:ok, user} <- fetch_user(user_id),\n     {:ok, perms} <- check_permissions(user),\n     true <- perms.can_edit do\n  {:ok, :authorized}\nelse\n  {:error, reason} -> {:error, reason}\n  false -> {:error, :forbidden}\nend",
+    "source": "Elixir: With Special Form Monadic Happy Path"
+  },
+  {
+    "text": "Task.async_stream(urls, &fetch_page/1, max_concurrency: 8, timeout: 5000)\n|> Enum.map(fn {:ok, result} -> result end)",
+    "source": "Elixir: Concurrent Asynchronous Stream Processing"
+  },
+  {
+    "text": "defmodule KVStore do\n  use GenServer\n\n  def start_link(_), do: GenServer.start_link(__MODULE__, %{}, name: __MODULE__)\n  def get(key), do: GenServer.call(__MODULE__, {:get, key})\n  def put(key, val), do: GenServer.cast(__MODULE__, {:put, key, val})\n\n  @impl true\n  def handle_call({:get, key}, _from, state), do: {:reply, Map.get(state, key), state}\n  @impl true\n  def handle_cast({:put, key, val}, state), do: {:noreply, Map.put(state, key, val)}\nend",
+    "source": "Elixir: OTP GenServer State Management"
+  },
+  {
+    "text": "defmodule RateLimiter do\n  use Agent\n  def start_link, do: Agent.start_link(fn -> %{} end, name: __MODULE__)\n  def check(ip) do\n    Agent.get_and_update(__MODULE__, fn state ->\n      count = Map.get(state, ip, 0)\n      if count < 100, do: {:allow, Map.put(state, ip, count + 1)}, else: {:deny, state}\n    end)\n  end\nend",
+    "source": "Elixir: State encapsulation using OTP Agent"
+  },
+  {
+    "text": "defmodule Stack do\n  defstruct elements: []\n  def push(%Stack{elements: elms}, item), do: %Stack{elements: [item | elms]}\n  def pop(%Stack{elements: [head | tail]}), do: {head, %Stack{elements: tail}}\n  def pop(%Stack{elements: []}), do: {:empty, %Stack{}}\nend",
+    "source": "Elixir: Functional immutable stack with defstruct"
+  },
+  {
+    "text": "receive do\n  {:ping, sender} -> send(sender, :pong)\n  {:msg, text} -> IO.puts(\"Message: #{text}\")\nafter\n  3000 -> IO.puts(\"Mailbox timed out\")\nend",
+    "source": "Elixir: Actor mailbox receive pattern with timeout block"
+  },
+  {
+    "text": "defmodule MathMacros do\n  defmacro unless(clause, do: expression) do\n    quote do\n      if(!unquote(clause), do: unquote(expression))\n    end\n  end\nend",
+    "source": "Elixir: Compile-time metaprogramming with quote and unquote"
+  }
+]

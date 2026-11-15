@@ -1,0 +1,42 @@
+[
+  {
+    "text": "set -euo pipefail\nIFS=$'\\n\\t'",
+    "source": "Bash 1k: Unofficial Strict Mode"
+  },
+  {
+    "text": "trap 'echo \"Error on line $LINENO. Command exited with status $?\"' ERR",
+    "source": "Bash 1k: Robust Error Trap Handler"
+  },
+  {
+    "text": "while IFS= read -r -d '' file; do\n    echo \"Processing: $file\"\ndone < <(find . -type f -name '*.txt' -print0)",
+    "source": "Bash 1k: Safe Null-Delimited File Loop with Process Substitution"
+  },
+  {
+    "text": "SCRIPT_DIR=\"$(cd \"$(dirname \"${BASH_SOURCE[0]}\")\" && pwd -P)\"",
+    "source": "Bash 1k: Canonical Script Directory Resolution"
+  },
+  {
+    "text": ": \"${PORT:=8080}\"\n: \"${APP_ENV:=development}\"\n: \"${LOG_LEVEL:=info}\"",
+    "source": "Bash 1k: Parameter Default Value Assignment with Null Command"
+  },
+  {
+    "text": "temp_dir=$(mktemp -d)\ntrap 'rm -rf \"$temp_dir\"' EXIT",
+    "source": "Bash 1k: Guaranteed Temporary Directory Cleanup"
+  },
+  {
+    "text": "declare -A lookup=(\n    [\"prod\"]=\"10.0.1.5\"\n    [\"stage\"]=\"10.0.2.10\"\n    [\"dev\"]=\"127.0.0.1\"\n)\necho \"Host for prod: ${lookup[\"prod\"]}\"",
+    "source": "Bash 1k: Associative Array Declaration"
+  },
+  {
+    "text": "filename=\"archive.tar.gz\"\nbase=\"${filename%%.*}\"\next=\"${filename#*.}\"",
+    "source": "Bash 1k: Substring Parameter Stripping"
+  },
+  {
+    "text": "command -v jq >/dev/null 2>&1 || { echo \"jq is required but not installed.\" >&2; exit 1; }",
+    "source": "Bash 1k: Command Dependency Checker"
+  },
+  {
+    "text": "mapfile -t lines < <(git status --porcelain)\nfor line in \"${lines[@]}\"; do\n    echo \"Modified: $line\"\ndone",
+    "source": "Bash 1k: Mapfile Array Population"
+  }
+]

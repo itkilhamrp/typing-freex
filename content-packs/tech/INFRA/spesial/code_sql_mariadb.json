@@ -1,0 +1,58 @@
+[
+  {
+    "text": "SELECT 'Hello, World!' AS message;",
+    "source": "MariaDB: Canonical Hello World query"
+  },
+  {
+    "text": "OPTIMIZE TABLE orders, order_items;",
+    "source": "MariaDB: Table storage defragmentation and stats refresh"
+  },
+  {
+    "text": "CREATE INDEX idx_orders_customer_created \nON orders (customer_id, created_at DESC);",
+    "source": "MariaDB: Composite descending index"
+  },
+  {
+    "text": "INSERT INTO user_stats (user_id, login_count, last_login)\nVALUES (42, 1, NOW())\nON DUPLICATE KEY UPDATE\n    login_count = login_count + 1,\n    last_login = VALUES(last_login);",
+    "source": "MariaDB: Upsert with ON DUPLICATE KEY UPDATE"
+  },
+  {
+    "text": "SELECT \n    department_id,\n    GROUP_CONCAT(username ORDER BY username SEPARATOR ', ') AS employees\nFROM employees\nGROUP BY department_id;",
+    "source": "MariaDB: GROUP_CONCAT grouped aggregation"
+  },
+  {
+    "text": "START TRANSACTION;\nUPDATE accounts SET balance = balance - 500 WHERE id = 1;\nUPDATE accounts SET balance = balance + 500 WHERE id = 2;\nCOMMIT;",
+    "source": "MariaDB: ACID transactional transfer block"
+  },
+  {
+    "text": "SELECT seq\nFROM seq_1_to_10\nWHERE seq % 2 = 1;",
+    "source": "MariaDB: Sequence storage engine virtual sequence"
+  },
+  {
+    "text": "SELECT \n    id,\n    title,\n    JSON_UNQUOTE(JSON_EXTRACT(metadata, '$.author.name')) AS author\nFROM articles\nWHERE JSON_EXTRACT(metadata, '$.published') = true;",
+    "source": "MariaDB: JSON extraction query with unquoting"
+  },
+  {
+    "text": "SELECT \n    name,\n    score,\n    DENSE_RANK() OVER (ORDER BY score DESC) AS rank_pos\nFROM student_scores;",
+    "source": "MariaDB: DENSE_RANK analytical window function"
+  },
+  {
+    "text": "EXPLAIN FORMAT=JSON\nSELECT * FROM orders\nWHERE customer_id = 101 AND order_date >= '2026-01-01'\nORDER BY order_date DESC\nLIMIT 20;",
+    "source": "MariaDB: Query execution plan JSON inspection"
+  },
+  {
+    "text": "CREATE TABLE employees_history (\n    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,\n    name VARCHAR(100) NOT NULL,\n    department VARCHAR(50) NOT NULL,\n    salary DECIMAL(10,2) NOT NULL\n) WITH SYSTEM VERSIONING;",
+    "source": "MariaDB: Temporal system-versioned table"
+  },
+  {
+    "text": "SELECT name, salary, row_start, row_end\nFROM employees_history\nFOR SYSTEM_TIME ALL\nWHERE id = 42\nORDER BY row_start DESC;",
+    "source": "MariaDB: Temporal query for historical audit changes"
+  },
+  {
+    "text": "CREATE TABLE sales_partitioned (\n    id INT NOT NULL,\n    sale_date DATE NOT NULL,\n    amount DECIMAL(10,2) NOT NULL\n)\nPARTITION BY RANGE (YEAR(sale_date)) (\n    PARTITION p2024 VALUES LESS THAN (2025),\n    PARTITION p2025 VALUES LESS THAN (2026),\n    PARTITION pmax VALUES LESS THAN MAXVALUE\n);",
+    "source": "MariaDB: Declarative range partitioned table definition"
+  },
+  {
+    "text": "DELIMITER //\nCREATE PROCEDURE ProcessOrder(IN order_id INT, OUT status VARCHAR(20))\nBEGIN\n    DECLARE exit handler FOR SQLEXCEPTION\n    BEGIN\n        ROLLBACK;\n        SET status = 'FAILED';\n    END;\n    START TRANSACTION;\n    UPDATE orders SET processed = 1 WHERE id = order_id;\n    COMMIT;\n    SET status = 'SUCCESS';\nEND //\nDELIMITER ;",
+    "source": "MariaDB: Stored procedure with SQLEXCEPTION rollback handler"
+  }
+]

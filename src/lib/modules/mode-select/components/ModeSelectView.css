@@ -1,0 +1,188 @@
+/* ═══════════════════════════════════════════════════
+   ModeSelectView.css — Page Layout & Full-Bleed Ribbon Stage
+   Console-style PS2 mode selection (Edge-to-Edge Ribbons)
+   ═══════════════════════════════════════════════════ */
+
+/* ─── Page Root & Isolation Barrier (Zero horizontal padding for edge-docked ribbons) ─── */
+.mode-select-page {
+  isolation: isolate;
+  contain: layout style;
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+  padding: 1rem 0;
+  background: var(--tt-bg);
+  color: var(--tt-text);
+  user-select: none;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* ─── Backdrop & Ambient Light Containment ─── */
+.mode-select-backdrop {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  contain: strict;
+  transform: translateZ(0);
+  z-index: 0;
+  overflow: hidden;
+}
+
+.mode-select-page .mode-orb {
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  border-radius: 9999px;
+  filter: blur(40px);
+  contain: strict;
+  transform: translateZ(0);
+  opacity: var(--tt-mode-orb-opacity, 0.25);
+}
+
+.mode-select-page .mode-orb--classic,
+.mode-select-page .mode-orb--arena {
+  left: 2%;
+  top: 12%;
+  background: var(--tt-primary, #007aff);
+}
+
+.mode-select-page .mode-orb--learning {
+  right: 2%;
+  top: 38%;
+  background: var(--color-ios-indigo, #5856d6);
+}
+
+.mode-select-page .mode-orb--games {
+  left: 4%;
+  bottom: 10%;
+  background: var(--color-ios-green, #34c759);
+}
+
+/* ─── Header Chrome ─── */
+.mode-select-page .mode-header {
+  position: relative;
+  z-index: 20;
+  width: calc(100% - 2rem);
+  max-width: 68rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  border-radius: 16px;
+  background: var(--tt-glass-bg);
+  border: 1px solid var(--tt-mode-card-border);
+  box-shadow: var(--tt-glass-shadow);
+  contain: layout style;
+}
+
+.mode-select-page .mode-header::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 5;
+  box-shadow: var(--tt-mode-card-rim);
+}
+
+.mode-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  min-height: 44px;
+  padding: 0.375rem 0.875rem;
+  border-radius: 12px;
+  border: none;
+  background: transparent;
+  color: var(--tt-primary);
+  font-weight: 600;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: background-color 150ms ease;
+}
+
+.mode-back-btn:hover {
+  background: var(--tt-surface-2);
+}
+
+.mode-back-btn:focus-visible {
+  outline: 2px solid var(--tt-focus-ring);
+  outline-offset: 2px;
+}
+
+.mode-header__center {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.mode-header__title {
+  font-size: 0.9375rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--tt-text);
+  margin: 0;
+}
+
+.mode-header__badge {
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.55rem;
+  border-radius: 9999px;
+  border: 0;
+  background: var(--tt-surface-2);
+  color: var(--tt-primary);
+}
+
+.mode-header__hint {
+  font-size: 0.6875rem;
+  font-family: var(--tt-font-typing);
+  color: var(--tt-text-secondary);
+}
+
+/* ─── Full-Bleed Ribbon Stack Stage (Flush to viewport left/right edges) ─── */
+.mode-ribbon-stage {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1.25rem;
+  flex: 1;
+  justify-content: center;
+  padding: 1.5rem 0;
+  width: 100%;
+  max-width: none;
+  margin: auto 0;
+}
+
+@media (min-width: 768px) {
+  .mode-ribbon-stage {
+    gap: 1.75rem;
+    padding: 2rem 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .mode-ribbon-stage {
+    gap: 2.25rem;
+  }
+}
+
+/* ─── Reduced Motion (WCAG 2.3.1) ─── */
+@media (prefers-reduced-motion: reduce) {
+  .mode-select-page .mode-orb {
+    filter: none;
+    opacity: 0.15;
+  }
+  .mode-back-btn {
+    transition: none;
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "test_uuid": "golden-trace-05-extra-characters",
+  "description": "Extra characters typed beyond word length before space",
+  "config": {
+    "mode": "words",
+    "wordLimit": 2
+  },
+  "targetText": "go fast",
+  "events": [
+    { "type": "CHARACTER_INPUT", "char": "g", "timestamp": 1000 },
+    { "type": "CHARACTER_INPUT", "char": "o", "timestamp": 1200 },
+    { "type": "CHARACTER_INPUT", "char": "o", "timestamp": 1400 },
+    { "type": "CHARACTER_INPUT", "char": "z", "timestamp": 1600 },
+    { "type": "SPACE", "timestamp": 1800 },
+    { "type": "CHARACTER_INPUT", "char": "f", "timestamp": 2000 },
+    { "type": "CHARACTER_INPUT", "char": "a", "timestamp": 2200 },
+    { "type": "CHARACTER_INPUT", "char": "s", "timestamp": 2400 },
+    { "type": "CHARACTER_INPUT", "char": "t", "timestamp": 2600 }
+  ],
+  "expected": {
+    "wpm": 45,
+    "rawWpm": 67.5,
+    "accuracy": 66.67,
+    "durationSeconds": 1.6,
+    "correctChars": 6,
+    "incorrectChars": 0,
+    "extraChars": 2
+  }
+}

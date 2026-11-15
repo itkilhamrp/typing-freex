@@ -1,0 +1,221 @@
+[
+  {
+    "code": "english",
+    "folder": "EN",
+    "category": "quote",
+    "name": "English",
+    "nativeName": "English",
+    "flag": "🇬🇧",
+    "aliases": [
+      "en",
+      "english"
+    ]
+  },
+  {
+    "code": "indonesian",
+    "folder": "ID",
+    "category": "quote",
+    "name": "Indonesian",
+    "nativeName": "Bahasa Indonesia",
+    "flag": "🇮🇩",
+    "aliases": [
+      "id",
+      "indonesian"
+    ]
+  },
+  {
+    "code": "spanish",
+    "folder": "ES",
+    "category": "quote",
+    "name": "Spanish",
+    "nativeName": "Español",
+    "flag": "🇪🇸",
+    "aliases": [
+      "es",
+      "spanish",
+      "espanol"
+    ]
+  },
+  {
+    "code": "french",
+    "folder": "FR",
+    "category": "quote",
+    "name": "French",
+    "nativeName": "Français",
+    "flag": "🇫🇷",
+    "aliases": [
+      "fr",
+      "french",
+      "francais"
+    ]
+  },
+  {
+    "code": "german",
+    "folder": "DE",
+    "category": "quote",
+    "name": "German",
+    "nativeName": "Deutsch",
+    "flag": "🇩🇪",
+    "aliases": [
+      "de",
+      "german",
+      "deutsch"
+    ]
+  },
+  {
+    "code": "italian",
+    "folder": "IT",
+    "category": "quote",
+    "name": "Italian",
+    "nativeName": "Italiano",
+    "flag": "🇮🇹",
+    "aliases": [
+      "it",
+      "italian",
+      "italiano"
+    ]
+  },
+  {
+    "code": "portuguese",
+    "folder": "PT",
+    "category": "quote",
+    "name": "Portuguese",
+    "nativeName": "Português",
+    "flag": "🇵🇹",
+    "aliases": [
+      "pt",
+      "portuguese",
+      "portugues"
+    ]
+  },
+  {
+    "code": "dutch",
+    "folder": "NL",
+    "category": "quote",
+    "name": "Dutch",
+    "nativeName": "Nederlands",
+    "flag": "🇳🇱",
+    "aliases": [
+      "nl",
+      "dutch",
+      "nederlands"
+    ]
+  },
+  {
+    "code": "russian",
+    "folder": "RU",
+    "category": "quote",
+    "name": "Russian",
+    "nativeName": "Русский",
+    "flag": "🇷🇺",
+    "aliases": [
+      "ru",
+      "russian",
+      "russkiy"
+    ]
+  },
+  {
+    "code": "japanese_romaji",
+    "folder": "JA",
+    "category": "quote",
+    "name": "Japanese (Romaji)",
+    "nativeName": "Nihongo Romaji",
+    "flag": "🇯🇵",
+    "aliases": [
+      "ja",
+      "japanese",
+      "nihongo",
+      "romaji"
+    ]
+  },
+  {
+    "code": "polish",
+    "folder": "PL",
+    "category": "quote",
+    "name": "Polish",
+    "nativeName": "Polski",
+    "flag": "🇵🇱",
+    "aliases": [
+      "pl",
+      "polish",
+      "polski"
+    ]
+  },
+  {
+    "code": "turkish",
+    "folder": "TR",
+    "category": "quote",
+    "name": "Turkish",
+    "nativeName": "Türkçe",
+    "flag": "🇹🇷",
+    "aliases": [
+      "tr",
+      "turkish",
+      "turkce"
+    ]
+  },
+  {
+    "code": "vietnamese",
+    "folder": "VI",
+    "category": "quote",
+    "name": "Vietnamese",
+    "nativeName": "Tiếng Việt",
+    "flag": "🇻🇳",
+    "aliases": [
+      "vi",
+      "vietnamese",
+      "tiengviet"
+    ]
+  },
+  {
+    "code": "latin",
+    "folder": "LA",
+    "category": "quote",
+    "name": "Latin",
+    "nativeName": "Lingua Latina",
+    "flag": "🏛️",
+    "aliases": [
+      "la",
+      "latin",
+      "latina"
+    ]
+  },
+  {
+    "code": "chinese_pinyin",
+    "folder": "ZH",
+    "category": "quote",
+    "name": "Chinese (Pinyin)",
+    "nativeName": "Hanyu Pinyin",
+    "flag": "🇨🇳",
+    "aliases": [
+      "zh",
+      "chinese",
+      "pinyin"
+    ]
+  },
+  {
+    "code": "korean_romaja",
+    "folder": "KO",
+    "category": "quote",
+    "name": "Korean (Romaja)",
+    "nativeName": "Hangugeo Romaja",
+    "flag": "🇰🇷",
+    "aliases": [
+      "ko",
+      "korean",
+      "romaja"
+    ]
+  },
+  {
+    "code": "afrikaans",
+    "folder": "AF",
+    "category": "quote",
+    "name": "Afrikaans",
+    "nativeName": "Afrikaans",
+    "flag": "🇿🇦",
+    "aliases": [
+      "af",
+      "afrikaans"
+    ]
+  }
+]

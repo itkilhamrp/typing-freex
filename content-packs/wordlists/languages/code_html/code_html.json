@@ -1,0 +1,8 @@
+{
+  "id": "code_html",
+  "name": "HTML",
+  "version": "1.0.0",
+  "language": "code_html",
+  "type": "wordlist",
+  "packed": "DOCTYPE\nhtml\nhead\ntitle\nbase\nlink\nmeta\nstyle\nscript\nnoscript\nbody\narticle\nsection\nnav\naside\nh1\nh2\nh3\nh4\nh5\nh6\nheader\nfooter\naddress\nmain\np\nhr\npre\nblockquote\nol\nul\nli\ndl\ndt\ndd\nfigure\nfigcaption\ndiv\na\nem\nstrong\nsmall\ns\ncite\nq\ndfn\nabbr\nruby\nrt\nrp\ndata\ntime\ncode\nvar\nsamp\nkbd\nsub\nsup\ni\nb\nu\nmark\nbdi\nbdo\nspan\nbr\nwbr\nins\ndel\npicture\nsource\nimg\niframe\nembed\nobject\nparam\nvideo\naudio\ntrack\nmap\narea\ntable\ncaption\ncolgroup\ncol\ntbody\nthead\ntfoot\ntr\ntd\nth\nform\nlabel\ninput\nbutton\nselect\ndatalist\noptgroup\noption\ntextarea\noutput\nprogress\nmeter\nfieldset\nlegend\ndetails\nsummary\ndialog\nslot\ntemplate\ncanvas\nsvg\npath\ncircle\nrect\nclass\nid\nstyle\ntitle\nlang\ndir\naccesskey\ntabindex\nhidden\nsrc\nhref\nalt\ntype\nvalue\nname\nplaceholder\nrequired\ndisabled\nchecked\nreadonly"
+}

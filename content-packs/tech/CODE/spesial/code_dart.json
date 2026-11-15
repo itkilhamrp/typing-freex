@@ -1,0 +1,58 @@
+[
+  {
+    "text": "void main() {\n  print('Hello, World!');\n}",
+    "source": "Dart: Canonical Hello World entrypoint"
+  },
+  {
+    "text": "typedef JsonMap = Map<String, dynamic>;",
+    "source": "Dart: Typedef for Dynamic JSON Object"
+  },
+  {
+    "text": "late final DatabaseConnection db = DatabaseConnection.initialize();",
+    "source": "Dart: Lazy Initialized Late Final Variable"
+  },
+  {
+    "text": "final doubled = [for (final n in [1, 2, 3, 4, 5]) if (n.isEven) n * 2];",
+    "source": "Dart: Collection-For and Collection-If Comprehension"
+  },
+  {
+    "text": "final uniqueWords = words\n    .map((w) => w.trim().toLowerCase())\n    .where((w) => w.isNotEmpty)\n    .toSet();",
+    "source": "Dart: Iterable Functional Chaining to Set"
+  },
+  {
+    "text": "extension StringExtension on String {\n  String capitalize() => isEmpty ? '' : '${this[0].toUpperCase()}${substring(1)}';\n}",
+    "source": "Dart: Extension Method on String"
+  },
+  {
+    "text": "final (name, age, :isAdmin) = ('Alice', 30, isAdmin: true);\nprint('$name is $age years old.');",
+    "source": "Dart: Dart 3 Record Destructuring Pattern"
+  },
+  {
+    "text": "String formatStatus(Status status) => switch (status) {\n  Status.active => 'Account is Active',\n  Status.pending => 'Verification Pending',\n  Status.suspended => 'Access Suspended',\n};",
+    "source": "Dart: Switch Expression with Exhaustive Pattern Matching"
+  },
+  {
+    "text": "Future<List<Item>> fetchItems() async {\n  try {\n    final response = await client.get(Uri.parse(endpoint));\n    if (response.statusCode == 200) {\n      final list = jsonDecode(response.body) as List;\n      return list.map((e) => Item.fromJson(e)).toList();\n    }\n    throw ApiException('Failed with status: ${response.statusCode}');\n  } finally {\n    client.close();\n  }\n}",
+    "source": "Dart: Async Future with JSON Mapping"
+  },
+  {
+    "text": "Stream<int> countStream(int max) async* {\n  for (var i = 1; i <= max; i++) {\n    await Future.delayed(const Duration(milliseconds: 100));\n    yield i;\n  }\n}",
+    "source": "Dart: Asynchronous Stream Generator async*"
+  },
+  {
+    "text": "sealed class AuthState {}\nclass AuthLoading extends AuthState {}\nclass Authenticated extends AuthState {\n  final User user;\n  Authenticated(this.user);\n}\nclass Unauthenticated extends AuthState {}",
+    "source": "Dart: Dart 3 Sealed Class State Modeling"
+  },
+  {
+    "text": "class Debouncer {\n  final Duration delay;\n  Timer? _timer;\n  Debouncer({required this.delay});\n\n  void run(VoidCallback action) {\n    _timer?.cancel();\n    _timer = Timer(delay, action);\n  }\n\n  void dispose() => _timer?.cancel();\n}",
+    "source": "Dart: UI action debouncer with timer cancellation"
+  },
+  {
+    "text": "abstract interface class Cache<K, V> {\n  V? get(K key);\n  void set(K key, V value);\n  void clear();\n}",
+    "source": "Dart: Dart 3 Interface Class Contract"
+  },
+  {
+    "text": "StreamTransformer<String, String> lineSplitter() {\n  return StreamTransformer.fromHandlers(\n    handleData: (data, sink) {\n      for (final line in data.split('\\n')) sink.add(line.trim());\n    },\n  );\n}",
+    "source": "Dart: Custom stream transformer handler"
+  }
+]

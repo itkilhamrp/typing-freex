@@ -1,0 +1,58 @@
+[
+  {
+    "text": "apiVersion: v1\nkind: Pod\nmetadata:\n  name: hello-world\nspec:\n  containers:\n  - name: hello\n    image: busybox:latest\n    command: ['sh', '-c', 'echo \"Hello, World!\"']\n  restartPolicy: Never",
+    "source": "Kubernetes: Hello World One-Shot Pod"
+  },
+  {
+    "text": "kubectl get pods -n production -l app=typing-api -o wide",
+    "source": "Kubernetes: CLI Pod Inspection Query"
+  },
+  {
+    "text": "kubectl exec -it pod/typing-api-pod -- /bin/sh",
+    "source": "Kubernetes: Interactive Pod Shell Execution"
+  },
+  {
+    "text": "kubectl logs -f deployment/typing-api --tail=100",
+    "source": "Kubernetes: Streaming Container Logs"
+  },
+  {
+    "text": "kubectl apply -k ./overlays/production",
+    "source": "Kubernetes: Declarative Kustomize Deployment"
+  },
+  {
+    "text": "kubectl rollout status deployment/typing-api -n production --timeout=60s",
+    "source": "Kubernetes: Rollout Health Verification Command"
+  },
+  {
+    "text": "apiVersion: v1\nkind: Service\nmetadata:\n  name: typing-service\nspec:\n  type: ClusterIP\n  selector:\n    app: typing-api\n  ports:\n  - port: 80\n    targetPort: 8080",
+    "source": "Kubernetes: ClusterIP Service Routing"
+  },
+  {
+    "text": "apiVersion: policy/v1\nkind: PodDisruptionBudget\nmetadata:\n  name: typing-pdb\nspec:\n  minAvailable: 2\n  selector:\n    matchLabels:\n      app: typing-api",
+    "source": "Kubernetes: High-Availability Pod Disruption Budget"
+  },
+  {
+    "text": "apiVersion: autoscaling/v2\nkind: HorizontalPodAutoscaler\nmetadata:\n  name: typing-hpa\nspec:\n  scaleTargetRef:\n    apiVersion: apps/v1\n    kind: Deployment\n    name: typing-api\n  minReplicas: 2\n  maxReplicas: 10\n  metrics:\n  - type: Resource\n    resource:\n      name: cpu\n      target:\n        type: Utilization\n        averageUtilization: 75",
+    "source": "Kubernetes: Horizontal Pod Autoscaler"
+  },
+  {
+    "text": "apiVersion: networking.k8s.io/v1\nkind: Ingress\nmetadata:\n  name: app-ingress\n  annotations:\n    cert-manager.io/cluster-issuer: letsencrypt-prod\nspec:\n  tls:\n  - hosts:\n    - typing.local\n    secretName: app-tls-cert\n  rules:\n  - host: typing.local\n    http:\n      paths:\n      - path: /\n        pathType: Prefix\n        backend:\n          service:\n            name: typing-service\n            port:\n              number: 80",
+    "source": "Kubernetes: Ingress with TLS Termination"
+  },
+  {
+    "text": "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  name: typing-engine\nspec:\n  replicas: 3\n  selector:\n    matchLabels:\n      app: typing-engine\n  template:\n    metadata:\n      labels:\n        app: typing-engine\n    spec:\n      containers:\n      - name: app\n        image: typing-engine:v2.0\n        resources:\n          limits:\n            cpu: \"500m\"\n            memory: \"512Mi\"\n          requests:\n            cpu: \"100m\"\n            memory: \"128Mi\"",
+    "source": "Kubernetes: Production Deployment with Resource Limits"
+  },
+  {
+    "text": "apiVersion: networking.k8s.io/v1\nkind: NetworkPolicy\nmetadata:\n  name: api-allow-db\nspec:\n  podSelector:\n    matchLabels:\n      app: postgres-db\n  ingress:\n  - from:\n    - podSelector:\n        matchLabels:\n          app: typing-api\n    ports:\n    - protocol: TCP\n      port: 5432",
+    "source": "Kubernetes: Zero-trust NetworkPolicy isolation"
+  },
+  {
+    "text": "apiVersion: v1\nkind: Secret\nmetadata:\n  name: app-secrets\ntype: Opaque\nstringData:\n  DATABASE_URL: \"postgres://user:password@db:5432/app\"\n  API_KEY: \"prod_live_secret_key_value\"",
+    "source": "Kubernetes: Opaque secret with stringData declaration"
+  },
+  {
+    "text": "kubectl top pods -n production --sort-by=memory\nkubectl describe node worker-node-01",
+    "source": "Kubernetes: Cluster node and pod telemetry commands"
+  }
+]

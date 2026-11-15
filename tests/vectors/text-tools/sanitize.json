@@ -1,0 +1,22 @@
+[
+  {
+    "name": "CRLF and CR to LF",
+    "input": "Line 1\r\nLine 2\rLine 3\nLine 4",
+    "expected": "Line 1\nLine 2\nLine 3\nLine 4"
+  },
+  {
+    "name": "Unicode NFC normalization",
+    "input": "e\u0301cole",
+    "expected": "\u00e9cole"
+  },
+  {
+    "name": "Strip C0 and C1 control characters (preserve LF and TAB)",
+    "input": "Hello\u0000\u0007World\tLine\u001F\u007F\nNext\u0085End",
+    "expected": "HelloWorld\tLine\nNextEnd"
+  },
+  {
+    "name": "Strip Bidi override characters",
+    "input": "Safe\u202AText\u202EHere\u2066Now\u2069Done",
+    "expected": "SafeTextHereNowDone"
+  }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "text": "{\n  \"message\": \"Hello, World!\",\n  \"status\": \"success\",\n  \"code\": 200\n}",
+    "source": "JSON/YAML: Canonical Hello World Payload"
+  },
+  {
+    "text": "{\n  \"name\": \"Typing FreeX\",\n  \"version\": \"1.0.0\",\n  \"private\": true\n}",
+    "source": "JSON/YAML: Standard Package Identity"
+  },
+  {
+    "text": "eslint:\n  rules:\n    no-console: warn\n    prefer-const: error",
+    "source": "JSON/YAML: Linter Ruleset Configuration"
+  },
+  {
+    "text": "{\n  \"scripts\": {\n    \"dev\": \"vite\",\n    \"build\": \"vite build\",\n    \"test\": \"vitest run\"\n  },\n  \"packageManager\": \"pnpm@10.0.0\"\n}",
+    "source": "JSON/YAML: Minimal package.json Scripts"
+  },
+  {
+    "text": "apiVersion: v1\nkind: ConfigMap\nmetadata:\n  name: app-config\ndata:\n  LOG_LEVEL: \"info\"\n  ENABLE_TELEMETRY: \"false\"",
+    "source": "JSON/YAML: Kubernetes ConfigMap Manifest"
+  },
+  {
+    "text": "{\n  \"compilerOptions\": {\n    \"target\": \"ESNext\",\n    \"module\": \"ESNext\",\n    \"moduleResolution\": \"bundler\",\n    \"strict\": true,\n    \"noUncheckedIndexedAccess\": true,\n    \"skipLibCheck\": true\n  }\n}",
+    "source": "JSON/YAML: Modern tsconfig.json Compiler Options"
+  },
+  {
+    "text": "openapi: 3.1.0\ninfo:\n  title: Core Typing Engine API\n  version: 1.0.0\npaths:\n  /v1/sessions:\n    post:\n      summary: Create new typing session\n      responses:\n        '201':\n          description: Created successfully",
+    "source": "JSON/YAML: OpenAPI 3.1 Specification"
+  },
+  {
+    "text": "default_settings: &defaults\n  timeout: 30\n  retries: 3\n  logging: true\n\nproduction:\n  <<: *defaults\n  database_url: \"postgres://prod-db:5432/main\"\n\nstaging:\n  <<: *defaults\n  database_url: \"postgres://stage-db:5432/main\"",
+    "source": "JSON/YAML: DRY Configuration with Anchors and Merge Keys"
+  },
+  {
+    "text": "name: CI Pipeline\non:\n  push:\n    branches: [main]\n  pull_request:\n    branches: [main]\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - uses: pnpm/action-setup@v4\n        with:\n          version: 10\n      - run: pnpm install --frozen-lockfile\n      - run: pnpm test",
+    "source": "JSON/YAML: GitHub Actions Workflow with PNPM"
+  },
+  {
+    "text": "version: \"3.9\"\nservices:\n  app:\n    build: .\n    ports:\n      - \"8080:8080\"\n    environment:\n      - NODE_ENV=production\n    restart: unless-stopped\n    healthcheck:\n      test: [\"CMD\", \"curl\", \"-f\", \"http://localhost:8080/health\"]\n      interval: 30s\n      timeout: 10s\n      retries: 3",
+    "source": "JSON/YAML: Production Docker Compose Definition"
+  },
+  {
+    "text": "{\n  \"$schema\": \"http://json-schema.org/draft-07/schema#\",\n  \"title\": \"UserProfile\",\n  \"type\": \"object\",\n  \"properties\": {\n    \"id\": { \"type\": \"string\", \"format\": \"uuid\" },\n    \"email\": { \"type\": \"string\", \"format\": \"email\" },\n    \"age\": { \"type\": \"integer\", \"minimum\": 0 }\n  },\n  \"required\": [\"id\", \"email\"]\n}",
+    "source": "JSON/YAML: JSON Schema draft-07 type validation spec"
+  },
+  {
+    "text": "replicaCount: 3\nimage:\n  repository: registry.internal/typing-app\n  pullPolicy: IfNotPresent\n  tag: \"v1.0.0\"\ningress:\n  enabled: true\n  className: nginx\n  hosts:\n    - host: typing.domain.com\n      paths:\n        - path: /\n          pathType: ImplementationSpecific",
+    "source": "JSON/YAML: Helm values.yaml configuration mapping"
+  },
+  {
+    "text": "tauri:\n  bundle:\n    active: true\n    targets: all\n    identifier: \"com.typingfree.app\"\n  security:\n    csp: \"default-src 'self'; img-src 'self' data: asset:;\"",
+    "source": "JSON/YAML: Tauri v2 configuration block"
+  },
+  {
+    "text": "stages:\n  - build\n  - test\n  - deploy\n\nbuild_artifact:\n  stage: build\n  script:\n    - pnpm install\n    - pnpm build\n  artifacts:\n    paths:\n      - dist/\n    expire_in: 1 week",
+    "source": "JSON/YAML: GitLab CI pipeline stage definition"
+  }
+]

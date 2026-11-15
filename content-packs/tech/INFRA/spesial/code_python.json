@@ -1,0 +1,58 @@
+[
+  {
+    "text": "print(\"Hello, World!\")",
+    "source": "Python: Canonical Hello World output"
+  },
+  {
+    "text": "name = \"Linus\"\nprint(f\"Developer: {name}, Status: Online\")",
+    "source": "Python: Formatted string literal interpolation"
+  },
+  {
+    "text": "if (n := len(items)) > 10:\n    print(f\"Collection too large: {n} elements\")",
+    "source": "Python: Walrus assignment expression"
+  },
+  {
+    "text": "squares = [x ** 2 for x in range(1, 11) if x % 2 == 0]",
+    "source": "Python: Filtered list comprehension"
+  },
+  {
+    "text": "from dataclasses import dataclass, field\nfrom datetime import datetime\n\n@dataclass(frozen=True)\nclass AuditLog:\n    user_id: int\n    action: str\n    timestamp: datetime = field(default_factory=datetime.utcnow)",
+    "source": "Python: Frozen dataclass with default factory"
+  },
+  {
+    "text": "from functools import lru_cache\n\n@lru_cache(maxsize=128)\ndef fibonacci(n: int) -> int:\n    if n < 2:\n        return n\n    return fibonacci(n - 1) + fibonacci(n - 2)",
+    "source": "Python: Memoization decorator with lru_cache"
+  },
+  {
+    "text": "with open(\"config.json\", mode=\"r\", encoding=\"utf-8\") as fh:\n    data = json.load(fh)\n    print(\"Loaded configuration keys:\", list(data.keys()))",
+    "source": "Python: Safe file ingestion with context manager"
+  },
+  {
+    "text": "match command.split():\n    case [\"quit\" | \"exit\"]:\n        print(\"Terminating session\")\n    case [\"load\", filename]:\n        print(f\"Loading file: {filename}\")\n    case [\"set\", key, value]:\n        print(f\"Updating config {key} to {value}\")\n    case _:\n        print(\"Unrecognized command syntax\")",
+    "source": "Python: Structural pattern matching match-case"
+  },
+  {
+    "text": "from typing import Protocol, runtime_checkable\n\n@runtime_checkable\nclass Closable(Protocol):\n    def close(self) -> None: ...\n\ndef dispose_resource(res: Closable) -> None:\n    if isinstance(res, Closable):\n        res.close()",
+    "source": "Python: Runtime checkable structural protocol"
+  },
+  {
+    "text": "import asyncio\n\nasync def fetch_metrics(service_id: int) -> dict:\n    await asyncio.sleep(0.05)\n    return {\"service_id\": service_id, \"status\": \"ok\"}\n\nasync def main():\n    results = await asyncio.gather(*(fetch_metrics(i) for i in range(5)))\n    return results",
+    "source": "Python: Concurrent coroutine orchestration with asyncio.gather"
+  },
+  {
+    "text": "def chunk_stream(iterable, chunk_size: int):\n    batch = []\n    for item in iterable:\n        batch.append(item)\n        if len(batch) == chunk_size:\n            yield batch\n            batch = []\n    if batch:\n        yield batch",
+    "source": "Python: Generator function for memory-bounded batching"
+  },
+  {
+    "text": "from contextlib import asynccontextmanager\n\n@asynccontextmanager\nasync def managed_database_session(pool):\n    conn = await pool.acquire()\n    tx = conn.transaction()\n    await tx.start()\n    try:\n        yield conn\n        await tx.commit()\n    except Exception:\n        await tx.rollback()\n        raise\n    finally:\n        await pool.release(conn)",
+    "source": "Python: Asynchronous transactional context manager"
+  },
+  {
+    "text": "class RateLimiter:\n    def __init__(self, max_calls: int, period: float):\n        self.max_calls = max_calls\n        self.period = period\n        self.timestamps: list[float] = []\n\n    def allow_request(self, now: float) -> bool:\n        self.timestamps = [t for t in self.timestamps if now - t < self.period]\n        if len(self.timestamps) < self.max_calls:\n            self.timestamps.append(now)\n            return True\n        return False",
+    "source": "Python: Sliding window rate limiter class implementation"
+  },
+  {
+    "text": "def compose(*functions):\n    def inner(arg):\n        result = arg\n        for f in reversed(functions):\n            result = f(result)\n        return result\n    return inner",
+    "source": "Python: Higher-order function composition utility"
+  }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "text": "using System;\n\nConsole.WriteLine(\"Hello, World!\");",
+    "source": "C#: Top-Level Statement Hello World"
+  },
+  {
+    "text": "public required string Name { get; init; }",
+    "source": "C#: Required Init-Only Property"
+  },
+  {
+    "text": "using var httpClient = new HttpClient();\nvar content = await httpClient.GetStringAsync(\"https://api.github.com\");",
+    "source": "C#: Using Declaration Resource Management"
+  },
+  {
+    "text": "public static bool IsNullOrWhiteSpace([NotNullWhen(false)] string? value) => string.IsNullOrWhiteSpace(value);",
+    "source": "C#: Nullability Analysis Contract Attribute"
+  },
+  {
+    "text": "var highEarners = employees\n    .Where(e => e.IsActive)\n    .OrderByDescending(e => e.Salary)\n    .Select(e => new { e.Id, e.FullName, e.Department })\n    .ToList();",
+    "source": "C#: Fluent LINQ Query with Anonymous Type Projection"
+  },
+  {
+    "text": "public static string Describe(object shape) => shape switch {\n    Circle { Radius: > 0 } c => $\"Circle with area: {Math.PI * c.Radius * c.Radius:F2}\",\n    Rectangle r when r.Width == r.Height => $\"Square of side {r.Width}\",\n    Rectangle r => $\"Rectangle {r.Width}x{r.Height}\",\n    _ => \"Unknown shape\",\n};",
+    "source": "C#: Pattern Matching with Relational and Property Patterns"
+  },
+  {
+    "text": "var (min, max) = numbers.Aggregate((min: int.MaxValue, max: int.MinValue), (acc, x) => (Math.Min(acc.min, x), Math.Max(acc.max, x)));",
+    "source": "C#: Tuple Aggregation in Single Pass"
+  },
+  {
+    "text": "public static T RequireNotNull<T>(T? value, [CallerArgumentExpression(nameof(value))] string? paramName = null) {\n    return value ?? throw new ArgumentNullException(paramName);\n}",
+    "source": "C#: CallerArgumentExpression Attribute for Guard Clauses"
+  },
+  {
+    "text": "public async IAsyncEnumerable<int> GenerateSequenceAsync([EnumeratorCancellation] CancellationToken ct = default) {\n    for (int i = 0; i < 100; i++) {\n        await Task.Delay(50, ct);\n        yield return i;\n    }\n}",
+    "source": "C#: Asynchronous Stream IAsyncEnumerable"
+  },
+  {
+    "text": "Span<byte> buffer = stackalloc byte[256];\nRandomNumberGenerator.Fill(buffer);",
+    "source": "C#: Zero-Allocation Memory Span with stackalloc"
+  },
+  {
+    "text": "public readonly record struct Money(decimal Amount, string Currency) {\n    public static Money Zero(string currency) => new(0m, currency);\n    public static Money operator +(Money a, Money b) {\n        if (a.Currency != b.Currency) throw new InvalidOperationException(\"Currency mismatch\");\n        return new Money(a.Amount + b.Amount, a.Currency);\n    }\n}",
+    "source": "C#: Readonly record struct with custom operator overloading"
+  },
+  {
+    "text": "var channel = Channel.CreateBounded<WorkItem>(new BoundedChannelOptions(100) {\n    FullMode = BoundedChannelFullMode.Wait\n});\n\nTask producer = Task.Run(async () => {\n    for (int i = 0; i < 50; i++) await channel.Writer.WriteAsync(new WorkItem(i));\n    channel.Writer.Complete();\n});",
+    "source": "C#: High-throughput bounded producer-consumer channel"
+  },
+  {
+    "text": "public static async Task<T> TimeoutAfter<T>(this Task<T> task, TimeSpan timeout) {\n    using var cts = new CancellationTokenSource();\n    var completedTask = await Task.WhenAny(task, Task.Delay(timeout, cts.Token));\n    if (completedTask == task) {\n        cts.Cancel();\n        return await task;\n    }\n    throw new TimeoutException(\"The operation timed out.\");\n}",
+    "source": "C#: Task async timeout extension with token cancellation"
+  },
+  {
+    "text": "public interface IRepository<T> where T : class, IEntity, new() {\n    Task<T?> GetByIdAsync(Guid id, CancellationToken ct = default);\n    Task AddAsync(T entity, CancellationToken ct = default);\n    Task DeleteAsync(Guid id, CancellationToken ct = default);\n}",
+    "source": "C#: Generic repository interface with type constraints"
+  }
+]

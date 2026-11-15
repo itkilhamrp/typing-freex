@@ -1,0 +1,645 @@
+[
+  {
+    "code": "tech",
+    "folder": "INFRA",
+    "category": "tech",
+    "name": "Code & Tech (All)",
+    "nativeName": "Tech Infrastructure & Systems",
+    "flag": "🖥️",
+    "aliases": [
+      "tech",
+      "code_tech",
+      "coding",
+      "infra",
+      "devops",
+      "sysadmin",
+      "technology"
+    ]
+  },
+  {
+    "code": "docker",
+    "folder": "INFRA",
+    "category": "tech",
+    "file": "docker.json",
+    "name": "Docker",
+    "nativeName": "Docker Containers & Compose",
+    "flag": "🐳",
+    "aliases": [
+      "dockerfile",
+      "container"
+    ]
+  },
+  {
+    "code": "podman",
+    "folder": "INFRA",
+    "category": "tech",
+    "file": "podman.json",
+    "name": "Podman",
+    "nativeName": "Podman & Quadlet Units",
+    "flag": "🦭",
+    "aliases": [
+      "podman",
+      "quadlet"
+    ]
+  },
+  {
+    "code": "nginx",
+    "folder": "INFRA",
+    "category": "tech",
+    "file": "nginx.json",
+    "name": "NGINX",
+    "nativeName": "NGINX Reverse Proxy & Web Server",
+    "flag": "🟩",
+    "aliases": [
+      "nginx",
+      "enginex",
+      "reverse_proxy"
+    ]
+  },
+  {
+    "code": "javascript",
+    "folder": "INFRA",
+    "category": "tech",
+    "file": "code_javascript.json",
+    "name": "JavaScript",
+    "nativeName": "JavaScript ECMAScript Idioms",
+    "flag": "🟨",
+    "aliases": [
+      "js",
+      "code_js"
+    ]
+  },
+  {
+    "code": "typescript",
+    "folder": "INFRA",
+    "category": "tech",
+    "file": "code_typescript.json",
+    "name": "TypeScript",
+    "nativeName": "TypeScript Type Constructs",
+    "flag": "🔷",
+    "aliases": [
+      "ts",
+      "code_ts"
+    ]
+  },
+  {
+    "code": "rust",
+    "folder": "INFRA",
+    "category": "tech",
+    "file": "code_rust.json",
+    "name": "Rust",
+    "nativeName": "Rust Language Idioms & Tokio",
+    "flag": "🦀",
+    "aliases": [
+      "rs",
+      "code_rust"
+    ]
+  },
+  {
+    "code": "go",
+    "folder": "INFRA",
+    "category": "tech",
+    "file": "code_go.json",
+    "name": "Go",
+    "nativeName": "Go Standard Library & Concurrency",
+    "flag": "🐹",
+    "aliases": [
+      "golang",
+      "code_go"
+    ]
+  },
+  {
+    "code": "python",
+    "folder": "INFRA",
+    "category": "tech",
+    "file": "code_python.json",
+    "name": "Python",
+    "nativeName": "Python Standard Library Idioms",
+    "flag": "🐍",
+    "aliases": [
+      "py",
+      "code_python"
+    ]
+  },
+  {
+    "code": "php",
+    "folder": "INFRA",
+    "category": "tech",
+    "file": "code_php.json",
+    "name": "PHP",
+    "nativeName": "PHP Modern Web Idioms",
+    "flag": "🐘",
+    "aliases": [
+      "php8",
+      "code_php"
+    ]
+  },
+  {
+    "code": "bash",
+    "folder": "INFRA",
+    "category": "tech",
+    "file": "code_bash.json",
+    "name": "Bash",
+    "nativeName": "Bash Shell & Systems Scripting",
+    "flag": "🐚",
+    "aliases": [
+      "sh",
+      "shell",
+      "code_bash"
+    ]
+  },
+  {
+    "code": "java",
+    "folder": "INFRA",
+    "category": "tech",
+    "file": "code_java.json",
+    "name": "Java",
+    "nativeName": "Java Standard Library & Concurrency",
+    "flag": "☕",
+    "aliases": [
+      "java21",
+      "code_java"
+    ]
+  },
+  {
+    "code": "c",
+    "folder": "INFRA",
+    "category": "tech",
+    "file": "code_c.json",
+    "name": "C",
+    "nativeName": "C Systems Programming Idioms",
+    "flag": "©️",
+    "aliases": [
+      "clang",
+      "code_c"
+    ]
+  },
+  {
+    "code": "cpp",
+    "folder": "INFRA",
+    "category": "tech",
+    "file": "code_cpp.json",
+    "name": "C++",
+    "nativeName": "C++ Modern Idioms & RAII",
+    "flag": "➕",
+    "aliases": [
+      "cplusplus",
+      "code_cpp"
+    ]
+  },
+  {
+    "code": "sql_mariadb",
+    "folder": "INFRA",
+    "category": "tech",
+    "file": "code_sql_mariadb.json",
+    "name": "MariaDB SQL",
+    "nativeName": "MariaDB Relational Database",
+    "flag": "🐬",
+    "aliases": [
+      "mariadb",
+      "mysql"
+    ]
+  },
+  {
+    "code": "sql_sqlite",
+    "folder": "INFRA",
+    "category": "tech",
+    "file": "code_sql_sqlite.json",
+    "name": "SQLite",
+    "nativeName": "SQLite Embedded Database",
+    "flag": "🪶",
+    "aliases": [
+      "sqlite",
+      "sqlite3"
+    ]
+  },
+  {
+    "code": "sql_postgresql",
+    "folder": "INFRA",
+    "category": "tech",
+    "file": "code_sql_postgresql.json",
+    "name": "PostgreSQL",
+    "nativeName": "PostgreSQL Relational Database",
+    "flag": "🐘",
+    "aliases": [
+      "postgres",
+      "pgsql",
+      "psql"
+    ]
+  },
+  {
+    "code": "gnu_linux",
+    "folder": "INFRA",
+    "category": "tech",
+    "file": "gnu_linux_cli.json",
+    "name": "GNU/Linux CLI",
+    "nativeName": "GNU/Linux CLI & Coreutils",
+    "flag": "🐧",
+    "aliases": [
+      "linux",
+      "cli",
+      "gnu_linux_cli"
+    ]
+  },
+  {
+    "code": "git",
+    "folder": "INFRA",
+    "category": "tech",
+    "file": "git.json",
+    "name": "Git",
+    "nativeName": "Git Version Control Workflows",
+    "flag": "🌿",
+    "aliases": [
+      "vcs",
+      "git_cli"
+    ]
+  },
+  {
+    "code": "code",
+    "folder": "CODE",
+    "category": "tech",
+    "name": "Code & Algorithms (All)",
+    "nativeName": "Programming Languages & Algorithms (1k)",
+    "flag": "⚡",
+    "aliases": [
+      "code_all",
+      "programming",
+      "dev",
+      "algorithms",
+      "algo",
+      "syntax",
+      "monkeytype_code"
+    ]
+  },
+  {
+    "code": "python_1k",
+    "folder": "CODE",
+    "category": "tech",
+    "file": "code_python_1k.json",
+    "name": "Python 1k",
+    "nativeName": "Python 1k (Algorithms & Data Structures)",
+    "flag": "🐍",
+    "aliases": [
+      "py1k",
+      "python_1k"
+    ]
+  },
+  {
+    "code": "typescript_1k",
+    "folder": "CODE",
+    "category": "tech",
+    "file": "code_typescript_1k.json",
+    "name": "TypeScript 1k",
+    "nativeName": "TypeScript 1k (Algorithms & Generics)",
+    "flag": "🔷",
+    "aliases": [
+      "ts1k",
+      "typescript_1k"
+    ]
+  },
+  {
+    "code": "javascript_1k",
+    "folder": "CODE",
+    "category": "tech",
+    "file": "code_javascript_1k.json",
+    "name": "JavaScript 1k",
+    "nativeName": "JavaScript 1k (Algorithms & Web APIs)",
+    "flag": "⚡",
+    "aliases": [
+      "js1k",
+      "code_javascript_1k"
+    ]
+  },
+  {
+    "code": "rust_1k",
+    "folder": "CODE",
+    "category": "tech",
+    "file": "code_rust_1k.json",
+    "name": "Rust 1k",
+    "nativeName": "Rust 1k (Algorithms & Safe Concurrency)",
+    "flag": "🦀",
+    "aliases": [
+      "rs1k",
+      "rust_1k"
+    ]
+  },
+  {
+    "code": "go_1k",
+    "folder": "CODE",
+    "category": "tech",
+    "file": "code_go_1k.json",
+    "name": "Go 1k",
+    "nativeName": "Go 1k (Algorithms & Channels)",
+    "flag": "🐹",
+    "aliases": [
+      "golang1k",
+      "go_1k"
+    ]
+  },
+  {
+    "code": "c_1k",
+    "folder": "CODE",
+    "category": "tech",
+    "file": "code_c_1k.json",
+    "name": "C 1k",
+    "nativeName": "C 1k (Algorithms & Memory Allocation)",
+    "flag": "©️",
+    "aliases": [
+      "clang1k",
+      "c_1k"
+    ]
+  },
+  {
+    "code": "cpp_1k",
+    "folder": "CODE",
+    "category": "tech",
+    "file": "code_cpp_1k.json",
+    "name": "C++ 1k",
+    "nativeName": "C++ 1k (Algorithms & STL Ranges)",
+    "flag": "➕",
+    "aliases": [
+      "cpp1k",
+      "code_cpp_1k"
+    ]
+  },
+  {
+    "code": "bash_1k",
+    "folder": "CODE",
+    "category": "tech",
+    "file": "code_bash_1k.json",
+    "name": "Bash 1k",
+    "nativeName": "Bash 1k (Automation Algorithms)",
+    "flag": "🐚",
+    "aliases": [
+      "sh1k",
+      "bash_1k"
+    ]
+  },
+  {
+    "code": "java_1k",
+    "folder": "CODE",
+    "category": "tech",
+    "file": "code_java_1k.json",
+    "name": "Java 1k",
+    "nativeName": "Java 1k (Algorithms & Streams)",
+    "flag": "☕",
+    "aliases": [
+      "java1k",
+      "code_java_1k"
+    ]
+  },
+  {
+    "code": "php_1k",
+    "folder": "CODE",
+    "category": "tech",
+    "file": "code_php_1k.json",
+    "name": "PHP 1k",
+    "nativeName": "PHP 1k (Algorithms & Modern Syntax)",
+    "flag": "🐘",
+    "aliases": [
+      "php1k",
+      "code_php_1k"
+    ]
+  },
+  {
+    "code": "sql_1k",
+    "folder": "CODE",
+    "category": "tech",
+    "file": "code_sql_1k.json",
+    "name": "SQL 1k",
+    "nativeName": "SQL 1k (Window Functions & CTEs)",
+    "flag": "🗄️",
+    "aliases": [
+      "sql1k",
+      "code_sql_1k"
+    ]
+  },
+  {
+    "code": "kotlin",
+    "folder": "CODE",
+    "category": "tech",
+    "file": "code_kotlin.json",
+    "name": "Kotlin",
+    "nativeName": "Kotlin Multiplatform & Coroutines",
+    "flag": "🟣",
+    "aliases": [
+      "kt",
+      "code_kotlin"
+    ]
+  },
+  {
+    "code": "swift",
+    "folder": "CODE",
+    "category": "tech",
+    "file": "code_swift.json",
+    "name": "Swift",
+    "nativeName": "Swift Protocol-Oriented Design",
+    "flag": "🦅",
+    "aliases": [
+      "swiftlang",
+      "code_swift"
+    ]
+  },
+  {
+    "code": "dart",
+    "folder": "CODE",
+    "category": "tech",
+    "file": "code_dart.json",
+    "name": "Dart",
+    "nativeName": "Dart & Flutter Reactive UI",
+    "flag": "🎯",
+    "aliases": [
+      "flutter",
+      "code_dart"
+    ]
+  },
+  {
+    "code": "csharp",
+    "folder": "CODE",
+    "category": "tech",
+    "file": "code_csharp.json",
+    "name": "C#",
+    "nativeName": "C# Modern (.NET Core)",
+    "flag": "♯",
+    "aliases": [
+      "cs",
+      "dotnet",
+      "code_csharp"
+    ]
+  },
+  {
+    "code": "ruby",
+    "folder": "CODE",
+    "category": "tech",
+    "file": "code_ruby.json",
+    "name": "Ruby",
+    "nativeName": "Ruby Metaprogramming & Blocks",
+    "flag": "💎",
+    "aliases": [
+      "rb",
+      "code_ruby"
+    ]
+  },
+  {
+    "code": "lua",
+    "folder": "CODE",
+    "category": "tech",
+    "file": "code_lua.json",
+    "name": "Lua",
+    "nativeName": "Lua Tables & Coroutines",
+    "flag": "🌙",
+    "aliases": [
+      "lua54",
+      "code_lua"
+    ]
+  },
+  {
+    "code": "zig",
+    "folder": "CODE",
+    "category": "tech",
+    "file": "code_zig.json",
+    "name": "Zig",
+    "nativeName": "Zig Comptime & Manual Memory",
+    "flag": "⚡",
+    "aliases": [
+      "ziglang",
+      "code_zig"
+    ]
+  },
+  {
+    "code": "elixir",
+    "folder": "CODE",
+    "category": "tech",
+    "file": "code_elixir.json",
+    "name": "Elixir",
+    "nativeName": "Elixir OTP & Actor Concurrency",
+    "flag": "💧",
+    "aliases": [
+      "ex",
+      "otp",
+      "code_elixir"
+    ]
+  },
+  {
+    "code": "haskell",
+    "folder": "CODE",
+    "category": "tech",
+    "file": "code_haskell.json",
+    "name": "Haskell",
+    "nativeName": "Haskell Pure Functional Types",
+    "flag": "λ",
+    "aliases": [
+      "hs",
+      "code_haskell"
+    ]
+  },
+  {
+    "code": "html_css",
+    "folder": "CODE",
+    "category": "tech",
+    "file": "code_html_css.json",
+    "name": "HTML5 & CSS3",
+    "nativeName": "HTML5 & CSS3 Web Layouts",
+    "flag": "🎨",
+    "aliases": [
+      "html",
+      "css",
+      "web"
+    ]
+  },
+  {
+    "code": "json_yaml",
+    "folder": "CODE",
+    "category": "tech",
+    "file": "code_json_yaml.json",
+    "name": "JSON & YAML",
+    "nativeName": "JSON & YAML Data Formats",
+    "flag": "📋",
+    "aliases": [
+      "json",
+      "yaml",
+      "config"
+    ]
+  },
+  {
+    "code": "markdown",
+    "folder": "CODE",
+    "category": "tech",
+    "file": "code_markdown.json",
+    "name": "Markdown",
+    "nativeName": "Markdown Technical Documentation",
+    "flag": "📝",
+    "aliases": [
+      "md",
+      "code_markdown"
+    ]
+  },
+  {
+    "code": "kubernetes",
+    "folder": "CODE",
+    "category": "tech",
+    "file": "code_kubernetes.json",
+    "name": "Kubernetes",
+    "nativeName": "Kubernetes Deployment Manifests (YAML)",
+    "flag": "☸️",
+    "aliases": [
+      "k8s",
+      "kubectl",
+      "code_kubernetes"
+    ]
+  },
+  {
+    "code": "neovim_vim",
+    "folder": "CODE",
+    "category": "tech",
+    "file": "code_neovim_vim.json",
+    "name": "Neovim & Vim",
+    "nativeName": "Neovim & Vim Scripting (Lua)",
+    "flag": "🟩",
+    "aliases": [
+      "vim",
+      "nvim",
+      "neovim"
+    ]
+  },
+  {
+    "code": "scala",
+    "folder": "CODE",
+    "category": "tech",
+    "file": "code_scala.json",
+    "name": "Scala",
+    "nativeName": "Scala 3 Functional & Object Programming",
+    "flag": "🔴",
+    "aliases": [
+      "scala3",
+      "code_scala"
+    ]
+  },
+  {
+    "code": "powershell",
+    "folder": "CODE",
+    "category": "tech",
+    "file": "code_powershell.json",
+    "name": "PowerShell",
+    "nativeName": "PowerShell Automation & Scripting",
+    "flag": "💻",
+    "aliases": [
+      "pwsh",
+      "ps1",
+      "code_powershell"
+    ]
+  },
+  {
+    "code": "r",
+    "folder": "CODE",
+    "category": "tech",
+    "file": "code_r.json",
+    "name": "R",
+    "nativeName": "R Statistical Computing & Graphics",
+    "flag": "📊",
+    "aliases": [
+      "rlang",
+      "code_r"
+    ]
+  }
+]

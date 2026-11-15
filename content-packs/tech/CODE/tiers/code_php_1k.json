@@ -1,0 +1,42 @@
+[
+  {
+    "text": "readonly class UserProfile {\n    public function __construct(\n        public string $id,\n        public string $email,\n        public DateTimeImmutable $createdAt = new DateTimeImmutable()\n    ) {}\n}",
+    "source": "PHP 1k: PHP 8.2 Readonly Class with Constructor Promotion"
+  },
+  {
+    "text": "$statusMessage = match ($httpStatusCode) {\n    200, 201 => 'Operation Successful',\n    400 => 'Bad Request',\n    401, 403 => 'Unauthorized Access',\n    404 => 'Resource Not Found',\n    500 => 'Internal Server Error',\n    default => 'Unhandled Status Code',\n};",
+    "source": "PHP 1k: Match Expression Pattern"
+  },
+  {
+    "text": "enum PaymentStatus: string {\n    case Pending = 'pending';\n    case Paid = 'paid';\n    case Failed = 'failed';\n\n    public function isFinal(): bool {\n        return match($this) {\n            self::Paid, self::Failed => true,\n            self::Pending => false,\n        };\n    }\n}",
+    "source": "PHP 1k: Backed Enum with Member Methods"
+  },
+  {
+    "text": "function chunkGenerator(iterable $items, int $size): Generator {\n    $chunk = [];\n    foreach ($items as $item) {\n        $chunk[] = $item;\n        if (count($chunk) === $size) {\n            yield $chunk;\n            $chunk = [];\n        }\n    }\n    if (!empty($chunk)) yield $chunk;\n}",
+    "source": "PHP 1k: Memory-Efficient Chunk Generator"
+  },
+  {
+    "text": "$cleaned = array_values(array_unique(array_filter($tags, fn($t) => strlen(trim($t)) > 0)));",
+    "source": "PHP 1k: Functional Array Filtering and Deduplication"
+  },
+  {
+    "text": "function safeDivide(float $a, float $b): ?float {\n    return abs($b) < PHP_FLOAT_EPSILON ? null : $a / $b;\n}",
+    "source": "PHP 1k: Nullable Type Return with Floating Epsilon"
+  },
+  {
+    "text": "$username = $request->get('user')?->getProfile()?->name ?? 'Guest';",
+    "source": "PHP 1k: Nullsafe Operator Chain with Null Coalescing"
+  },
+  {
+    "text": "final class Singleton {\n    private static ?self $instance = null;\n    private function __construct() {}\n    public static function getInstance(): self {\n        return self::$instance ??= new self();\n    }\n}",
+    "source": "PHP 1k: Null Coalescing Assignment Singleton"
+  },
+  {
+    "text": "$formatted = sprintf('[%s] %s: %s', date('Y-m-d H:i:s'), strtoupper($level), $message);",
+    "source": "PHP 1k: Fast String Log Formatter with sprintf"
+  },
+  {
+    "text": "usort($items, fn(array $a, array $b): int => $a['priority'] <=> $b['priority']);",
+    "source": "PHP 1k: Spaceship Operator Array Sorting"
+  }
+]
