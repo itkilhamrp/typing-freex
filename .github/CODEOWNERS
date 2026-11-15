@@ -1,9 +1,0 @@
-# Global default
-* @Typing-FreeX-core-team
-
-# Security sensitive IPC and Capabilities
-src-tauri/capabilities/ @Typing-FreeX-security-team
-src-tauri/tauri.conf.json @Typing-FreeX-security-team
-src-tauri/src/commands/ @Typing-FreeX-security-team
-src-tauri/src/db/validate.rs @Typing-FreeX-security-team
-.github/workflows/ @Typing-FreeX-security-team

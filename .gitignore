@@ -24,6 +24,9 @@ yarn.lock
 coverage/
 *.lcov
 
+# Github Workflow
+.github/
+
 # Flatpak build artifacts
 flatpak/typing_freex
 flatpak/.flatpak-builder/
